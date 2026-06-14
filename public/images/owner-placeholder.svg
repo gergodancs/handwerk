@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="560" viewBox="0 0 560 560" fill="none">
+  <rect width="560" height="560" fill="#0f172a"/>
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="560" y2="560" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1e293b"/>
+      <stop offset="1" stop-color="#0f172a"/>
+    </linearGradient>
+  </defs>
+  <rect width="560" height="560" fill="url(#g)"/>
+  <circle cx="280" cy="220" r="88" fill="#334155"/>
+  <path d="M120 480c40-72 120-108 160-108s120 36 160 108" fill="#334155"/>
+  <text x="280" y="238" text-anchor="middle" fill="#34d399" font-family="system-ui,sans-serif" font-size="52" font-weight="700">GD</text>
+  <text x="280" y="520" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="18">Foto folgt</text>
+</svg>
