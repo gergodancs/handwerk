@@ -140,9 +140,9 @@ const de: LocaleDictionary = {
   },
   hero: {
     title:
-      "Gergely Dancs – Ihr Handwerker in Wien: Malerarbeiten & Altbau-Fensterrenovierung",
+      "Ihr Spezialist für Altbau-Fensterrettung & Premium Handwerk in Wien",
     subtitle:
-      "Persönlich, präzise und zuverlässig: Malerarbeiten, Spachteln und die liebevolle Rettung alter Wiener Holzfenster & Türen – mit fairen Fixpreisen.",
+      "Die liebevolle Rettung und Pflege alter Wiener Holzfenster, Türen und Rahmen. Als anspruchsvoller Allrounder kümmere ich mich zudem um präzise Ausbesserungen, feine Malerarbeiten und professionelle Montagen – sauber, zuverlässig und mit Blick fürs Detail.",
     ctaWhatsApp: "WhatsApp Chat",
     ctaCall: "Anrufen",
   },
@@ -187,19 +187,19 @@ Mit freundlichen Grüßen,`,
     title: "Meine Leistungen",
     items: [
       {
-        title: "Maler- & Spachtelarbeiten",
-        description:
-          "Professionelles Ausmalen, exaktes Gletteln und die Ausbesserung von Wänden und Decken. Saubere Kanten und makellose Oberflächen für Ihr Wohlbefinden.",
-      },
-      {
         title: "Altbau Fenster- & Türenrenovierung",
         description:
-          "Nachhaltige Sanierung, Schleifen und präzises Lackieren von verwitterten Holzfenstern, Innentüren und deren Rahmen. Ich bringe den alten Wiener Charme zurück.",
+          "Nachhaltige Sanierung, fachgerechtes Schleifen, Spachteln und präzises Lackieren von verwitterten Holzfenstern, Innentüren und deren Rahmen. Ich rette den alten Wiener Charme, statt teuer auszutauschen.",
       },
       {
-        title: "Allrounder & Montageservice",
+        title: "Feine Maler- & Ausbesserungsarbeiten",
         description:
-          "Schnelle und fachgerechte Hilfe im Alltag: Lampenmontage, Möbelaufbau (IKEA, Lutz etc.), kleinere Reparaturen, Sanitärtausch (Armaturen) und Silikonfugen-Erneuerung.",
+          "Professionelles Ausmalen, exaktes Gletten und die feine Ausbesserung von Wänden und Decken. Saubere Kanten und makellose Oberflächen für Ihr Wohlbefinden.",
+      },
+      {
+        title: "Premium Allrounder & Montageservice",
+        description:
+          "Schnelle und fachgerechte Hilfe im Alltag: Lampenmontage, Möbelaufbau, kleinere Reparaturen, Sanitärtausch (Armaturen) und Silikonfugen-Erneuerung auf höchstem Niveau.",
       },
     ],
   },
@@ -344,9 +344,9 @@ const en: LocaleDictionary = {
   },
   hero: {
     title:
-      "Gergely Dancs – Your Handyman in Vienna: Painting & Altbau Window Restoration",
+      "Your Specialist for Altbau Window Restoration & Premium Handyman Services in Vienna",
     subtitle:
-      "Personal, precise, and reliable: painting, plastering, and premium restoration of classic Viennese wooden windows & doors – with fair fixed prices.",
+      "Dedicated restoration and maintenance of classic Viennese wooden windows, doors, and frames. As a high-end all-rounder and decorator, I also handle precise repairs, fine painting, and professional assembly work – clean, reliable, and with absolute attention to detail.",
     ctaWhatsApp: "WhatsApp Chat",
     ctaCall: "Call Now",
   },
@@ -391,19 +391,19 @@ Best regards,`,
     title: "My Services",
     items: [
       {
-        title: "Painting & Plastering",
-        description:
-          "Professional interior painting, precise wall smoothing (plastering), and wall repairs. Clean edges and flawless surfaces for your home.",
-      },
-      {
         title: "Altbau Window & Door Restoration",
         description:
-          "Sustainable renovation, sanding, and precise painting of weathered wooden windows, doors, and frames. I bring back the classic Viennese charm.",
+          "Sustainable restoration, professional sanding, plastering, and precise painting of weathered wooden windows, interior doors, and frames. I preserve classic Viennese charm instead of costly replacement.",
       },
       {
-        title: "Handyman & Assembly Service",
+        title: "Fine Painting & Touch-up Work",
         description:
-          "Quick and professional help: lamp installation, furniture assembly (IKEA, Lutz, etc.), minor repairs, faucet replacement, and silicone joint renewal.",
+          "Professional interior painting, precise smoothing, and fine repairs to walls and ceilings. Clean edges and flawless surfaces for your home.",
+      },
+      {
+        title: "Premium Handyman & Assembly Service",
+        description:
+          "Fast, professional everyday help: lamp installation, furniture assembly, minor repairs, faucet replacement, and silicone joint renewal – at the highest standard.",
       },
     ],
   },
