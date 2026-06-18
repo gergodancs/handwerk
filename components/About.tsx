@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { Dictionary } from "@/lib/dictionaries";
+import { OWNER_PROFILE_IMAGE } from "@/lib/images";
 import { OWNER_NAME } from "@/lib/site";
 
 type AboutProps = {
@@ -16,11 +17,11 @@ export function About({ dict }: AboutProps) {
         <div className="mx-auto w-full max-w-[280px]">
           <div className="relative aspect-square overflow-hidden rounded-2xl border border-slate-700 bg-slate-900 shadow-xl">
             <Image
-              src="/images/owner-placeholder.svg"
+              src={OWNER_PROFILE_IMAGE}
               alt={dict.about.imageAlt}
               fill
               sizes="280px"
-              className="object-cover"
+              className="object-cover object-top"
               priority={false}
             />
           </div>

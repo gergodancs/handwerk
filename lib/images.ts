@@ -2,6 +2,9 @@ const REF = "/images/referenzen";
 const ALTBAU = `${REF}/altbau-sanierung`;
 const ALLROUNDER = `${REF}/allrounder-maler`;
 const LEISTUNGEN = "/images/leistungen";
+const PROFIL = "/images/profil";
+
+export const OWNER_PROFILE_IMAGE = `${PROFIL}/profil-pic.jpg`;
 
 export const LEISTUNG_IMAGES = {
   altbauFensterSanierung:

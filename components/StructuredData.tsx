@@ -1,6 +1,6 @@
 import { EMAIL, GOOGLE_BUSINESS_URL, GOOGLE_PLACE_ID, GOOGLE_MAPS_PLACE_URL, PHONE_HREF, WEBSITE_URL } from "@/lib/constants";
 import { getPlaceReviews } from "@/lib/google-places";
-import { HERO_BACKGROUND } from "@/lib/images";
+import { HERO_BACKGROUND, OWNER_PROFILE_IMAGE } from "@/lib/images";
 import { getDictionary } from "@/lib/dictionaries";
 import type { Locale } from "@/lib/i18n";
 import { getAreaServedSchema, isSchemaSafeReviews, VIENNA_GEO } from "@/lib/seo";
@@ -38,6 +38,7 @@ export async function StructuredData({
     image: [
       `${SITE_URL}/${lang}/opengraph-image`,
       `${SITE_URL}${HERO_BACKGROUND}`,
+      `${SITE_URL}${OWNER_PROFILE_IMAGE}`,
     ],
     address: {
       "@type": "PostalAddress",
@@ -55,6 +56,7 @@ export async function StructuredData({
     founder: {
       "@type": "Person",
       name: OWNER_NAME,
+      image: `${SITE_URL}${OWNER_PROFILE_IMAGE}`,
     },
     priceRange: "€€",
     knowsLanguage: ["de", "en"],
