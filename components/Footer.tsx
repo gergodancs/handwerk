@@ -70,7 +70,7 @@ export function Footer({ lang, dict }: FooterProps) {
               </li>
               <li>
                 <a
-                  href={buildMailtoHref(dict.email.subject, dict.email.body)}
+                  href={buildMailtoHref()}
                   className="inline-flex items-center gap-2 text-sm text-slate-300 transition-colors hover:text-white"
                 >
                   <EmailIcon className="h-4 w-4" />

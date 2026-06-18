@@ -61,7 +61,7 @@ export function Hero({ dict }: HeroProps) {
           </a>
 
           <a
-            href={buildMailtoHref(dict.email.subject, dict.email.body)}
+            href={buildMailtoHref()}
             className="inline-flex items-center justify-center gap-3 rounded-xl border border-slate-600 bg-slate-900/50 px-8 py-4 text-base font-semibold text-white transition-colors hover:border-slate-500 hover:bg-slate-800/50"
           >
             <EmailIcon className="h-5 w-5" />

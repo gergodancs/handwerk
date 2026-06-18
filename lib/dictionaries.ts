@@ -50,8 +50,6 @@ export type Dictionary = {
   reviews: ReviewsLabels;
   email: {
     buttonText: string;
-    subject: string;
-    body: string;
   };
   services: {
     title: string;
@@ -200,17 +198,6 @@ const de: LocaleDictionary = {
   },
   email: {
     buttonText: "E-Mail senden",
-    subject: "Anfrage für Handwerksarbeiten - Wien Handwerk Profis",
-    body: `Hallo Gergely,
-
-ich interessiere mich für:
-[ ] Altbau Fenster- & Türensanierung
-[ ] Nutenfräsen & nachträgliche Dichtung
-[ ] Malerarbeiten / Allrounder-Service
-
-Bitte kontaktieren Sie mich unter der Telefonnummer: 
-
-Mit freundlichen Grüßen,`,
   },
   services: {
     title: "Meine Leistungen",
@@ -470,17 +457,6 @@ const en: LocaleDictionary = {
   },
   email: {
     buttonText: "Send E-Mail",
-    subject: "Inquiry for Handyman Services - Wien Handwerk Profis",
-    body: `Hello Gergely,
-
-I am interested in:
-[ ] Altbau window & door restoration
-[ ] Routed groove sealing & draft insulation
-[ ] Painting / handyman services
-
-Please contact me at the following phone number: 
-
-Best regards,`,
   },
   services: {
     title: "My Services",

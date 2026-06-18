@@ -18,6 +18,7 @@ export const PHONE_DISPLAY = "06608956377";
 export const PHONE_HREF = "tel:+436608956377";
 export const WHATSAPP_HREF = "https://wa.me/436608956377";
 export const EMAIL = `info@${SITE_HOST}`;
+export const MAILTO_HREF = `mailto:${EMAIL}`;
 export const WEBSITE_DISPLAY = SITE_HOST;
 export const WEBSITE_URL = SITE_URL;
 export const ODR_URL = "https://ec.europa.eu/odr";
@@ -30,7 +31,6 @@ export const IMPRESSUM = {
   gisaNumber: "39350114",
 } as const;
 
-export function buildMailtoHref(subject: string, body: string): string {
-  const params = new URLSearchParams({ subject, body });
-  return `mailto:${EMAIL}?${params.toString()}`;
+export function buildMailtoHref(): string {
+  return MAILTO_HREF;
 }

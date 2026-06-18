@@ -24,7 +24,7 @@ export function SectionCTA({ dict }: SectionCTAProps) {
           {dict.sectionCta.whatsapp}
         </a>
         <a
-          href={buildMailtoHref(dict.email.subject, dict.email.body)}
+          href={buildMailtoHref()}
           className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-800 transition-colors hover:border-slate-400"
         >
           <EmailIcon className="h-4 w-4" />

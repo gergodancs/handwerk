@@ -48,7 +48,7 @@ export function Header({ lang, dict }: HeaderProps) {
           <LanguageSwitcher lang={lang} />
 
           <a
-            href={buildMailtoHref(dict.email.subject, dict.email.body)}
+            href={buildMailtoHref()}
             className="hidden items-center gap-1.5 rounded-lg border border-slate-700 px-3 py-1.5 text-xs font-medium text-slate-300 transition-colors hover:border-slate-500 hover:text-white sm:inline-flex"
           >
             <EmailIcon className="h-3.5 w-3.5" />
