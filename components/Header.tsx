@@ -11,16 +11,38 @@ type HeaderProps = {
   dict: Dictionary;
 };
 
+const NAV_ITEMS = [
+  { key: "services" as const, href: "#leistungen" },
+  { key: "gallery" as const, href: "#referenzen" },
+  { key: "reviews" as const, href: "#bewertungen" },
+  { key: "faq" as const, href: "#faq" },
+];
+
 export function Header({ lang, dict }: HeaderProps) {
   return (
     <header className="sticky top-0 z-50 border-b border-slate-800/80 bg-slate-950/95 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
         <Link
           href={`/${lang}`}
-          className="text-base font-semibold tracking-tight text-white sm:text-lg"
+          className="shrink-0 text-base font-semibold tracking-tight text-white sm:text-lg"
         >
           {dict.header.companyName}
         </Link>
+
+        <nav
+          className="hidden items-center gap-5 lg:flex"
+          aria-label={lang === "de" ? "Seitennavigation" : "Page navigation"}
+        >
+          {NAV_ITEMS.map((item) => (
+            <a
+              key={item.key}
+              href={item.href}
+              className="text-sm font-medium text-slate-300 transition-colors hover:text-white"
+            >
+              {dict.header.nav[item.key]}
+            </a>
+          ))}
+        </nav>
 
         <div className="flex items-center gap-3 sm:gap-4">
           <LanguageSwitcher lang={lang} />

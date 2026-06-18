@@ -1,11 +1,53 @@
 import { ImageResponse } from "next/og";
+import { isValidLocale } from "@/lib/i18n";
 
-export const runtime = "edge";
-export const alt = "Wien Handwerk Profis – Handwerker & Maler in Wien";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-export default function OpenGraphImage() {
+const COPY = {
+  de: {
+    alt: "Wien Handwerk Profis – Altbau-Fenster Sanierung und Handwerker Wien",
+    brand: "Wien Handwerk Profis",
+    name: "Gergely Dancs",
+    tagline: "Altbau-Fenster · Nutenfräsen · Handwerker Wien",
+    bullets: ["Fixpreise", "Saubere Arbeit", "Ganz Wien"],
+  },
+  en: {
+    alt: "Wien Handwerk Profis – period window restoration and handyman Vienna",
+    brand: "Wien Handwerk Profis",
+    name: "Gergely Dancs",
+    tagline: "Period windows · Routed sealing · Handyman Vienna",
+    bullets: ["Fixed prices", "Clean work", "All Vienna"],
+  },
+} as const;
+
+export async function generateImageMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}) {
+  const { lang } = await params;
+  const locale = isValidLocale(lang) ? lang : "de";
+
+  return [
+    {
+      id: locale,
+      alt: COPY[locale].alt,
+      size,
+      contentType,
+    },
+  ];
+}
+
+export default async function OpenGraphImage({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}) {
+  const { lang } = await params;
+  const locale = isValidLocale(lang) ? lang : "de";
+  const copy = COPY[locale];
+
   return new ImageResponse(
     (
       <div
@@ -32,7 +74,7 @@ export default function OpenGraphImage() {
               textTransform: "uppercase",
             }}
           >
-            Wien Handwerk Profis
+            {copy.brand}
           </div>
           <div
             style={{
@@ -42,7 +84,7 @@ export default function OpenGraphImage() {
               maxWidth: 900,
             }}
           >
-            Gergely Dancs
+            {copy.name}
           </div>
           <div
             style={{
@@ -52,7 +94,7 @@ export default function OpenGraphImage() {
               maxWidth: 800,
             }}
           >
-            Malerarbeiten · Altbau-Fenster · Handwerker Wien
+            {copy.tagline}
           </div>
         </div>
         <div
@@ -63,11 +105,12 @@ export default function OpenGraphImage() {
             color: "#94a3b8",
           }}
         >
-          <span>Fixpreise</span>
-          <span>·</span>
-          <span>Saubere Arbeit</span>
-          <span>·</span>
-          <span>Ganz Wien</span>
+          {copy.bullets.map((item, index) => (
+            <span key={item} style={{ display: "flex", gap: "24px" }}>
+              {index > 0 ? <span>·</span> : null}
+              <span>{item}</span>
+            </span>
+          ))}
         </div>
       </div>
     ),

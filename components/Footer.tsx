@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { Dictionary } from "@/lib/dictionaries";
 import type { Locale } from "@/lib/i18n";
-import { buildMailtoHref, PHONE_DISPLAY, PHONE_HREF, WHATSAPP_HREF } from "@/lib/constants";
+import { buildMailtoHref, GOOGLE_MAPS_PLACE_URL, PHONE_DISPLAY, PHONE_HREF, WHATSAPP_HREF } from "@/lib/constants";
 import { PhoneIcon } from "./icons/PhoneIcon";
 import { WhatsAppIcon } from "./icons/WhatsAppIcon";
 import { EmailIcon } from "./icons/EmailIcon";
@@ -15,23 +15,38 @@ export function Footer({ lang, dict }: FooterProps) {
   return (
     <footer className="border-t border-slate-800 bg-slate-950 px-4 py-12 sm:px-6">
       <div className="mx-auto max-w-6xl">
-        <div className="grid gap-10 sm:grid-cols-2">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
           <div>
-            <Link
-              href={`/${lang}/impressum`}
-              className="text-sm font-semibold uppercase tracking-wider text-slate-400 transition-colors hover:text-white"
-            >
+            <p className="text-sm font-semibold uppercase tracking-wider text-slate-400">
               {dict.footer.impressum}
-            </Link>
+            </p>
+            <ul className="mt-3 space-y-2">
+              <li>
+                <Link
+                  href={`/${lang}/impressum`}
+                  className="text-sm text-slate-300 transition-colors hover:text-white"
+                >
+                  {dict.footer.impressum}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={`/${lang}/datenschutz`}
+                  className="text-sm text-slate-300 transition-colors hover:text-white"
+                >
+                  {dict.footer.privacy}
+                </Link>
+              </li>
+            </ul>
             <p className="mt-3 text-sm leading-relaxed text-slate-500">
-              {dict.footer.impressumTeaser}
+              {dict.footer.impressumTeaser} {dict.footer.privacyTeaser}
             </p>
           </div>
 
           <div>
-            <h2 className="text-sm font-semibold uppercase tracking-wider text-slate-400">
+            <p className="text-sm font-semibold uppercase tracking-wider text-slate-400">
               {dict.footer.contactTitle}
-            </h2>
+            </p>
             <ul className="mt-3 space-y-2">
               <li>
                 <a
@@ -62,6 +77,18 @@ export function Footer({ lang, dict }: FooterProps) {
                   {dict.email.buttonText}
                 </a>
               </li>
+              {GOOGLE_MAPS_PLACE_URL ? (
+                <li>
+                  <a
+                    href={GOOGLE_MAPS_PLACE_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-slate-300 transition-colors hover:text-white"
+                  >
+                    Google Maps
+                  </a>
+                </li>
+              ) : null}
             </ul>
           </div>
         </div>

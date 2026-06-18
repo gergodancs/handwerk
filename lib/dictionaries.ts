@@ -19,9 +19,16 @@ export type Dictionary = {
     title: string;
     description: string;
     keywords: string[];
+    ogImageAlt: string;
   };
   header: {
     companyName: string;
+    nav: {
+      services: string;
+      gallery: string;
+      reviews: string;
+      faq: string;
+    };
   };
   hero: {
     title: string;
@@ -80,6 +87,8 @@ export type Dictionary = {
   footer: {
     impressum: string;
     impressumTeaser: string;
+    privacy: string;
+    privacyTeaser: string;
     contactTitle: string;
     rights: string;
   };
@@ -109,6 +118,17 @@ export type Dictionary = {
     disputeTextBefore: string;
     disputeTextAfter: string;
   };
+  privacyPage: {
+    metaTitle: string;
+    metaDescription: string;
+    title: string;
+    backToHome: string;
+    lastUpdated: string;
+    sections: Array<{
+      title: string;
+      paragraphs: string[];
+    }>;
+  };
   floatingCta: {
     whatsapp: string;
     call: string;
@@ -117,10 +137,11 @@ export type Dictionary = {
 
 const de: LocaleDictionary = {
   meta: {
-    title:
-      "Altbau-Fensterrettung Wien | Nutenfräsen & Dichtung – Wien Handwerk Profis",
+    title: "Altbau-Fenster sanieren Wien | Nutenfräsen & Dichtung",
     description:
-      "Gergely Dancs – Spezialist für Altbau-Fenster- und Türensanierung in Wien. Schleifen, Lackieren, Nutenfräsen und unsichtbare Silikon-Dichtung gegen Zugluft. Premium Handwerk ohne Subunternehmer.",
+      "Altbau-Fenster & Türen sanieren in Wien: Schleifen, Lackieren, Nutenfräsen & Silikondichtung gegen Zugluft. Gergely Dancs – Fixpreis per WhatsApp.",
+    ogImageAlt:
+      "Wien Handwerk Profis – Altbau-Fenster Sanierung und Handwerker Wien",
     keywords: [
       "Altbau Fenster sanieren Wien",
       "Holzfenster restaurieren Wien",
@@ -138,6 +159,12 @@ const de: LocaleDictionary = {
   },
   header: {
     companyName: "Wien Handwerk Profis",
+    nav: {
+      services: "Leistungen",
+      gallery: "Referenzen",
+      reviews: "Bewertungen",
+      faq: "FAQ",
+    },
   },
   hero: {
     title:
@@ -191,12 +218,12 @@ Mit freundlichen Grüßen,`,
       {
         title: "Altbau Fenster- & Türensanierung",
         description:
-          "Schleifen, Spachteln, Kitten und präzises Lackieren von klassischen Wiener Holzfenstern und Innentüren. Wir erhalten den historischen Charme Ihres Altbaus und retten die Originalsubstanz vor dem teuren Neukauf.",
+          "Schleifen, Spachteln, Kitten und präzises Lackieren von klassischen Wiener Holzfenstern und Innentüren. Ich erhalte den historischen Charme Ihres Altbaus und rette die Originalsubstanz vor dem teuren Neukauf.",
       },
       {
         title: "Nutenfräsen & Nachträgliche Dichtung",
         description:
-          "Schluss mit Zugluft und hohen Heizkosten. Wir fräsen eine präzise 3mm-Nut in den Fensterflügel und setzen eine langlebige Silikon-Schlauchdichtung ein. Unsichtbar, hocheffektiv und drastisch lärmreduzierend.",
+          "Schluss mit Zugluft und hohen Heizkosten. Ich fräse eine präzise 3mm-Nut in den Fensterflügel und setze eine langlebige Silikon-Schlauchdichtung ein. Unsichtbar, hocheffektiv und drastisch lärmreduzierend.",
       },
       {
         title: "Premium Allrounder & Malerarbeiten",
@@ -242,7 +269,7 @@ Mit freundlichen Grüßen,`,
       {
         question: "Bleibt meine Wohnung während der Sanierung offen oder schmutzig?",
         answer:
-          "Absolut nein! Bei klassischen Wiener Kastenfenstern (Doppelfenstern) demontieren wir immer nur eine Ebene (z. B. die Innenflügel), während die andere Ebene geschlossen bleibt. Ihre Wohnung ist zu jeder Zeit sicher und wetterfest. Zudem arbeiten wir mit professionellen Absaugsystemen direkt an unseren Maschinen – der Schleifstaub wird sofort aufgefangen, sodass Ihr Wohnraum sauber bleibt.",
+          "Absolut nein! Bei klassischen Wiener Kastenfenstern (Doppelfenstern) demontiere ich immer nur eine Ebene (z. B. die Innenflügel), während die andere Ebene geschlossen bleibt. Ihre Wohnung ist zu jeder Zeit sicher und wetterfest. Zudem arbeite ich mit professionellen Absaugsystemen direkt an meinen Maschinen – der Schleifstaub wird sofort aufgefangen, sodass Ihr Wohnraum sauber bleibt.",
       },
       {
         question:
@@ -280,6 +307,8 @@ Mit freundlichen Grüßen,`,
   footer: {
     impressum: "Impressum",
     impressumTeaser: "Rechtliche Informationen und Kontaktdaten.",
+    privacy: "Datenschutz",
+    privacyTeaser: "Informationen zur Verarbeitung Ihrer Daten (DSGVO).",
     contactTitle: "Kontakt",
     rights: "© Wien Handwerk Profis. Alle Rechte vorbehalten.",
   },
@@ -312,6 +341,65 @@ Mit freundlichen Grüßen,`,
     disputeTextAfter:
       "Sie können allfällige Beschwerden auch an die oben angegebene E-Mail-Adresse richten.",
   },
+  privacyPage: {
+    metaTitle: "Datenschutz – Wien Handwerk Profis",
+    metaDescription:
+      "Datenschutzerklärung von Wien Handwerk Profis: Informationen zur Verarbeitung personenbezogener Daten gemäß DSGVO.",
+    title: "Datenschutzerklärung",
+    backToHome: "← Zurück zur Startseite",
+    lastUpdated: "Stand: Juni 2026",
+    sections: [
+      {
+        title: "1. Verantwortlicher",
+        paragraphs: [
+          "Verantwortlich für die Datenverarbeitung auf dieser Website ist Gergely Dancs, Penzinger Str. 29-31/3/12, 1140 Wien, Österreich. E-Mail: info@wien-handwerk-profis.at, Telefon: 0660 8956377.",
+        ],
+      },
+      {
+        title: "2. Zweck der Website",
+        paragraphs: [
+          "Diese Website informiert über Handwerks- und Malerleistungen in Wien mit Schwerpunkt Altbau-Fenster- und Türensanierung. Sie können mich per Telefon, E-Mail oder WhatsApp kontaktieren, um eine Anfrage zu stellen oder Fotos von geplanten Arbeiten zu senden.",
+        ],
+      },
+      {
+        title: "3. Welche Daten werden verarbeitet?",
+        paragraphs: [
+          "Bei einer Kontaktaufnahme verarbeite ich die von Ihnen übermittelten Daten (z. B. Name, Telefonnummer, E-Mail-Adresse, Inhalt der Nachricht sowie von Ihnen freiwillig gesendete Fotos). Beim Besuch der Website können technisch notwendige Server-Logdaten verarbeitet werden (z. B. IP-Adresse, Zeitpunkt des Zugriffs, aufgerufene Seite, Browsertyp).",
+          "Auf der Startseite können öffentliche Google-Bewertungen angezeigt werden. Dabei werden Inhalte von Google geladen; es gelten zusätzlich die Datenschutzbestimmungen von Google.",
+        ],
+      },
+      {
+        title: "4. Rechtsgrundlagen",
+        paragraphs: [
+          "Die Verarbeitung erfolgt zur Bearbeitung Ihrer Anfrage und zur Durchführung vorvertraglicher Maßnahmen (Art. 6 Abs. 1 lit. b DSGVO), auf Grundlage meines berechtigten Interesses an der sicheren Bereitstellung dieser Website (Art. 6 Abs. 1 lit. f DSGVO) sowie – soweit erforderlich – auf Basis Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO).",
+        ],
+      },
+      {
+        title: "5. Hosting",
+        paragraphs: [
+          "Diese Website wird bei Vercel Inc. gehostet. Dabei können personenbezogene Daten in Drittländern (z. B. USA) verarbeitet werden. Vercel setzt geeignete Garantien für Datenübermittlungen ein. Weitere Informationen finden Sie in der Datenschutzerklärung von Vercel.",
+        ],
+      },
+      {
+        title: "6. Speicherdauer",
+        paragraphs: [
+          "Anfragedaten speichere ich nur so lange, wie dies für die Bearbeitung Ihres Anliegens, die Abwicklung eines Auftrags oder die Erfüllung gesetzlicher Aufbewahrungspflichten erforderlich ist.",
+        ],
+      },
+      {
+        title: "7. Ihre Rechte",
+        paragraphs: [
+          "Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit sowie Widerspruch gegen die Verarbeitung. Wenn Sie der Ansicht sind, dass die Verarbeitung gegen das Datenschutzrecht verstößt, können Sie sich bei der Österreichischen Datenschutzbehörde beschweren (www.dsb.gv.at).",
+        ],
+      },
+      {
+        title: "8. Cookies und Analyse-Tools",
+        paragraphs: [
+          "Diese Website verwendet keine Tracking- oder Marketing-Cookies und kein Analyse-Tool wie Google Analytics. Es werden nur technisch notwendige Funktionen für den Betrieb der Website eingesetzt.",
+        ],
+      },
+    ],
+  },
   floatingCta: {
     whatsapp: "WhatsApp",
     call: "Anruf",
@@ -320,10 +408,11 @@ Mit freundlichen Grüßen,`,
 
 const en: LocaleDictionary = {
   meta: {
-    title:
-      "Altbau Window Restoration Vienna | Routed Sealing & Craftsman – Wien Handwerk Profis",
+    title: "Altbau Window Restoration Vienna | Routed Sealing",
     description:
-      "Gergely Dancs – specialist for Altbau window and door restoration in Vienna. Sanding, painting, routed groove sealing against drafts. Premium craftsmanship, no subcontractors.",
+      "Altbau window & door restoration in Vienna: sanding, painting, routed sealing against drafts. Gergely Dancs – fair fixed price via WhatsApp.",
+    ogImageAlt:
+      "Wien Handwerk Profis – period window restoration and handyman Vienna",
     keywords: [
       "Altbau window restoration Vienna",
       "wooden window renovation Vienna",
@@ -340,6 +429,12 @@ const en: LocaleDictionary = {
   },
   header: {
     companyName: "Wien Handwerk Profis",
+    nav: {
+      services: "Services",
+      gallery: "Projects",
+      reviews: "Reviews",
+      faq: "FAQ",
+    },
   },
   hero: {
     title:
@@ -393,12 +488,12 @@ Best regards,`,
       {
         title: "Altbau Window & Door Restoration",
         description:
-          "Sanding, filling, glazing putty, and precise painting of classic Viennese wooden windows and interior doors. We preserve the historic charm of your period home and save the original fabric from costly replacement.",
+          "Sanding, filling, glazing putty, and precise painting of classic Viennese wooden windows and interior doors. I preserve the historic charm of your period home and save the original fabric from costly replacement.",
       },
       {
         title: "Routed Grooves & Retrofit Sealing",
         description:
-          "No more drafts and high heating costs. We rout a precise 3mm groove into the sash and install a durable silicone tube seal. Invisible, highly effective, and dramatically noise-reducing.",
+          "No more drafts and high heating costs. I rout a precise 3mm groove into the sash and install a durable silicone tube seal. Invisible, highly effective, and dramatically noise-reducing.",
       },
       {
         title: "Premium Handyman & Painting",
@@ -444,7 +539,7 @@ Best regards,`,
       {
         question: "Will my apartment stay open or dirty during the restoration?",
         answer:
-          "Absolutely not! With classic Viennese box windows (double windows), we always remove only one layer (e.g. the inner sashes) while the other layer stays closed. Your home remains secure and weatherproof at all times. We also use professional dust extraction systems directly on our machines – sanding dust is captured immediately so your living space stays clean.",
+          "Absolutely not! With classic Viennese box windows (double windows), I always remove only one layer (e.g. the inner sashes) while the other layer stays closed. Your home remains secure and weatherproof at all times. I also use professional dust extraction systems directly on my machines – sanding dust is captured immediately so your living space stays clean.",
       },
       {
         question:
@@ -482,6 +577,8 @@ Best regards,`,
   footer: {
     impressum: "Legal Notice",
     impressumTeaser: "Legal information and contact details.",
+    privacy: "Privacy Policy",
+    privacyTeaser: "How we process your personal data (GDPR).",
     contactTitle: "Contact",
     rights: "© Wien Handwerk Profis. All rights reserved.",
   },
@@ -513,6 +610,65 @@ Best regards,`,
       "Consumers have the opportunity to submit complaints to the EU Online Dispute Resolution platform:",
     disputeTextAfter:
       "You may also send any complaints to the e-mail address listed above.",
+  },
+  privacyPage: {
+    metaTitle: "Privacy Policy – Wien Handwerk Profis",
+    metaDescription:
+      "Privacy policy of Wien Handwerk Profis: information on personal data processing under the GDPR.",
+    title: "Privacy Policy",
+    backToHome: "← Back to homepage",
+    lastUpdated: "Last updated: June 2026",
+    sections: [
+      {
+        title: "1. Data controller",
+        paragraphs: [
+          "The data controller for this website is Gergely Dancs, Penzinger Str. 29-31/3/12, 1140 Vienna, Austria. E-mail: info@wien-handwerk-profis.at, phone: +43 660 8956377.",
+        ],
+      },
+      {
+        title: "2. Purpose of this website",
+        paragraphs: [
+          "This website provides information about handyman and painting services in Vienna, with a focus on Altbau window and door restoration. You can contact me by phone, e-mail, or WhatsApp to request a quote or send photos of planned work.",
+        ],
+      },
+      {
+        title: "3. What data is processed?",
+        paragraphs: [
+          "When you contact me, I process the data you provide (e.g. name, phone number, e-mail address, message content, and photos you voluntarily send). When you visit the website, technically necessary server log data may be processed (e.g. IP address, time of access, page requested, browser type).",
+          "Public Google reviews may be displayed on the homepage. Content is loaded from Google; Google's privacy policy also applies.",
+        ],
+      },
+      {
+        title: "4. Legal bases",
+        paragraphs: [
+          "Processing is carried out to handle your inquiry and for pre-contractual measures (Art. 6(1)(b) GDPR), based on my legitimate interest in providing this website securely (Art. 6(1)(f) GDPR), and – where required – on your consent (Art. 6(1)(a) GDPR).",
+        ],
+      },
+      {
+        title: "5. Hosting",
+        paragraphs: [
+          "This website is hosted by Vercel Inc. Personal data may be processed in third countries (e.g. the USA). Vercel uses appropriate safeguards for data transfers. Further information is available in Vercel's privacy policy.",
+        ],
+      },
+      {
+        title: "6. Retention",
+        paragraphs: [
+          "I store inquiry data only as long as necessary to handle your request, perform a job, or comply with legal retention obligations.",
+        ],
+      },
+      {
+        title: "7. Your rights",
+        paragraphs: [
+          "You have the right to access, rectification, erasure, restriction of processing, data portability, and to object to processing. If you believe processing violates data protection law, you may lodge a complaint with the Austrian Data Protection Authority (www.dsb.gv.at).",
+        ],
+      },
+      {
+        title: "8. Cookies and analytics",
+        paragraphs: [
+          "This website does not use tracking or marketing cookies and does not use analytics tools such as Google Analytics. Only technically necessary functions are used to operate the site.",
+        ],
+      },
+    ],
   },
   floatingCta: {
     whatsapp: "WhatsApp",

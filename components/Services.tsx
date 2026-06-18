@@ -9,7 +9,10 @@ type ServicesProps = {
 
 export function Services({ dict }: ServicesProps) {
   return (
-    <section className="bg-white px-4 py-20 sm:px-6 sm:py-24">
+    <section
+      id="leistungen"
+      className="bg-white px-4 py-20 sm:px-6 sm:py-24"
+    >
       <div className="mx-auto max-w-6xl">
         <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
           {dict.services.title}

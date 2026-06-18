@@ -100,7 +100,13 @@ export function GalleryProjectRow({ title, phases }: GalleryProjectRowProps) {
         </span>
       </div>
 
-      <div className="mt-6 hidden gap-4 sm:grid sm:grid-cols-4">
+      <div
+        className={`mt-6 hidden gap-4 sm:grid ${
+          phases.length > 4
+            ? "sm:grid-cols-2 lg:grid-cols-5"
+            : "sm:grid-cols-2 lg:grid-cols-4"
+        }`}
+      >
         {phases.map((phase) => (
           <PhaseCard
             key={phase.label}

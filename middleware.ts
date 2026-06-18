@@ -15,14 +15,13 @@ export function middleware(request: NextRequest) {
   const pathnameLocale = pathname.split("/")[1];
 
   if (pathname === "/") {
-    return NextResponse.redirect(
-      new URL(`/${defaultLocale}`, request.url),
-    );
+    return NextResponse.redirect(new URL(`/${defaultLocale}`, request.url), 308);
   }
 
   if (!isValidLocale(pathnameLocale)) {
     return NextResponse.redirect(
       new URL(`/${defaultLocale}${pathname}`, request.url),
+      308,
     );
   }
 

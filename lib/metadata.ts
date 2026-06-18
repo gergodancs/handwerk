@@ -49,6 +49,30 @@ function baseMetadata(lang: Locale): Partial<Metadata> {
   };
 }
 
+function buildLegalOpenGraph(
+  lang: Locale,
+  title: string,
+  description: string,
+  path: string,
+): Metadata["openGraph"] {
+  return {
+    title,
+    description,
+    url: `${SITE_URL}/${lang}/${path}`,
+    siteName: SITE_NAME,
+    locale: lang === "de" ? "de_AT" : "en_US",
+    type: "website",
+    images: [
+      {
+        url: `/${lang}/opengraph-image`,
+        width: 1200,
+        height: 630,
+        alt: SITE_NAME,
+      },
+    ],
+  };
+}
+
 export function buildImpressumMetadata(lang: Locale): Metadata {
   const dict = getDictionary(lang);
 
@@ -57,13 +81,40 @@ export function buildImpressumMetadata(lang: Locale): Metadata {
     title: dict.impressumPage.metaTitle,
     description: dict.impressumPage.metaDescription,
     alternates: buildAlternates(lang, "impressum"),
-    openGraph: {
+    openGraph: buildLegalOpenGraph(
+      lang,
+      dict.impressumPage.metaTitle,
+      dict.impressumPage.metaDescription,
+      "impressum",
+    ),
+    twitter: {
+      card: "summary_large_image",
       title: dict.impressumPage.metaTitle,
       description: dict.impressumPage.metaDescription,
-      url: `${SITE_URL}/${lang}/impressum`,
-      siteName: SITE_NAME,
-      locale: lang === "de" ? "de_AT" : "en_US",
-      type: "website",
+      images: [`/${lang}/opengraph-image`],
+    },
+  };
+}
+
+export function buildPrivacyMetadata(lang: Locale): Metadata {
+  const dict = getDictionary(lang);
+
+  return {
+    ...baseMetadata(lang),
+    title: dict.privacyPage.metaTitle,
+    description: dict.privacyPage.metaDescription,
+    alternates: buildAlternates(lang, "datenschutz"),
+    openGraph: buildLegalOpenGraph(
+      lang,
+      dict.privacyPage.metaTitle,
+      dict.privacyPage.metaDescription,
+      "datenschutz",
+    ),
+    twitter: {
+      card: "summary_large_image",
+      title: dict.privacyPage.metaTitle,
+      description: dict.privacyPage.metaDescription,
+      images: [`/${lang}/opengraph-image`],
     },
   };
 }
@@ -90,7 +141,7 @@ export function buildPageMetadata(lang: Locale): Metadata {
           url: `/${lang}/opengraph-image`,
           width: 1200,
           height: 630,
-          alt: SITE_NAME,
+          alt: dict.meta.ogImageAlt,
         },
       ],
     },

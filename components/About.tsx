@@ -8,7 +8,10 @@ type AboutProps = {
 
 export function About({ dict }: AboutProps) {
   return (
-    <section className="border-t border-slate-800 bg-slate-950 px-4 py-20 sm:px-6 sm:py-24">
+    <section
+      id="ueber-mich"
+      className="border-t border-slate-800 bg-slate-950 px-4 py-20 sm:px-6 sm:py-24"
+    >
       <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[280px_1fr] lg:gap-14">
         <div className="mx-auto w-full max-w-[280px]">
           <div className="relative aspect-square overflow-hidden rounded-2xl border border-slate-700 bg-slate-900 shadow-xl">

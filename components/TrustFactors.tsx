@@ -24,7 +24,10 @@ type TrustFactorsProps = {
 
 export function TrustFactors({ dict }: TrustFactorsProps) {
   return (
-    <section className="bg-slate-950 px-4 py-20 sm:px-6 sm:py-24">
+    <section
+      id="vorteile"
+      className="bg-slate-950 px-4 py-20 sm:px-6 sm:py-24"
+    >
       <div className="mx-auto max-w-6xl">
         <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
           {dict.trust.title}

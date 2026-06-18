@@ -1,13 +1,14 @@
-import { EMAIL, GOOGLE_BUSINESS_URL, GOOGLE_PLACE_ID, PHONE_HREF, WEBSITE_URL } from "@/lib/constants";
+import { EMAIL, GOOGLE_BUSINESS_URL, GOOGLE_PLACE_ID, GOOGLE_MAPS_PLACE_URL, PHONE_HREF, WEBSITE_URL } from "@/lib/constants";
 import { getPlaceReviews } from "@/lib/google-places";
 import { HERO_BACKGROUND } from "@/lib/images";
 import { getDictionary } from "@/lib/dictionaries";
 import type { Locale } from "@/lib/i18n";
+import { getAreaServedSchema, isSchemaSafeReviews, VIENNA_GEO } from "@/lib/seo";
 import { BUSINESS_NAME, OWNER_NAME, SITE_NAME, SITE_URL } from "@/lib/site";
 
 type StructuredDataProps = {
   lang: Locale;
-  page?: "home" | "impressum";
+  page?: "home" | "impressum" | "privacy";
 };
 
 export async function StructuredData({
@@ -18,12 +19,10 @@ export async function StructuredData({
   const phone = PHONE_HREF.replace("tel:", "");
 
   const placeReviews = page === "home" ? await getPlaceReviews(lang) : null;
+  const schemaReviews = isSchemaSafeReviews(placeReviews) ? placeReviews : null;
 
   const googleProfileUrl =
-    GOOGLE_BUSINESS_URL ||
-    (GOOGLE_PLACE_ID
-      ? `https://www.google.com/maps/place/?q=place_id:${GOOGLE_PLACE_ID}`
-      : "");
+    GOOGLE_BUSINESS_URL || GOOGLE_MAPS_PLACE_URL || "";
 
   const sameAs = [WEBSITE_URL, ...(googleProfileUrl ? [googleProfileUrl] : [])];
 
@@ -36,7 +35,10 @@ export async function StructuredData({
     url: `${SITE_URL}/${lang}`,
     telephone: phone,
     email: EMAIL,
-    image: [`${SITE_URL}/${lang}/opengraph-image`, HERO_BACKGROUND],
+    image: [
+      `${SITE_URL}/${lang}/opengraph-image`,
+      `${SITE_URL}${HERO_BACKGROUND}`,
+    ],
     address: {
       "@type": "PostalAddress",
       streetAddress: "Penzinger Str. 29-31/3/12",
@@ -44,10 +46,12 @@ export async function StructuredData({
       postalCode: "1140",
       addressCountry: "AT",
     },
-    areaServed: {
-      "@type": "City",
-      name: "Vienna",
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: VIENNA_GEO.latitude,
+      longitude: VIENNA_GEO.longitude,
     },
+    areaServed: getAreaServedSchema(lang),
     founder: {
       "@type": "Person",
       name: OWNER_NAME,
@@ -55,13 +59,32 @@ export async function StructuredData({
     priceRange: "€€",
     knowsLanguage: ["de", "en"],
     sameAs,
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+        ],
+        opens: "08:00",
+        closes: "18:00",
+      },
+    ],
   };
 
-  if (placeReviews) {
+  if (googleProfileUrl) {
+    localBusiness.hasMap = googleProfileUrl;
+  }
+
+  if (schemaReviews) {
     localBusiness.aggregateRating = {
       "@type": "AggregateRating",
-      ratingValue: placeReviews.rating.toFixed(1),
-      reviewCount: placeReviews.totalRatings,
+      ratingValue: schemaReviews.rating.toFixed(1),
+      reviewCount: schemaReviews.totalRatings,
       bestRating: "5",
       worstRating: "1",
     };
@@ -81,6 +104,17 @@ export async function StructuredData({
   ];
 
   if (page === "home") {
+    dict.services.items.forEach((service, index) => {
+      graph.push({
+        "@type": "Service",
+        "@id": `${SITE_URL}/${lang}#service-${index + 1}`,
+        name: service.title,
+        description: service.description,
+        provider: { "@id": `${SITE_URL}/#business` },
+        areaServed: getAreaServedSchema(lang),
+      });
+    });
+
     graph.push({
       "@type": "FAQPage",
       "@id": `${SITE_URL}/${lang}#faq`,
@@ -94,7 +128,7 @@ export async function StructuredData({
       })),
     });
 
-    placeReviews?.reviews.forEach((review) => {
+    schemaReviews?.reviews.forEach((review) => {
       graph.push({
         "@type": "Review",
         author: { "@type": "Person", name: review.author },
@@ -119,6 +153,52 @@ export async function StructuredData({
       url: `${SITE_URL}/${lang}/impressum`,
       isPartOf: { "@id": `${SITE_URL}/#website` },
       about: { "@id": `${SITE_URL}/#business` },
+    });
+    graph.push({
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: SITE_NAME,
+          item: `${SITE_URL}/${lang}`,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: dict.impressumPage.title,
+          item: `${SITE_URL}/${lang}/impressum`,
+        },
+      ],
+    });
+  }
+
+  if (page === "privacy") {
+    graph.push({
+      "@type": "WebPage",
+      "@id": `${SITE_URL}/${lang}/datenschutz#webpage`,
+      name: dict.privacyPage.title,
+      description: dict.privacyPage.metaDescription,
+      url: `${SITE_URL}/${lang}/datenschutz`,
+      isPartOf: { "@id": `${SITE_URL}/#website` },
+      about: { "@id": `${SITE_URL}/#business` },
+    });
+    graph.push({
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: SITE_NAME,
+          item: `${SITE_URL}/${lang}`,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: dict.privacyPage.title,
+          item: `${SITE_URL}/${lang}/datenschutz`,
+        },
+      ],
     });
   }
 

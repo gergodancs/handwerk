@@ -5,7 +5,11 @@ import sharp from "sharp";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..", "public", "images");
-const DIRS = ["leistungen", "referenzen/allrounder-maler"];
+const DIRS = [
+  "leistungen",
+  "referenzen/altbau-sanierung",
+  "referenzen/allrounder-maler",
+];
 const MAX_WIDTH = 1600;
 const JPEG_QUALITY = 82;
 

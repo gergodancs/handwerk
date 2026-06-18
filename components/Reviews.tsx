@@ -14,14 +14,20 @@ type ReviewsProps = {
   lang: Locale;
 };
 
-function StarRating({ rating }: { rating: number }) {
+function StarRating({
+  rating,
+  starsLabel,
+}: {
+  rating: number;
+  starsLabel: string;
+}) {
   const rounded = Math.round(rating);
 
   return (
     <div
       className="flex gap-0.5"
       role="img"
-      aria-label={`${rating} von 5 Sternen`}
+      aria-label={`${rating} / 5 ${starsLabel}`}
     >
       {Array.from({ length: 5 }).map((_, index) => (
         <svg
@@ -69,7 +75,13 @@ function AuthorAvatar({ review }: { review: PlaceReview }) {
   );
 }
 
-function ReviewCard({ review }: { review: PlaceReview }) {
+function ReviewCard({
+  review,
+  starsLabel,
+}: {
+  review: PlaceReview;
+  starsLabel: string;
+}) {
   return (
     <article className="flex h-full flex-col rounded-2xl border border-slate-800 bg-slate-900 p-6 shadow-lg shadow-black/20">
       <div className="flex items-start gap-4">
@@ -79,7 +91,7 @@ function ReviewCard({ review }: { review: PlaceReview }) {
             {review.author}
           </p>
           <div className="mt-1">
-            <StarRating rating={review.rating} />
+            <StarRating rating={review.rating} starsLabel={starsLabel} />
           </div>
         </div>
       </div>
@@ -134,7 +146,10 @@ export async function Reviews({ dict, lang }: ReviewsProps) {
                   {ratingLabel}
                 </span>
                 <div>
-                  <StarRating rating={placeReviews.rating} />
+                  <StarRating
+                    rating={placeReviews.rating}
+                    starsLabel={dict.reviews.starsLabel}
+                  />
                   <p className="mt-1 text-sm text-slate-400">
                     {reviewCountLabel}
                   </p>
@@ -158,7 +173,11 @@ export async function Reviews({ dict, lang }: ReviewsProps) {
 
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {placeReviews.reviews.map((review) => (
-            <ReviewCard key={review.id} review={review} />
+            <ReviewCard
+              key={review.id}
+              review={review}
+              starsLabel={dict.reviews.starsLabel}
+            />
           ))}
         </div>
 
