@@ -7,6 +7,7 @@ type ReviewsLabels = {
   viewAllLabel: string;
   writeReviewLabel: string;
   starsLabel: string;
+  partialApiNote: string;
 };
 
 type LocaleDictionary = Omit<Dictionary, "reviews"> & {
@@ -117,18 +118,18 @@ export type Dictionary = {
 const de: LocaleDictionary = {
   meta: {
     title:
-      "Handwerker & Maler Wien | Altbau-Fensterrenovierung – Wien Handwerk Profis",
+      "Altbau-Fensterrettung Wien | Nutenfräsen & Dichtung – Wien Handwerk Profis",
     description:
-      "Gergely Dancs – Ihr Handwerker in Wien für Malerarbeiten, Spachteln, Altbau-Holzfenster-Sanierung und Montageservice. Fixpreise, saubere Arbeit, Einsatz in ganz Wien (u. a. 1., 13., 18., 19. Bezirk).",
+      "Gergely Dancs – Spezialist für Altbau-Fenster- und Türensanierung in Wien. Schleifen, Lackieren, Nutenfräsen und unsichtbare Silikon-Dichtung gegen Zugluft. Premium Handwerk ohne Subunternehmer.",
     keywords: [
+      "Altbau Fenster sanieren Wien",
+      "Holzfenster restaurieren Wien",
+      "Nutenfräsen Fenster Wien",
+      "Fensterdichtung nachrüsten Wien",
+      "Kastenfenster sanieren Wien",
+      "Zugluft Fenster Wien",
       "Handwerker Wien",
       "Maler Wien",
-      "Altbau Fenster renovieren Wien",
-      "Holzfenster lackieren Wien",
-      "Spachteln Wien",
-      "Wand streichen Wien",
-      "Allrounder Wien",
-      "Montageservice Wien",
       "Handwerk Profis",
       "Hietzing",
       "Döbling",
@@ -142,18 +143,17 @@ const de: LocaleDictionary = {
     title:
       "Ihr Spezialist für Altbau-Fensterrettung & Premium Handwerk in Wien",
     subtitle:
-      "Die liebevolle Rettung und Pflege alter Wiener Holzfenster, Türen und Rahmen. Als anspruchsvoller Allrounder kümmere ich mich zudem um präzise Ausbesserungen, feine Malerarbeiten und professionelle Montagen – sauber, zuverlässig und mit Blick fürs Detail.",
+      "Die liebevolle Rettung und Pflege klassischer Wiener Holzfenster, Türen und Rahmen. Ich verwandle verwitterte oder beschädigte Fenster wieder in neuwertige Schmuckstücke – kombiniert mit modernster, unsichtbarer Hohlraum-Fräsdichtung gegen Zugluft und Kälte. Sauber, zuverlässig und direkt vor Ort.",
     ctaWhatsApp: "WhatsApp Chat",
     ctaCall: "Anrufen",
   },
   about: {
     title: "Über mich",
-    role: "Ihr Handwerker in Wien",
-    imageAlt: "Gergely Dancs – Handwerker in Wien",
+    role: "Altbau-Liebhaber & Handwerker",
+    imageAlt: "Gergely Dancs – Altbau-Liebhaber & Handwerker in Wien",
     paragraphs: [
-      "Mein Name ist Gergely Dancs. Ich bin Ihr persönlicher Ansprechpartner für hochwertige Malerarbeiten, Altbau-Fensterrenovierung und Allrounder-Service in Wien – ohne Subunternehmer, ohne Umwege.",
-      "Mit Sorgfalt, Präzision und Premium-Materialien sorge ich dafür, dass Ihr Zuhause nicht nur schöner, sondern auch dauerhaft geschützt ist. Saubere Baustellen und transparente Fixpreise sind für mich selbstverständlich.",
-      "Schicken Sie mir einfach Fotos Ihres Projekts per WhatsApp – in den meisten Fällen erhalten Sie noch am selben Tag ein faires Angebot.",
+      "Mein Name ist Gergely Dancs. Ich bin nicht nur Handwerker, sondern echter Altbau-Liebhaber. Für mich ist ein altes Wiener Holzfenster kein wertloses Relikt, das man einfach durch Plastik ersetzt, sondern ein Stück Geschichte, das Handwerkskunst und Charakter besitzt.",
+      "Mit viel Fingerspitzengefühl, Präzision und Premium-Materialien sorge ich dafür, dass Ihre Fenster und Türen nicht nur optisch wieder im alten Glanz erstrahlen, sondern durch moderne Dichtungstechnik auch perfekt vor Kälte und Lärm schützen. Ehrlich, direkt und ohne Subunternehmer.",
     ],
   },
   sectionCta: {
@@ -168,6 +168,8 @@ const de: LocaleDictionary = {
     viewAllLabel: "Alle Bewertungen auf Google ansehen",
     writeReviewLabel: "Bewertung auf Google schreiben",
     starsLabel: "Sterne",
+    partialApiNote:
+      "Hinweis: Über die öffentliche Google API werden maximal 5 Bewertungen angezeigt. Alle {count} Bewertungen finden Sie auf Google.",
   },
   email: {
     buttonText: "E-Mail senden",
@@ -175,9 +177,9 @@ const de: LocaleDictionary = {
     body: `Hallo Gergely,
 
 ich interessiere mich für:
-[ ] Malerarbeiten
-[ ] Fensterrenovierung
-[ ] Sonstige Allrounder-Arbeiten
+[ ] Altbau Fenster- & Türensanierung
+[ ] Nutenfräsen & nachträgliche Dichtung
+[ ] Malerarbeiten / Allrounder-Service
 
 Bitte kontaktieren Sie mich unter der Telefonnummer: 
 
@@ -187,52 +189,44 @@ Mit freundlichen Grüßen,`,
     title: "Meine Leistungen",
     items: [
       {
-        title: "Altbau Fenster- & Türenrenovierung",
+        title: "Altbau Fenster- & Türensanierung",
         description:
-          "Nachhaltige Sanierung, fachgerechtes Schleifen, Spachteln und präzises Lackieren von verwitterten Holzfenstern, Innentüren und deren Rahmen. Ich rette den alten Wiener Charme, statt teuer auszutauschen.",
+          "Schleifen, Spachteln, Kitten und präzises Lackieren von klassischen Wiener Holzfenstern und Innentüren. Wir erhalten den historischen Charme Ihres Altbaus und retten die Originalsubstanz vor dem teuren Neukauf.",
       },
       {
-        title: "Feine Maler- & Ausbesserungsarbeiten",
+        title: "Nutenfräsen & Nachträgliche Dichtung",
         description:
-          "Professionelles Ausmalen, exaktes Gletten und die feine Ausbesserung von Wänden und Decken. Saubere Kanten und makellose Oberflächen für Ihr Wohlbefinden.",
+          "Schluss mit Zugluft und hohen Heizkosten. Wir fräsen eine präzise 3mm-Nut in den Fensterflügel und setzen eine langlebige Silikon-Schlauchdichtung ein. Unsichtbar, hocheffektiv und drastisch lärmreduzierend.",
       },
       {
-        title: "Premium Allrounder & Montageservice",
+        title: "Premium Allrounder & Malerarbeiten",
         description:
-          "Schnelle und fachgerechte Hilfe im Alltag: Lampenmontage, Möbelaufbau, kleinere Reparaturen, Sanitärtausch (Armaturen) und Silikonfugen-Erneuerung auf höchstem Niveau.",
+          "Feine Innenmalerei, exaktes Spachteln von Rissen sowie fachgerechte Montagen im Alltag (Lampen, Möbel, Regale). Alles aus einer Hand, ohne Subunternehmer, mit Fokus auf absolute Sauberkeit.",
       },
     ],
   },
   gallery: {
     title: "Meine Arbeiten in Wien",
     subtitle:
-      "Ein ehrlicher Einblick in meine Arbeitsweise – vom Ausgangszustand bis zum perfekten Ergebnis, Schritt für Schritt.",
+      "Zwei Schwerpunkte, Schritt für Schritt – vom Ausgangszustand bis zum Premium-Ergebnis. Staubarm, mit Schutz Ihrer Wohnung und ohne offene Fenster über Nacht.",
     projects: [
       {
-        title: "Altbau-Fenster Restauration",
+        title: "Altbau-Fenster Sanierung & Nachträgliche Dichtung",
         phases: [
-          { label: "1) Altbau-Fenster Restauration" },
-          { label: "2) Detail Schleifen" },
-          { label: "3) Grundierung / Lackierung" },
-          { label: "4) Fertiges Ergebnis" },
+          { label: "1) Altbau Holz Reparatur" },
+          { label: "2) Tür Sanierung Wien" },
+          { label: "3) Fenster abdichten einfräsen" },
+          { label: "4) Fenster Sanierung Wien" },
         ],
       },
       {
-        title: "Wand streichen & Spachteln",
+        title: "Premium Allrounder & Malerarbeiten",
         phases: [
-          { label: "1) Wand Vorbereitung" },
-          { label: "2) Präzises Spachteln" },
-          { label: "3) Erster Anstrich" },
-          { label: "4) Perfektes Endergebnis" },
-        ],
-      },
-      {
-        title: "Allrounder & Montageservice",
-        phases: [
-          { label: "1) Lampenmontage" },
-          { label: "2) Möbelaufbau" },
-          { label: "3) Sanitär & Reparatur" },
-          { label: "4) Sauberes Endergebnis" },
+          { label: "1) Wand Reparatur Wien" },
+          { label: "2) Garderobe streichen Wien" },
+          { label: "3) WC Sanierung Mikrozement Wien" },
+          { label: "4) Möbelmontage Wien" },
+          { label: "5) Treppengeländer Montage Wien" },
         ],
       },
     ],
@@ -244,6 +238,11 @@ Mit freundlichen Grüßen,`,
         question: "Wie erhalte ich am schnellsten ein Angebot?",
         answer:
           "Am einfachsten und schnellsten geht es per WhatsApp oder E-Mail. Senden Sie mir einfach ein paar Fotos von den zu erledigenden Arbeiten (z. B. der Wand, dem Altbau-Fenster oder der Montageaufgabe) und eine kurze Beschreibung. Ich kann Ihnen in den meisten Fällen direkt einen fairen Pauschalpreis nennen – so gibt es keine bösen Überraschungen oder versteckte Kosten.",
+      },
+      {
+        question: "Bleibt meine Wohnung während der Sanierung offen oder schmutzig?",
+        answer:
+          "Absolut nein! Bei klassischen Wiener Kastenfenstern (Doppelfenstern) demontieren wir immer nur eine Ebene (z. B. die Innenflügel), während die andere Ebene geschlossen bleibt. Ihre Wohnung ist zu jeder Zeit sicher und wetterfest. Zudem arbeiten wir mit professionellen Absaugsystemen direkt an unseren Maschinen – der Schleifstaub wird sofort aufgefangen, sodass Ihr Wohnraum sauber bleibt.",
       },
       {
         question:
@@ -267,9 +266,9 @@ Mit freundlichen Grüßen,`,
           "Ich schütze Ihr Eigentum penibel, arbeite staubarm und hinterlasse die Baustelle absolut rein.",
       },
       {
-        title: "Wiener Altbau-Experte",
+        title: "Wiener Kastenfenster-Experte",
         description:
-          "Ich verstehe die Struktur alter Wohnungen und weiß genau, wie man empfindliche Holzsubstanzen fachgerecht saniert.",
+          "Ich kenne den Aufbau klassischer Doppelfenster und saniere schrittweise – ohne dass Ihre Wohnung offen oder ungeschützt bleibt.",
       },
       {
         title: "Transparente Fixpreise",
@@ -322,17 +321,17 @@ Mit freundlichen Grüßen,`,
 const en: LocaleDictionary = {
   meta: {
     title:
-      "Handyman & Painter Vienna | Altbau Window Restoration – Wien Handwerk Profis",
+      "Altbau Window Restoration Vienna | Routed Sealing & Craftsman – Wien Handwerk Profis",
     description:
-      "Gergely Dancs – your handyman in Vienna for painting, plastering, Altbau wooden window restoration and assembly services. Fixed prices, clean work, serving all of Vienna (incl. districts 1, 13, 18, 19).",
+      "Gergely Dancs – specialist for Altbau window and door restoration in Vienna. Sanding, painting, routed groove sealing against drafts. Premium craftsmanship, no subcontractors.",
     keywords: [
+      "Altbau window restoration Vienna",
+      "wooden window renovation Vienna",
+      "window draft sealing Vienna",
+      "routed groove sealing Vienna",
+      "period window restoration Vienna",
       "handyman Vienna",
       "painter Vienna",
-      "Altbau window restoration Vienna",
-      "wooden window painting Vienna",
-      "plastering Vienna",
-      "interior painting Vienna",
-      "assembly service Vienna",
       "Wien Handwerk Profis",
       "Hietzing",
       "Döbling",
@@ -344,20 +343,19 @@ const en: LocaleDictionary = {
   },
   hero: {
     title:
-      "Your Specialist for Altbau Window Restoration & Premium Handyman Services in Vienna",
+      "Your Specialist for Period Window Restoration & Premium Craftsman in Vienna",
     subtitle:
-      "Dedicated restoration and maintenance of classic Viennese wooden windows, doors, and frames. As a high-end all-rounder and decorator, I also handle precise repairs, fine painting, and professional assembly work – clean, reliable, and with absolute attention to detail.",
+      "Dedicated restoration and maintenance of classic Viennese wooden windows, doors, and frames. I transform weathered or damaged windows into pristine centerpieces – combined with modern, invisible routed silicone sealing against drafts and cold. Clean, reliable, and directly on-site.",
     ctaWhatsApp: "WhatsApp Chat",
     ctaCall: "Call Now",
   },
   about: {
     title: "About Me",
-    role: "Your handyman in Vienna",
-    imageAlt: "Gergely Dancs – handyman in Vienna",
+    role: "Altbau Enthusiast & Craftsman",
+    imageAlt: "Gergely Dancs – Altbau enthusiast & craftsman in Vienna",
     paragraphs: [
-      "My name is Gergely Dancs. I am your personal contact for high-quality painting, Altbau window restoration, and handyman services in Vienna – no subcontractors, no runaround.",
-      "With care, precision, and premium materials, I make sure your home not only looks better but stays protected for years. Clean job sites and transparent fixed prices are standard for me.",
-      "Simply send me photos of your project via WhatsApp – in most cases, you'll receive a fair quote the same day.",
+      "My name is Gergely Dancs. I am not just a handyman, but a true Altbau enthusiast. To me, an old Viennese wooden window is not a worthless relic to be replaced with plastic, but a piece of history with craftsmanship and character.",
+      "With a keen eye for detail, precision, and premium materials, I make sure your windows and doors not only shine again visually, but also protect perfectly against cold and noise through modern sealing technology. Honest, direct, and without subcontractors.",
     ],
   },
   sectionCta: {
@@ -372,6 +370,8 @@ const en: LocaleDictionary = {
     viewAllLabel: "View all reviews on Google",
     writeReviewLabel: "Write a review on Google",
     starsLabel: "stars",
+    partialApiNote:
+      "Note: The public Google API shows up to 5 reviews. View all {count} reviews on Google.",
   },
   email: {
     buttonText: "Send E-Mail",
@@ -379,9 +379,9 @@ const en: LocaleDictionary = {
     body: `Hello Gergely,
 
 I am interested in:
-[ ] Painting Works
-[ ] Window Restoration
-[ ] Other Handyman Services
+[ ] Altbau window & door restoration
+[ ] Routed groove sealing & draft insulation
+[ ] Painting / handyman services
 
 Please contact me at the following phone number: 
 
@@ -393,50 +393,42 @@ Best regards,`,
       {
         title: "Altbau Window & Door Restoration",
         description:
-          "Sustainable restoration, professional sanding, plastering, and precise painting of weathered wooden windows, interior doors, and frames. I preserve classic Viennese charm instead of costly replacement.",
+          "Sanding, filling, glazing putty, and precise painting of classic Viennese wooden windows and interior doors. We preserve the historic charm of your period home and save the original fabric from costly replacement.",
       },
       {
-        title: "Fine Painting & Touch-up Work",
+        title: "Routed Grooves & Retrofit Sealing",
         description:
-          "Professional interior painting, precise smoothing, and fine repairs to walls and ceilings. Clean edges and flawless surfaces for your home.",
+          "No more drafts and high heating costs. We rout a precise 3mm groove into the sash and install a durable silicone tube seal. Invisible, highly effective, and dramatically noise-reducing.",
       },
       {
-        title: "Premium Handyman & Assembly Service",
+        title: "Premium Handyman & Painting",
         description:
-          "Fast, professional everyday help: lamp installation, furniture assembly, minor repairs, faucet replacement, and silicone joint renewal – at the highest standard.",
+          "Fine interior painting, precise crack filling, and professional everyday installations (lamps, furniture, shelves). Everything from one source, no subcontractors, with absolute focus on cleanliness.",
       },
     ],
   },
   gallery: {
-    title: "My Projects in Vienna",
+    title: "My Work in Vienna",
     subtitle:
-      "An honest look at how I work – from the starting condition to a flawless finish, step by step.",
+      "Two focus areas, step by step – from the starting condition to a premium finish. Dust-free, protecting your home, and without leaving windows open overnight.",
     projects: [
       {
-        title: "Altbau Window Restoration",
+        title: "Period Window Restoration & Retrofit Sealing",
         phases: [
-          { label: "1) Altbau Window Restoration" },
-          { label: "2) Detail Sanding" },
-          { label: "3) Priming / Painting" },
-          { label: "4) Finished Result" },
+          { label: "1) Period Wood Repair" },
+          { label: "2) Door Restoration Vienna" },
+          { label: "3) Window Sealing & Routing" },
+          { label: "4) Window Restoration Vienna" },
         ],
       },
       {
-        title: "Wall Painting & Plastering",
+        title: "Premium Handyman & Painting",
         phases: [
-          { label: "1) Wall Preparation" },
-          { label: "2) Precise Plastering" },
-          { label: "3) First Coat" },
-          { label: "4) Perfect Final Result" },
-        ],
-      },
-      {
-        title: "Handyman & Assembly Service",
-        phases: [
-          { label: "1) Lamp Installation" },
-          { label: "2) Furniture Assembly" },
-          { label: "3) Plumbing & Repairs" },
-          { label: "4) Clean Finished Result" },
+          { label: "1) Wall Repair Vienna" },
+          { label: "2) Built-in Wardrobe Painting Vienna" },
+          { label: "3) Microcement Bathroom Vienna" },
+          { label: "4) Furniture Assembly Vienna" },
+          { label: "5) Stair Railing Installation Vienna" },
         ],
       },
     ],
@@ -448,6 +440,11 @@ Best regards,`,
         question: "How can I get a quote as quickly as possible?",
         answer:
           "The easiest and fastest way is via WhatsApp or E-mail. Simply send me a few photos of the work to be done (e.g., the wall, the Altbau window, or the assembly task) along with a short description. In most cases, I can provide you with a fair fixed price (Pauschalpreis) immediately – ensuring no bad surprises or hidden costs.",
+      },
+      {
+        question: "Will my apartment stay open or dirty during the restoration?",
+        answer:
+          "Absolutely not! With classic Viennese box windows (double windows), we always remove only one layer (e.g. the inner sashes) while the other layer stays closed. Your home remains secure and weatherproof at all times. We also use professional dust extraction systems directly on our machines – sanding dust is captured immediately so your living space stays clean.",
       },
       {
         question:
@@ -471,9 +468,9 @@ Best regards,`,
           "I meticulously protect your property, minimize dust, and leave the workspace spotless.",
       },
       {
-        title: "Altbau Specialist",
+        title: "Viennese Box Window Expert",
         description:
-          "I understand the structure of old apartments and know exactly how to professionally restore delicate wooden surfaces.",
+          "I understand classic double-window construction and restore in stages – without leaving your home open or unprotected.",
       },
       {
         title: "Transparent Fixed Prices",

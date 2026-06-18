@@ -1,0 +1,53 @@
+{
+  "syncedAt": "2026-06-15T18:42:41.573Z",
+  "source": "places",
+  "rating": 5,
+  "totalRatings": 7,
+  "reviews": [
+    {
+      "id": "google-2026-02-18T12:23:17.635878646Z-Gabriella Monostori",
+      "author": "Gabriella Monostori",
+      "authorPhotoUrl": "https://lh3.googleusercontent.com/a/ACg8ocIyuJx_dTMbZ25Mwjz3cl7BJ1be-XqfSGmVcKOyxHiYp0dwVw=s128-c0x00000000-cc-rp-mo-ba3",
+      "rating": 5,
+      "text": "Ich habe ihn mit der Vorbereitung meiner Wiener Wohnung für eine Neuvermietung beauftragt.\nDie Arbeiten wurden zuverlässig und wie vereinbart erledigt.\nDer neue Mieter konnte direkt einziehen.\nSehr zufrieden.",
+      "relativeTime": "vor 3 Monaten",
+      "publishedAt": "2026-02-18"
+    },
+    {
+      "id": "google-2026-02-04T14:28:24.633381005Z-Franz Rongits",
+      "author": "Franz Rongits",
+      "authorPhotoUrl": "https://lh3.googleusercontent.com/a/ACg8ocJ4t2TKcJYq2BKRoW_SMeTc4SQB_tWZBjsFsyv2IeOuLJG0hQ=s128-c0x00000000-cc-rp-mo",
+      "rating": 5,
+      "text": "Top-Empfehlung !\nRasche Antwort , sehr freundlich , alles fachgerecht erledigt . Alles sehr professionell und genau nach meinen Wünschen ausgeführt !\nJederzeit wieder !",
+      "relativeTime": "vor 4 Monaten",
+      "publishedAt": "2026-02-04"
+    },
+    {
+      "id": "google-2026-02-21T16:18:38.137232354Z-Maria Naglmeier",
+      "author": "Maria Naglmeier",
+      "authorPhotoUrl": "https://lh3.googleusercontent.com/a/ACg8ocKPqVeYLpxfRF8UVuBRbFqTZDhZqDQRi6CQzdoaBznsUJQZog=s128-c0x00000000-cc-rp-mo",
+      "rating": 5,
+      "text": "TOP !!! Besser geht nicht. Am Samstag nmtg. innerhalb von 3 Stunden alles erledigt. Unbedingt weiter zu empfehlen !",
+      "relativeTime": "vor 3 Monaten",
+      "publishedAt": "2026-02-21"
+    },
+    {
+      "id": "google-2026-06-03T14:58:44.606511795Z-Dominik Sprenger",
+      "author": "Dominik Sprenger",
+      "authorPhotoUrl": "https://lh3.googleusercontent.com/a/ACg8ocIDKcaPh-BpC233POnt9r-8OZNX4WuSsOOBw9W90dgwhUlrRQ=s128-c0x00000000-cc-rp-mo",
+      "rating": 5,
+      "text": "Kann ich sehr empfehlen. Hab ihn schon 2x beauftragt für divere Arbeiten in der Wohnung.  Zuverlässig, Pünktlich, Transparent und Top Arbeit gemacht.  Danke!",
+      "relativeTime": "vor einer Woche",
+      "publishedAt": "2026-06-03"
+    },
+    {
+      "id": "google-2026-05-10T10:38:15.248370280Z-Gabriela Rajkovic",
+      "author": "Gabriela Rajkovic",
+      "authorPhotoUrl": "https://lh3.googleusercontent.com/a/ACg8ocKQCQrk-EiK1dNh46Her-v_mSbllLMDCVayqomeWbMRdShiwg=s128-c0x00000000-cc-rp-mo",
+      "rating": 5,
+      "text": "Ich bin sehr zufrieden mit der Arbeit. Er war pünktlich, freundlich und hat alle Arbeiten äußerst sorgfältig und professionell ausgeführt. Besonders beeindruckt hat mich, wie sauber und ordentlich er gearbeitet hat – alles wurde am Ende perfekt hinterlassen.\n\nAuch die Kommunikation war unkompliziert und zuverlässig. Termine wurden eingehalten und auf meine Wünsche wurde jederzeit eingegangen. Man merkt sofort, dass hier jemand mit viel Erfahrung und Engagement arbeitet.\n\nIch kann diesen Handwerker auf jeden Fall weiterempfehlen und würde ihn jederzeit wieder beauftragen.",
+      "relativeTime": "vor einem Monat",
+      "publishedAt": "2026-05-10"
+    }
+  ]
+}

@@ -4,6 +4,8 @@ import { unstable_noStore as noStore } from "next/cache";
 import { cache } from "react";
 import { PHONE_DISPLAY } from "./constants";
 import type { Locale } from "./i18n";
+import { fetchBusinessProfileReviews } from "./google-business-reviews";
+import { loadCachedGoogleReviews } from "./google-reviews-cache";
 import { getFallbackPlaceReviews } from "./google-reviews-fallback";
 import { BUSINESS_NAME, OWNER_NAME, SITE_NAME } from "./site";
 
@@ -30,7 +32,7 @@ export type PlaceReviewsResult = {
   rating: number;
   totalRatings: number;
   reviews: PlaceReview[];
-  source: "api" | "fallback";
+  source: "business_profile" | "places" | "fallback";
   resolvedPlaceId?: string;
 };
 
@@ -101,7 +103,7 @@ function mapNewApiResult(
     rating: data.rating ?? 5,
     totalRatings: data.userRatingCount ?? reviews.length,
     reviews,
-    source: "api",
+    source: "places",
     resolvedPlaceId: placeId,
   };
 }
@@ -245,8 +247,14 @@ export const getPlaceReviews = cache(
     }
 
     try {
-      const apiResult = await fetchPlaceReviewsFromApi(lang);
-      if (apiResult) return apiResult;
+      const businessReviews = await fetchBusinessProfileReviews(lang);
+      if (businessReviews) return businessReviews;
+
+      const cachedReviews = await loadCachedGoogleReviews();
+      if (cachedReviews) return cachedReviews;
+
+      const placesResult = await fetchPlaceReviewsFromApi(lang);
+      if (placesResult) return placesResult;
     } catch (error) {
       if (process.env.NODE_ENV === "development") {
         console.warn("[google-places] API request failed:", error);

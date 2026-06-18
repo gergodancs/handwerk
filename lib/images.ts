@@ -1,18 +1,54 @@
-export const HERO_BACKGROUND =
-  "https://images.unsplash.com/photo-1441105501384-23156f198d37?auto=format&fit=crop&w=1920&q=80";
+const REF = "/images/referenzen";
+const ALTBAU = `${REF}/altbau-sanierung`;
+const ALLROUNDER = `${REF}/allrounder-maler`;
+const LEISTUNGEN = "/images/leistungen";
+
+export const LEISTUNG_IMAGES = {
+  altbauFensterSanierung:
+    "altbau-fenster-sanierung-nachtraegliche-waermedämmung-wien.jpg",
+  handwerkerWien: "handwerker-wien.jpg",
+} as const;
+
+export const ALLROUNDER_GALLERY_IMAGES = {
+  bohrloecherSpachteln: "bohrloecher-spachteln-wand-reparatur-wien.jpg",
+  garderobeStreichen:
+    "einbauschrank-renovierung-altbau-garderobe-streichen.jpg",
+  wcSanierungMikrozement: "fugenlose-wc-sanierung-mikrozement-wien.jpg",
+  moebelmontageIkea: "moebelmontage-wien-ikea-moebel-aufbauen.jpg",
+  treppengelaenderMontage: "treppengelaender-montage-holz-metall-wien.jpg",
+} as const;
+
+export const ALTBAU_GALLERY_IMAGES = {
+  reparaturMorschesHolz:
+    "altbau-fenster-reparatur-morsches-holz-sanieren.jpg",
+  silikondichtungEinfraesen:
+    "fenster-abdichten-altbau-silikondichtung-einfraesen.jpg",
+  tuerSanierungSchallschutz:
+    "altbau-tuer-sanierung-und-schallschutz-abdichtung.jpg",
+  einstellenGegenZugluft:
+    "altbau-fenster-einstellen-gegen-zugluft-wien.jpg",
+} as const;
+
+export const PROJECT_IMAGES = {
+  vorher: `${ALTBAU}/${ALTBAU_GALLERY_IMAGES.reparaturMorschesHolz}`,
+  nachher: `${ALTBAU}/${ALTBAU_GALLERY_IMAGES.einstellenGegenZugluft}`,
+  dichtungDetail: `${ALTBAU}/${ALTBAU_GALLERY_IMAGES.silikondichtungEinfraesen}`,
+} as const;
+
+export const HERO_BACKGROUND = PROJECT_IMAGES.nachher;
 
 export const SERVICE_IMAGES = [
   {
-    src: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=800&q=80",
-    alt: "Professional interior painting work",
+    src: `${LEISTUNGEN}/${LEISTUNG_IMAGES.altbauFensterSanierung}`,
+    alt: "Altbau Fenster Sanierung nachträgliche Wärmedämmung Wien",
   },
   {
-    src: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80",
-    alt: "Classic wooden window restoration",
+    src: PROJECT_IMAGES.dichtungDetail,
+    alt: "Nutenfräsen Fensterdichtung Altbau Silikondichtung einfräsen Wien",
   },
   {
-    src: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80",
-    alt: "Handyman tools and assembly service",
+    src: `${LEISTUNGEN}/${LEISTUNG_IMAGES.handwerkerWien}`,
+    alt: "Handwerker Wien Allrounder Malerarbeiten Montage und Reparatur",
   },
 ] as const;
 
@@ -20,60 +56,44 @@ export const GALLERY_PROJECTS = [
   {
     phases: [
       {
-        src: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80",
-        alt: "Weathered Altbau wooden window frame",
+        src: `${ALTBAU}/${ALTBAU_GALLERY_IMAGES.reparaturMorschesHolz}`,
+        alt: "Altbau Fenster Reparatur morsches Holz sanieren Wien",
       },
       {
-        src: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=600&q=80",
-        alt: "Sanding and surface preparation detail",
+        src: `${ALTBAU}/${ALTBAU_GALLERY_IMAGES.tuerSanierungSchallschutz}`,
+        alt: "Altbau Tür Sanierung Schallschutz Abdichtung Wien",
       },
       {
-        src: "https://images.unsplash.com/photo-1745665777586-09381ba528d6?auto=format&fit=crop&w=600&q=80",
-        alt: "Priming and painting a wooden window",
+        src: `${ALTBAU}/${ALTBAU_GALLERY_IMAGES.silikondichtungEinfraesen}`,
+        alt: "Fenster abdichten Altbau Silikondichtung einfräsen Wien",
       },
       {
-        src: "https://images.unsplash.com/photo-1669756999398-21d4e97c4278?auto=format&fit=crop&w=600&q=80",
-        alt: "Finished restored window in Vienna",
-      },
-    ],
-  },
-  {
-    phases: [
-      {
-        src: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=600&q=80",
-        alt: "Wall surface before preparation",
-      },
-      {
-        src: "https://images.unsplash.com/photo-1600607687644-c7171b42498f?auto=format&fit=crop&w=600&q=80",
-        alt: "Precise wall plastering and smoothing",
-      },
-      {
-        src: "https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=600&q=80",
-        alt: "First coat of paint on interior wall",
-      },
-      {
-        src: "https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&w=600&q=80",
-        alt: "Finished elegant painted room",
+        src: `${ALTBAU}/${ALTBAU_GALLERY_IMAGES.einstellenGegenZugluft}`,
+        alt: "Altbau Fenster einstellen gegen Zugluft Wien",
       },
     ],
   },
   {
     phases: [
       {
-        src: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80",
-        alt: "Professional lamp installation",
+        src: `${ALLROUNDER}/${ALLROUNDER_GALLERY_IMAGES.bohrloecherSpachteln}`,
+        alt: "Bohrlöcher spachteln Wand reparieren Handwerker Wien",
       },
       {
-        src: "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=600&q=80",
-        alt: "Furniture assembly and measuring",
+        src: `${ALLROUNDER}/${ALLROUNDER_GALLERY_IMAGES.garderobeStreichen}`,
+        alt: "Einbauschrank Renovierung Altbau Garderobe streichen Wien",
       },
       {
-        src: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80",
-        alt: "Handyman tools for plumbing and repairs",
+        src: `${ALLROUNDER}/${ALLROUNDER_GALLERY_IMAGES.wcSanierungMikrozement}`,
+        alt: "Fugenlose WC Sanierung Mikrozement Handwerker Wien",
       },
       {
-        src: "https://images.unsplash.com/photo-1541323429887-2e393b8db71c?auto=format&fit=crop&w=600&q=80",
-        alt: "Clean finished home after handyman service",
+        src: `${ALLROUNDER}/${ALLROUNDER_GALLERY_IMAGES.moebelmontageIkea}`,
+        alt: "Möbelmontage Wien IKEA Möbel aufbauen Handwerker",
+      },
+      {
+        src: `${ALLROUNDER}/${ALLROUNDER_GALLERY_IMAGES.treppengelaenderMontage}`,
+        alt: "Treppengeländer Montage Holz Metall Handwerker Wien",
       },
     ],
   },

@@ -162,6 +162,16 @@ export async function Reviews({ dict, lang }: ReviewsProps) {
           ))}
         </div>
 
+        {placeReviews.source === "places" &&
+          placeReviews.totalRatings > placeReviews.reviews.length && (
+            <p className="mt-6 text-center text-sm text-slate-500">
+              {dict.reviews.partialApiNote.replace(
+                "{count}",
+                String(placeReviews.totalRatings),
+              )}
+            </p>
+          )}
+
         {(GOOGLE_MAPS_PLACE_URL || GOOGLE_WRITE_REVIEW_URL) && (
           <div className="mt-8 text-center">
             <a
