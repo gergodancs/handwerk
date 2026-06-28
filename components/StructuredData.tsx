@@ -26,6 +26,10 @@ export async function StructuredData({
 
   const sameAs = [WEBSITE_URL, ...(googleProfileUrl ? [googleProfileUrl] : [])];
 
+  const heroImageUrl = HERO_BACKGROUND.startsWith("http")
+    ? HERO_BACKGROUND
+    : `${SITE_URL}${HERO_BACKGROUND}`;
+
   const localBusiness: Record<string, unknown> = {
     "@type": "HomeAndConstructionBusiness",
     "@id": `${SITE_URL}/#business`,
@@ -37,7 +41,7 @@ export async function StructuredData({
     email: EMAIL,
     image: [
       `${SITE_URL}/${lang}/opengraph-image`,
-      `${SITE_URL}${HERO_BACKGROUND}`,
+      heroImageUrl,
       `${SITE_URL}${OWNER_PROFILE_IMAGE}`,
     ],
     address: {
