@@ -61,14 +61,18 @@ export type Dictionary = {
   gallery: {
     title: string;
     subtitle: string;
-    projects: Array<{
-      title: string;
-      phases: Array<{
-        label: string;
-      }>;
+    phases: Array<{
+      label: string;
     }>;
   };
   faq: {
+    title: string;
+    items: Array<{
+      question: string;
+      answer: string;
+    }>;
+  };
+  microcementFaq: {
     title: string;
     items: Array<{
       question: string;
@@ -135,24 +139,24 @@ export type Dictionary = {
 
 const de: LocaleDictionary = {
   meta: {
-    title: "Altbau-Fenster sanieren Wien | Nutenfräsen & Dichtung",
+    title: "Wohnungssanierung Wien | Mikrocement & fugenlose Bäder",
     description:
-      "Altbau-Fenster & Türen sanieren in Wien: Schleifen, Lackieren, Nutenfräsen & Silikondichtung gegen Zugluft. Gergely Dancs – Fixpreis per WhatsApp.",
+      "Wohnung renovieren in Wien: Malen, Spachteln, komplette Sanierung. Mikrocement, fugenlose Bäder & Betonoptik mit Murexin designcoat & Cemher. Fixpreis per WhatsApp.",
     ogImageAlt:
-      "Wien Handwerk Profis – Altbau-Fenster Sanierung und Handwerker Wien",
+      "Wien Handwerk Profis – Wohnungssanierung und Mikrocement Wien",
     keywords: [
-      "Altbau Fenster sanieren Wien",
-      "Holzfenster restaurieren Wien",
-      "Nutenfräsen Fenster Wien",
-      "Fensterdichtung nachrüsten Wien",
-      "Kastenfenster sanieren Wien",
-      "Zugluft Fenster Wien",
-      "Handwerker Wien",
+      "Wohnungssanierung Wien",
+      "Wohnung renovieren Wien",
+      "Mikrocement Wien",
+      "fugenloses Bad Wien",
+      "Betonoptik Wände Wien",
+      "Murexin designcoat Wien",
+      "Cemher Wien",
       "Maler Wien",
-      "Handwerk Profis",
-      "Hietzing",
-      "Döbling",
-      "Währing",
+      "Wohnung sanieren Wien",
+      "Bad renovieren Wien",
+      "Handwerker Wien",
+      "Altbau Wohnung Wien",
     ],
   },
   header: {
@@ -165,20 +169,19 @@ const de: LocaleDictionary = {
     },
   },
   hero: {
-    title:
-      "Ihr Spezialist für Altbau-Fensterrettung & Premium Handwerk in Wien",
+    title: "Ihr Spezialist für Wohnungssanierung & Mikrocement in Wien",
     subtitle:
-      "Die liebevolle Rettung und Pflege klassischer Wiener Holzfenster, Türen und Rahmen. Ich verwandle verwitterte oder beschädigte Fenster wieder in neuwertige Schmuckstücke – kombiniert mit modernster, unsichtbarer Hohlraum-Fräsdichtung gegen Zugluft und Kälte. Sauber, zuverlässig und direkt vor Ort.",
+      "Komplette Wohnungsrenovierung von Malerarbeiten und Spachteln bis zur fertigen Wohnung – plus fugenlose Mikrocement-Oberflächen in Bad und WC. Ich arbeite sauber, termingerecht und mit Premium-Materialien wie Murexin designcoat und Cemher. Altbau-Fenster und Allrounder-Leistungen als Ergänzung.",
     ctaWhatsApp: "WhatsApp Chat",
     ctaCall: "Anrufen",
   },
   about: {
     title: "Über mich",
-    role: "Altbau-Liebhaber & Handwerker",
-    imageAlt: "Gergely Dancs – Altbau-Liebhaber & Handwerker in Wien",
+    role: "Wohnungssanierung & Mikrocement in Wien",
+    imageAlt: "Gergely Dancs – Wohnungssanierung und Mikrocement in Wien",
     paragraphs: [
-      "Mein Name ist Gergely Dancs. Ich bin nicht nur Handwerker, sondern echter Altbau-Liebhaber. Für mich ist ein altes Wiener Holzfenster kein wertloses Relikt, das man einfach durch Plastik ersetzt, sondern ein Stück Geschichte, das Handwerkskunst und Charakter besitzt.",
-      "Mit viel Fingerspitzengefühl, Präzision und Premium-Materialien sorge ich dafür, dass Ihre Fenster und Türen nicht nur optisch wieder im alten Glanz erstrahlen, sondern durch moderne Dichtungstechnik auch perfekt vor Kälte und Lärm schützen. Ehrlich, direkt und ohne Subunternehmer.",
+      "Mein Name ist Gergely Dancs. Ich renoviere Wohnungen in Wien von der ersten Vorbereitung bis zum bezugsfertigen Ergebnis – Malen, Spachteln, Bodenarbeiten und detailverliebte Ausführung inklusive.",
+      "Als Zusatz-Spezialisierung setze ich fugenlose Mikrocement- und Betonoptik-Oberflächen mit Murexin designcoat und Cemher um – ideal für moderne Bäder, WCs und Wandflächen. Dazu kommen Altbau-Fenster und zuverlässiger Allrounder-Service, alles aus einer Hand und ohne Subunternehmer.",
     ],
   },
   sectionCta: {
@@ -203,45 +206,55 @@ const de: LocaleDictionary = {
     title: "Meine Leistungen",
     items: [
       {
-        title: "Altbau Fenster- & Türensanierung",
+        title: "Wohnungssanierung Wien",
         description:
-          "Schleifen, Spachteln, Kitten und präzises Lackieren von klassischen Wiener Holzfenstern und Innentüren. Ich erhalte den historischen Charme Ihres Altbaus und rette die Originalsubstanz vor dem teuren Neukauf.",
+          "Komplette Renovierung Ihrer Wohnung: Vorbereitung, Spachteln, Streichen, Detailarbeiten und saubere Übergabe. Ideal für Vermietung, Verkauf oder frisches Wohngefühl – von der Küche bis zum Wohnzimmer, termingerecht und mit Fixpreis.",
       },
       {
-        title: "Nutenfräsen & Nachträgliche Dichtung",
+        title: "Mikrocement & fugenlose Bäder",
         description:
-          "Schluss mit Zugluft und hohen Heizkosten. Ich fräse eine präzise 3mm-Nut in den Fensterflügel und setze eine langlebige Silikon-Schlauchdichtung ein. Unsichtbar, hocheffektiv und drastisch lärmreduzierend.",
+          "Fugenlose Mikrocement-Oberflächen für Bad, Dusche und WC – wasserfest, pflegeleicht und in modernem Betonlook. Verarbeitung mit Murexin designcoat und Cemher für langlebige, nahtlose Ergebnisse ohne Fliesenfugen.",
       },
       {
-        title: "Premium Allrounder & Malerarbeiten",
+        title: "Altbau Fenster & Allrounder",
         description:
-          "Feine Innenmalerei, exaktes Spachteln von Rissen sowie fachgerechte Montagen im Alltag (Lampen, Möbel, Regale). Alles aus einer Hand, ohne Subunternehmer, mit Fokus auf absolute Sauberkeit.",
+          "Ergänzend Altbau-Fenster- und Türensanierung, Nutenfräsen, Malerarbeiten und Montagen im Alltag. Wenn neben der Wohnungssanierung noch Fenster, Wände oder Einbauten anstehen – alles aus einer Hand.",
       },
     ],
   },
   gallery: {
     title: "Meine Arbeiten in Wien",
     subtitle:
-      "Zwei Schwerpunkte, Schritt für Schritt – vom Ausgangszustand bis zum Premium-Ergebnis. Staubarm, mit Schutz Ihrer Wohnung und ohne offene Fenster über Nacht.",
-    projects: [
+      "Ausgewählte Projekte – Wohnungssanierung, Mikrocement, Altbau-Fenster und Allrounder-Arbeiten in Wien.",
+    phases: [
+      { label: "Vorher Nachher Wohnung" },
+      { label: "Ausgangszustand Zimmer" },
+      { label: "Mikrocement Verarbeitung" },
+      { label: "Fugenloses Bad Dusche" },
+      { label: "Mikrocement WC Betonoptik" },
+      { label: "Altbau Fenster Reparatur Wien" },
+      { label: "Bohrlöcher spachteln Wien" },
+      { label: "Fenster abdichten einfräsen" },
+      { label: "Treppengeländer Montage Wien" },
+    ],
+  },
+  microcementFaq: {
+    title: "Häufig gestellte Fragen zu Mikrozement & Preisen",
+    items: [
       {
-        title: "Altbau-Fenster Sanierung & Nachträgliche Dichtung",
-        phases: [
-          { label: "1) Altbau Holz Reparatur" },
-          { label: "2) Tür Sanierung Wien" },
-          { label: "3) Fenster abdichten einfräsen" },
-          { label: "4) Fenster Sanierung Wien" },
-        ],
+        question: "Ist Mikrozement eine günstige Alternative zu Fliesen?",
+        answer:
+          "Nein, Mikrozement ist ein exklusiver Oberflächenbelag. Der finanzielle Vorteil liegt nicht im Materialpreis, sondern im Entfall der Abrissarbeiten: Sie sparen Lärm, Schmutz, Entsorgungskosten und Zeit, da der Belag direkt auf bestehende Fliesen aufgetragen werden kann.",
       },
       {
-        title: "Premium Allrounder & Malerarbeiten",
-        phases: [
-          { label: "1) Wand Reparatur Wien" },
-          { label: "2) Garderobe streichen Wien" },
-          { label: "3) WC Sanierung Mikrozement Wien" },
-          { label: "4) Möbelmontage Wien" },
-          { label: "5) Treppengeländer Montage Wien" },
-        ],
+        question: "Warum ist die Verarbeitung so aufwendig?",
+        answer:
+          "Anders als in Online-Videos dargestellt, ist Mikrozement kein einfaches Spachteln. Es erfordert präzise Untergrundvorbereitung, ein mehrschichtiges System (Grundierung, Gewebe, Basis- und Feinschichten, Versiegelung) sowie die strikte Einhaltung der Trocknungszeiten des Herstellers.",
+      },
+      {
+        question: "Welche Vorteile bietet Mikrozement?",
+        answer:
+          "Sie erhalten eine fugenlose, moderne und leicht zu reinigende Oberfläche in handwerklicher Unikat-Optik, die vollkommen wasserfest und langlebig ist.",
       },
     ],
   },
@@ -251,23 +264,22 @@ const de: LocaleDictionary = {
       {
         question: "Wie erhalte ich am schnellsten ein Angebot?",
         answer:
-          "Am einfachsten und schnellsten geht es per WhatsApp oder E-Mail. Senden Sie mir einfach ein paar Fotos von den zu erledigenden Arbeiten (z. B. der Wand, dem Altbau-Fenster oder der Montageaufgabe) und eine kurze Beschreibung. Ich kann Ihnen in den meisten Fällen direkt einen fairen Pauschalpreis nennen – so gibt es keine bösen Überraschungen oder versteckte Kosten.",
+          "Am einfachsten per WhatsApp oder E-Mail. Senden Sie mir Fotos der Wohnung, des Bads oder der zu renovierenden Flächen – ich nenne Ihnen in den meisten Fällen direkt einen fairen Fixpreis ohne versteckte Kosten.",
       },
       {
-        question: "Bleibt meine Wohnung während der Sanierung offen oder schmutzig?",
+        question: "Bleibt die Wohnung während der Sanierung bewohnbar?",
         answer:
-          "Absolut nein! Bei klassischen Wiener Kastenfenstern (Doppelfenstern) demontiere ich immer nur eine Ebene (z. B. die Innenflügel), während die andere Ebene geschlossen bleibt. Ihre Wohnung ist zu jeder Zeit sicher und wetterfest. Zudem arbeite ich mit professionellen Absaugsystemen direkt an meinen Maschinen – der Schleifstaub wird sofort aufgefangen, sodass Ihr Wohnraum sauber bleibt.",
+          "Je nach Umfang arbeite ich raumweise und schütze Möbel sowie Böden sorgfältig ab. Staubarme Vorbereitung, saubere Baustellenführung und klare Absprachen sorgen dafür, dass Ihr Alltag so wenig wie möglich gestört wird.",
       },
       {
-        question:
-          "Welche Materialien verwenden Sie für die Altbau-Fenster- und Türenrenovierung?",
+        question: "Welche Materialien verwenden Sie für Mikrocement?",
         answer:
-          "Für klassische Wiener Altbau-Holzfenster und Türen verwende ich ausschließlich hochwertige, langlebige Grundierungen und Lacke von Premium-Marken. Die richtige Vorbereitung (gründliches Schleifen und Spachteln) und Profi-Materialien garantieren, dass das Holz optimal geschützt ist und für viele Jahre wie neu aussieht.",
+          "Für fugenlose Bäder, Duschen und Betonoptik-Wände arbeite ich mit Murexin designcoat und Cemher – hochwertige Systeme für wasserfeste, nahtlose Oberflächen. Für Maler- und Spachtelarbeiten setze ich bewährte Premium-Produkte ein.",
       },
       {
         question: "In welchen Bezirken in Wien sind Sie tätig?",
         answer:
-          "Ich bin im gesamten Wiener Raum für Sie im Einsatz. Da sich mein Schwerpunkt auf die fachgerechte Altbau-Sanierung und hochwertige Pflege von Wohnsitzen konzentriert, bin ich besonders häufig in Bezirken mit hohem Altbau- und Einfamilienhaus-Anteil anzutreffen – wie etwa im 1. Bezirk (Innere Stadt), 13. (Hietzing), 18. (Währing) oder 19. (Döbling). Dank flexibler Routenplanung sind aber in ganz Wien auch kurzfristige Termine möglich.",
+          "Ich bin im gesamten Wiener Raum im Einsatz – Wohnungssanierung, Mikrocement-Bäder und ergänzend Altbau-Fenster. Besonders häufig in Bezirken wie Innere Stadt, Hietzing, Währing und Döbling; kurzfristige Termine sind in ganz Wien möglich.",
       },
     ],
   },
@@ -275,19 +287,19 @@ const de: LocaleDictionary = {
     title: "Warum mich wählen?",
     items: [
       {
-        title: "Sauberkeit & Präzision",
+        title: "Sauberkeit & Fixpreise",
         description:
-          "Ich schütze Ihr Eigentum penibel, arbeite staubarm und hinterlasse die Baustelle absolut rein.",
+          "Abgedeckte Böden, saubere Baustelle und transparente Pauschalpreise – Sie wissen vorab, was die Wohnungssanierung kostet.",
       },
       {
-        title: "Wiener Kastenfenster-Experte",
+        title: "Mikrocement-Spezialist",
         description:
-          "Ich kenne den Aufbau klassischer Doppelfenster und saniere schrittweise – ohne dass Ihre Wohnung offen oder ungeschützt bleibt.",
+          "Fugenlose Bäder und Betonoptik mit Murexin designcoat und Cemher – wasserfest, modern und ohne Fliesenfugen.",
       },
       {
-        title: "Transparente Fixpreise",
+        title: "Alles aus einer Hand",
         description:
-          "Keine versteckten Kosten oder böse Überraschungen. Sie erhalten vorab ein klares, faires Angebot.",
+          "Wohnungssanierung, Mikrocement und ergänzend Altbau-Fenster – ein Ansprechpartner, keine Subunternehmer.",
       },
     ],
   },
@@ -302,7 +314,7 @@ const de: LocaleDictionary = {
   impressumPage: {
     metaTitle: "Impressum – Wien Handwerk Profis",
     metaDescription:
-      "Impressum und rechtliche Angaben zu Wien Handwerk Profis – Gergely Dancs, Handwerker in Wien.",
+      "Impressum und rechtliche Angaben zu Wien Handwerk Profis – Gergely Dancs, Wohnungssanierung und Mikrocement in Wien.",
     title: "Impressum",
     backToHome: "← Zurück zur Startseite",
     responsibleTitle: "Für den Inhalt verantwortlich",
@@ -345,7 +357,7 @@ const de: LocaleDictionary = {
       {
         title: "2. Zweck der Website",
         paragraphs: [
-          "Diese Website informiert über Handwerks- und Malerleistungen in Wien mit Schwerpunkt Altbau-Fenster- und Türensanierung. Sie können mich per Telefon, E-Mail oder WhatsApp kontaktieren, um eine Anfrage zu stellen oder Fotos von geplanten Arbeiten zu senden.",
+          "Diese Website informiert über Wohnungssanierung, Mikrocement-Oberflächen und Handwerksleistungen in Wien. Sie können mich per Telefon, E-Mail oder WhatsApp kontaktieren, um eine Anfrage zu stellen oder Fotos von geplanten Arbeiten zu senden.",
         ],
       },
       {
@@ -395,23 +407,22 @@ const de: LocaleDictionary = {
 
 const en: LocaleDictionary = {
   meta: {
-    title: "Altbau Window Restoration Vienna | Routed Sealing",
+    title: "Apartment Renovation Vienna | Microcement Bathrooms",
     description:
-      "Altbau window & door restoration in Vienna: sanding, painting, routed sealing against drafts. Gergely Dancs – fair fixed price via WhatsApp.",
+      "Apartment renovation in Vienna: painting, plastering, full refurbishment. Seamless microcement bathrooms with Murexin designcoat & Cemher. Fair fixed price via WhatsApp.",
     ogImageAlt:
-      "Wien Handwerk Profis – period window restoration and handyman Vienna",
+      "Wien Handwerk Profis – apartment renovation and microcement Vienna",
     keywords: [
-      "Altbau window restoration Vienna",
-      "wooden window renovation Vienna",
-      "window draft sealing Vienna",
-      "routed groove sealing Vienna",
-      "period window restoration Vienna",
-      "handyman Vienna",
+      "apartment renovation Vienna",
+      "home renovation Vienna",
+      "microcement Vienna",
+      "seamless bathroom Vienna",
+      "concrete effect walls Vienna",
+      "Murexin designcoat Vienna",
+      "Cemher Vienna",
       "painter Vienna",
-      "Wien Handwerk Profis",
-      "Hietzing",
-      "Döbling",
-      "Währing",
+      "bathroom renovation Vienna",
+      "handyman Vienna",
     ],
   },
   header: {
@@ -424,20 +435,19 @@ const en: LocaleDictionary = {
     },
   },
   hero: {
-    title:
-      "Your Specialist for Period Window Restoration & Premium Craftsman in Vienna",
+    title: "Your Specialist for Apartment Renovation & Microcement in Vienna",
     subtitle:
-      "Dedicated restoration and maintenance of classic Viennese wooden windows, doors, and frames. I transform weathered or damaged windows into pristine centerpieces – combined with modern, invisible routed silicone sealing against drafts and cold. Clean, reliable, and directly on-site.",
+      "Complete apartment refurbishment from painting and plastering to move-in ready results – plus seamless microcement surfaces for bathrooms and WCs. I work cleanly and on schedule with premium materials including Murexin designcoat and Cemher. Period windows and handyman services available as add-ons.",
     ctaWhatsApp: "WhatsApp Chat",
     ctaCall: "Call Now",
   },
   about: {
     title: "About Me",
-    role: "Altbau Enthusiast & Craftsman",
-    imageAlt: "Gergely Dancs – Altbau enthusiast & craftsman in Vienna",
+    role: "Apartment Renovation & Microcement in Vienna",
+    imageAlt: "Gergely Dancs – apartment renovation and microcement in Vienna",
     paragraphs: [
-      "My name is Gergely Dancs. I am not just a handyman, but a true Altbau enthusiast. To me, an old Viennese wooden window is not a worthless relic to be replaced with plastic, but a piece of history with craftsmanship and character.",
-      "With a keen eye for detail, precision, and premium materials, I make sure your windows and doors not only shine again visually, but also protect perfectly against cold and noise through modern sealing technology. Honest, direct, and without subcontractors.",
+      "My name is Gergely Dancs. I renovate apartments across Vienna from initial preparation to a finished, move-in ready result – including painting, plastering, flooring coordination, and meticulous detail work.",
+      "I also specialize in seamless microcement and concrete-effect surfaces using Murexin designcoat and Cemher – perfect for modern bathrooms, WCs, and feature walls. Period window restoration and reliable handyman work are available as complementary services, all from one contact with no subcontractors.",
     ],
   },
   sectionCta: {
@@ -462,45 +472,55 @@ const en: LocaleDictionary = {
     title: "My Services",
     items: [
       {
-        title: "Altbau Window & Door Restoration",
+        title: "Apartment Renovation Vienna",
         description:
-          "Sanding, filling, glazing putty, and precise painting of classic Viennese wooden windows and interior doors. I preserve the historic charm of your period home and save the original fabric from costly replacement.",
+          "Complete apartment refurbishment: preparation, plastering, painting, detail work, and a clean handover. Ideal for rental, sale, or a fresh living space – from kitchen to living room, on schedule with fixed pricing.",
       },
       {
-        title: "Routed Grooves & Retrofit Sealing",
+        title: "Microcement & Seamless Bathrooms",
         description:
-          "No more drafts and high heating costs. I rout a precise 3mm groove into the sash and install a durable silicone tube seal. Invisible, highly effective, and dramatically noise-reducing.",
+          "Seamless microcement surfaces for bathrooms, showers, and WCs – waterproof, low-maintenance, and in a modern concrete look. Applied with Murexin designcoat and Cemher for durable, joint-free results.",
       },
       {
-        title: "Premium Handyman & Painting",
+        title: "Period Windows & Handyman",
         description:
-          "Fine interior painting, precise crack filling, and professional everyday installations (lamps, furniture, shelves). Everything from one source, no subcontractors, with absolute focus on cleanliness.",
+          "Complementary period window and door restoration, routed sealing, painting, and everyday installations. When apartment renovation is combined with windows, walls, or fittings – everything from one source.",
       },
     ],
   },
   gallery: {
     title: "My Work in Vienna",
     subtitle:
-      "Two focus areas, step by step – from the starting condition to a premium finish. Dust-free, protecting your home, and without leaving windows open overnight.",
-    projects: [
+      "Selected projects – apartment renovation, microcement, period windows, and handyman work in Vienna.",
+    phases: [
+      { label: "Before & after apartment" },
+      { label: "Room starting condition" },
+      { label: "Microcement application" },
+      { label: "Seamless shower" },
+      { label: "Microcement WC" },
+      { label: "Period window repair Vienna" },
+      { label: "Patching drill holes Vienna" },
+      { label: "Window sealing groove Vienna" },
+      { label: "Stair railing installation Vienna" },
+    ],
+  },
+  microcementFaq: {
+    title: "Frequently asked questions about microcement & pricing",
+    items: [
       {
-        title: "Period Window Restoration & Retrofit Sealing",
-        phases: [
-          { label: "1) Period Wood Repair" },
-          { label: "2) Door Restoration Vienna" },
-          { label: "3) Window Sealing & Routing" },
-          { label: "4) Window Restoration Vienna" },
-        ],
+        question: "Is microcement a cheap alternative to tiles?",
+        answer:
+          "No, microcement is a premium surface finish. The financial advantage is not in the material cost, but in avoiding demolition work: you save noise, mess, disposal costs, and time, because the coating can be applied directly over existing tiles.",
       },
       {
-        title: "Premium Handyman & Painting",
-        phases: [
-          { label: "1) Wall Repair Vienna" },
-          { label: "2) Built-in Wardrobe Painting Vienna" },
-          { label: "3) Microcement Bathroom Vienna" },
-          { label: "4) Furniture Assembly Vienna" },
-          { label: "5) Stair Railing Installation Vienna" },
-        ],
+        question: "Why is the application so labour-intensive?",
+        answer:
+          "Unlike what online videos suggest, microcement is not simple skim coating. It requires precise substrate preparation, a multi-layer system (primer, mesh, base and finish coats, sealing), and strict adherence to the manufacturer's drying times.",
+      },
+      {
+        question: "What are the benefits of microcement?",
+        answer:
+          "You get a seamless, modern, easy-to-clean surface with a bespoke handcrafted look that is fully waterproof and long-lasting.",
       },
     ],
   },
@@ -510,23 +530,22 @@ const en: LocaleDictionary = {
       {
         question: "How can I get a quote as quickly as possible?",
         answer:
-          "The easiest and fastest way is via WhatsApp or E-mail. Simply send me a few photos of the work to be done (e.g., the wall, the Altbau window, or the assembly task) along with a short description. In most cases, I can provide you with a fair fixed price (Pauschalpreis) immediately – ensuring no bad surprises or hidden costs.",
+          "The fastest way is via WhatsApp or e-mail. Send photos of your apartment, bathroom, or surfaces to be renovated – in most cases I can give you a fair fixed price immediately with no hidden costs.",
       },
       {
-        question: "Will my apartment stay open or dirty during the restoration?",
+        question: "Can I stay in the apartment during renovation?",
         answer:
-          "Absolutely not! With classic Viennese box windows (double windows), I always remove only one layer (e.g. the inner sashes) while the other layer stays closed. Your home remains secure and weatherproof at all times. I also use professional dust extraction systems directly on my machines – sanding dust is captured immediately so your living space stays clean.",
+          "Depending on scope, I work room by room and protect furniture and floors carefully. Dust-minimizing preparation, clean site management, and clear scheduling keep disruption to a minimum.",
       },
       {
-        question:
-          "What materials do you use for Altbau window and door restoration?",
+        question: "What materials do you use for microcement?",
         answer:
-          "For classic Viennese wooden windows and doors, I exclusively use high-quality, durable primers and lacquers from premium brands. Proper preparation (thorough sanding and patching) combined with professional materials guarantees that the wood is perfectly protected and looks brand new for years to come.",
+          "For seamless bathrooms, showers, and concrete-effect walls I use Murexin designcoat and Cemher – premium systems for waterproof, joint-free surfaces. For painting and plastering I rely on proven professional products.",
       },
       {
         question: "Which districts in Vienna do you cover?",
         answer:
-          "I operate across the entire Vienna area. Since my expertise focuses on professional Altbau restoration and high-quality home maintenance, I am particularly active in districts with a high density of classic old buildings and family homes – such as the 1st district (Innere Stadt), 13th (Hietzing), 18th (Währing), or 19th (Döbling). However, thanks to flexible scheduling, short-notice appointments are possible all over Vienna.",
+          "I work across Vienna – apartment renovation, microcement bathrooms, and complementary period window work. Especially active in districts such as Innere Stadt, Hietzing, Währing, and Döbling; short-notice appointments are possible city-wide.",
       },
     ],
   },
@@ -534,19 +553,19 @@ const en: LocaleDictionary = {
     title: "Why Choose Me?",
     items: [
       {
-        title: "Cleanliness & Precision",
+        title: "Clean Work & Fixed Prices",
         description:
-          "I meticulously protect your property, minimize dust, and leave the workspace spotless.",
+          "Protected floors, a tidy site, and transparent fixed pricing – you know the cost of your renovation upfront.",
       },
       {
-        title: "Viennese Box Window Expert",
+        title: "Microcement Specialist",
         description:
-          "I understand classic double-window construction and restore in stages – without leaving your home open or unprotected.",
+          "Seamless bathrooms and concrete-effect surfaces with Murexin designcoat and Cemher – waterproof, modern, and joint-free.",
       },
       {
-        title: "Transparent Fixed Prices",
+        title: "Everything from One Source",
         description:
-          "No hidden fees or surprises. You receive a clear, fair offer before I begin.",
+          "Apartment renovation, microcement, and complementary period windows – one contact, no subcontractors.",
       },
     ],
   },
@@ -561,7 +580,7 @@ const en: LocaleDictionary = {
   impressumPage: {
     metaTitle: "Legal Notice – Wien Handwerk Profis",
     metaDescription:
-      "Legal notice and company information for Wien Handwerk Profis – Gergely Dancs, handyman services in Vienna.",
+      "Legal notice and company information for Wien Handwerk Profis – Gergely Dancs, apartment renovation and microcement in Vienna.",
     title: "Legal Notice (Impressum)",
     backToHome: "← Back to homepage",
     responsibleTitle: "Responsible for content",
@@ -604,7 +623,7 @@ const en: LocaleDictionary = {
       {
         title: "2. Purpose of this website",
         paragraphs: [
-          "This website provides information about handyman and painting services in Vienna, with a focus on Altbau window and door restoration. You can contact me by phone, e-mail, or WhatsApp to request a quote or send photos of planned work.",
+          "This website provides information about apartment renovation, microcement surfaces, and handyman services in Vienna. You can contact me by phone, e-mail, or WhatsApp to request a quote or send photos of planned work.",
         ],
       },
       {

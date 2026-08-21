@@ -1,5 +1,5 @@
 import type { Dictionary } from "@/lib/dictionaries";
-import { GALLERY_PROJECTS } from "@/lib/images";
+import { GALLERY_PHASES } from "@/lib/images";
 import { GalleryProjectRow } from "./GalleryProjectRow";
 import { SectionCTA } from "./SectionCTA";
 
@@ -21,22 +21,13 @@ export function Gallery({ dict }: GalleryProps) {
           {dict.gallery.subtitle}
         </p>
 
-        <div className="mt-14 space-y-16">
-          {dict.gallery.projects.map((project, projectIndex) => {
-            const images = GALLERY_PROJECTS[projectIndex];
-
-            return (
-              <GalleryProjectRow
-                key={project.title}
-                title={project.title}
-                phases={project.phases.map((phase, phaseIndex) => ({
-                  label: phase.label,
-                  src: images.phases[phaseIndex].src,
-                  alt: images.phases[phaseIndex].alt,
-                }))}
-              />
-            );
-          })}
+        <div className="mt-14">
+          <GalleryProjectRow
+            phases={dict.gallery.phases.map((phase, phaseIndex) => ({
+              label: phase.label,
+              ...GALLERY_PHASES[phaseIndex],
+            }))}
+          />
         </div>
 
         <SectionCTA dict={dict} />

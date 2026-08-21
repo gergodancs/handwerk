@@ -27,7 +27,7 @@ export const RIS_DISPLAY = "www.ris.bka.gv.at";
 
 export const IMPRESSUM = {
   name: "Gergely Dancs",
-  company: "Ihr Handwerker in Wien | Handwerk Profis",
+  company: "Wohnungssanierung & Mikrocement Wien | Handwerk Profis",
   gisaNumber: "39350114",
 } as const;
 

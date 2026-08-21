@@ -6,18 +6,18 @@ export const contentType = "image/png";
 
 const COPY = {
   de: {
-    alt: "Wien Handwerk Profis – Altbau-Fenster Sanierung und Handwerker Wien",
+    alt: "Wien Handwerk Profis – Wohnungssanierung und Mikrocement Wien",
     brand: "Wien Handwerk Profis",
     name: "Gergely Dancs",
-    tagline: "Altbau-Fenster · Nutenfräsen · Handwerker Wien",
-    bullets: ["Fixpreise", "Saubere Arbeit", "Ganz Wien"],
+    tagline: "Wohnungssanierung · Mikrocement · fugenlose Bäder Wien",
+    bullets: ["Fixpreise", "Murexin · Cemher", "Ganz Wien"],
   },
   en: {
-    alt: "Wien Handwerk Profis – period window restoration and handyman Vienna",
+    alt: "Wien Handwerk Profis – apartment renovation and microcement Vienna",
     brand: "Wien Handwerk Profis",
     name: "Gergely Dancs",
-    tagline: "Period windows · Routed sealing · Handyman Vienna",
-    bullets: ["Fixed prices", "Clean work", "All Vienna"],
+    tagline: "Apartment renovation · Microcement · seamless bathrooms",
+    bullets: ["Fixed prices", "Murexin · Cemher", "All Vienna"],
   },
 } as const;
 

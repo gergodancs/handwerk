@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { Dictionary } from "@/lib/dictionaries";
+import { MicrocementFAQ } from "./MicrocementFAQ";
 import { SectionCTA } from "./SectionCTA";
 import { SERVICE_IMAGES } from "@/lib/images";
 
@@ -50,6 +51,8 @@ export function Services({ dict }: ServicesProps) {
             );
           })}
         </div>
+
+        <MicrocementFAQ dict={dict} embedded />
 
         <SectionCTA dict={dict} />
       </div>

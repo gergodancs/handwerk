@@ -8,8 +8,8 @@ const ROOT = join(__dirname, "..", "public", "images");
 const DIRS = [
   "profil",
   "leistungen",
-  "referenzen/altbau-sanierung",
-  "referenzen/allrounder-maler",
+  "referenzen/wohnung-sanierung",
+  "referenzen/mikrocement",
 ];
 const MAX_WIDTH = 1600;
 const JPEG_QUALITY = 82;

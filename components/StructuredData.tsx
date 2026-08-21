@@ -124,14 +124,24 @@ export async function StructuredData({
     graph.push({
       "@type": "FAQPage",
       "@id": `${SITE_URL}/${lang}#faq`,
-      mainEntity: dict.faq.items.map((item) => ({
-        "@type": "Question",
-        name: item.question,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: item.answer,
-        },
-      })),
+      mainEntity: [
+        ...dict.faq.items.map((item) => ({
+          "@type": "Question" as const,
+          name: item.question,
+          acceptedAnswer: {
+            "@type": "Answer" as const,
+            text: item.answer,
+          },
+        })),
+        ...dict.microcementFaq.items.map((item) => ({
+          "@type": "Question" as const,
+          name: item.question,
+          acceptedAnswer: {
+            "@type": "Answer" as const,
+            text: item.answer,
+          },
+        })),
+      ],
     });
 
     schemaReviews?.reviews.forEach((review) => {
