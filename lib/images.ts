@@ -37,7 +37,8 @@ export const LEISTUNG_IMAGES = {
   handwerkerWien: "handwerker-wien.jpg",
 } as const;
 
-export const HERO_BACKGROUND = `${WOHNUNG}/${WOHNUNG_GALLERY_IMAGES.vorherNachher}`;
+export const HERO_BACKGROUND =
+  "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80";
 
 export const SERVICE_IMAGES = [
   {
