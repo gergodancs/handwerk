@@ -13,6 +13,7 @@ type ReviewsCacheFile = {
 };
 
 const CACHE_PATH = path.join(process.cwd(), "data", "google-reviews-cache.json");
+const CACHE_MAX_AGE_MS = 24 * 60 * 60 * 1000;
 
 export async function loadCachedGoogleReviews(): Promise<PlaceReviewsResult | null> {
   try {
@@ -20,6 +21,11 @@ export async function loadCachedGoogleReviews(): Promise<PlaceReviewsResult | nu
     const data = JSON.parse(raw) as ReviewsCacheFile;
 
     if (!data.reviews?.length) return null;
+
+    const syncedAt = Date.parse(data.syncedAt);
+    if (!Number.isNaN(syncedAt) && Date.now() - syncedAt > CACHE_MAX_AGE_MS) {
+      return null;
+    }
 
     return {
       rating: data.rating,

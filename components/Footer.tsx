@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { Dictionary } from "@/lib/dictionaries";
 import type { Locale } from "@/lib/i18n";
-import { buildMailtoHref, GOOGLE_MAPS_PLACE_URL, PHONE_DISPLAY, PHONE_HREF, WHATSAPP_HREF } from "@/lib/constants";
+import { buildMailtoHref, GOOGLE_VIEW_REVIEWS_URL, PHONE_DISPLAY, PHONE_HREF, WHATSAPP_HREF } from "@/lib/constants";
 import { PhoneIcon } from "./icons/PhoneIcon";
 import { WhatsAppIcon } from "./icons/WhatsAppIcon";
 import { EmailIcon } from "./icons/EmailIcon";
@@ -77,10 +77,10 @@ export function Footer({ lang, dict }: FooterProps) {
                   {dict.email.buttonText}
                 </a>
               </li>
-              {GOOGLE_MAPS_PLACE_URL ? (
+              {GOOGLE_VIEW_REVIEWS_URL ? (
                 <li>
                   <a
-                    href={GOOGLE_MAPS_PLACE_URL}
+                    href={GOOGLE_VIEW_REVIEWS_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-sm text-slate-300 transition-colors hover:text-white"

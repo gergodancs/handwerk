@@ -6,7 +6,7 @@ import {
   type PlaceReview,
 } from "@/lib/google-places";
 import type { Locale } from "@/lib/i18n";
-import { GOOGLE_MAPS_PLACE_URL, GOOGLE_WRITE_REVIEW_URL } from "@/lib/constants";
+import { GOOGLE_VIEW_REVIEWS_URL, GOOGLE_WRITE_REVIEW_URL } from "@/lib/constants";
 import { GoogleIcon } from "./icons/GoogleIcon";
 
 type ReviewsProps = {
@@ -191,10 +191,10 @@ export async function Reviews({ dict, lang }: ReviewsProps) {
             </p>
           )}
 
-        {(GOOGLE_MAPS_PLACE_URL || GOOGLE_WRITE_REVIEW_URL) && (
+        {(GOOGLE_VIEW_REVIEWS_URL || GOOGLE_WRITE_REVIEW_URL) && (
           <div className="mt-8 text-center">
             <a
-              href={GOOGLE_MAPS_PLACE_URL || GOOGLE_WRITE_REVIEW_URL}
+              href={GOOGLE_VIEW_REVIEWS_URL || GOOGLE_WRITE_REVIEW_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-400 transition-colors hover:text-emerald-300"

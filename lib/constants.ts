@@ -1,4 +1,4 @@
-import { SITE_HOST, SITE_URL } from "./site";
+import { BUSINESS_NAME, SITE_HOST, SITE_URL } from "./site";
 
 export const GOOGLE_BUSINESS_URL =
   process.env.NEXT_PUBLIC_GOOGLE_BUSINESS_URL ?? "";
@@ -10,9 +10,15 @@ export const GOOGLE_WRITE_REVIEW_URL = GOOGLE_PLACE_ID
   ? `https://search.google.com/local/writereview?placeid=${GOOGLE_PLACE_ID}`
   : "";
 
+const mapsSearchQuery = encodeURIComponent(BUSINESS_NAME);
+
 export const GOOGLE_MAPS_PLACE_URL = GOOGLE_PLACE_ID
-  ? `https://www.google.com/maps/place/?q=place_id:${GOOGLE_PLACE_ID}`
+  ? `https://www.google.com/maps/search/?api=1&query=${mapsSearchQuery}&query_place_id=${encodeURIComponent(GOOGLE_PLACE_ID)}`
   : "";
+
+/** Prefer the owner share link; fallback to cross-platform Maps place URL. */
+export const GOOGLE_VIEW_REVIEWS_URL =
+  GOOGLE_BUSINESS_URL || GOOGLE_MAPS_PLACE_URL;
 
 export const PHONE_DISPLAY = "06608956377";
 export const PHONE_HREF = "tel:+436608956377";

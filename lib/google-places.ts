@@ -250,11 +250,11 @@ export const getPlaceReviews = cache(
       const businessReviews = await fetchBusinessProfileReviews(lang);
       if (businessReviews) return businessReviews;
 
-      const cachedReviews = await loadCachedGoogleReviews();
-      if (cachedReviews) return cachedReviews;
-
       const placesResult = await fetchPlaceReviewsFromApi(lang);
       if (placesResult) return placesResult;
+
+      const cachedReviews = await loadCachedGoogleReviews();
+      if (cachedReviews) return cachedReviews;
     } catch (error) {
       if (process.env.NODE_ENV === "development") {
         console.warn("[google-places] API request failed:", error);

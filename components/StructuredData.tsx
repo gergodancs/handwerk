@@ -1,4 +1,4 @@
-import { EMAIL, GOOGLE_BUSINESS_URL, GOOGLE_PLACE_ID, GOOGLE_MAPS_PLACE_URL, PHONE_HREF, WEBSITE_URL } from "@/lib/constants";
+import { EMAIL, GOOGLE_BUSINESS_URL, GOOGLE_PLACE_ID, GOOGLE_VIEW_REVIEWS_URL, PHONE_HREF, WEBSITE_URL } from "@/lib/constants";
 import { getPlaceReviews } from "@/lib/google-places";
 import { HERO_BACKGROUND, OWNER_PROFILE_IMAGE } from "@/lib/images";
 import { getDictionary } from "@/lib/dictionaries";
@@ -22,7 +22,7 @@ export async function StructuredData({
   const schemaReviews = isSchemaSafeReviews(placeReviews) ? placeReviews : null;
 
   const googleProfileUrl =
-    GOOGLE_BUSINESS_URL || GOOGLE_MAPS_PLACE_URL || "";
+    GOOGLE_BUSINESS_URL || GOOGLE_VIEW_REVIEWS_URL || "";
 
   const sameAs = [WEBSITE_URL, ...(googleProfileUrl ? [googleProfileUrl] : [])];
 
