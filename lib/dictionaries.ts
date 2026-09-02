@@ -139,23 +139,22 @@ export type Dictionary = {
 
 const de: LocaleDictionary = {
   meta: {
-    title: "Wohnungssanierung Wien | Mikrocement & fugenlose Bäder",
+    title: "Handwerker Wien | Malerarbeiten & Mikrozement | Wien Handwerk Profis",
     description:
-      "Wohnung renovieren in Wien: Malen, Spachteln, komplette Sanierung. Mikrocement, fugenlose Bäder & Betonoptik mit Murexin designcoat & Cemher. Fixpreis per WhatsApp.",
+      "Ihr zuverlässiger Handwerker in Wien. Profi für Malerarbeiten, Mikrozement, Komplettsanierung & Kleinreparaturen. Jetzt kostenloses Angebot anfordern!",
     ogImageAlt:
-      "Wien Handwerk Profis – Wohnungssanierung und Mikrocement Wien",
+      "Wien Handwerk Profis – Handwerker, Malerarbeiten und Mikrozement in Wien",
     keywords: [
-      "Wohnungssanierung Wien",
-      "Wohnung renovieren Wien",
-      "Mikrocement Wien",
-      "fugenloses Bad Wien",
-      "Betonoptik Wände Wien",
-      "Murexin designcoat Wien",
-      "Cemher Wien",
-      "Maler Wien",
-      "Wohnung sanieren Wien",
-      "Bad renovieren Wien",
       "Handwerker Wien",
+      "Malerarbeiten Wien",
+      "Mikrozement Wien",
+      "Komplettsanierung Wien",
+      "Kleinreparaturen Wien",
+      "Wohnungssanierung Wien",
+      "fugenloses Bad Wien",
+      "Handwerker Maler Wien",
+      "Renovierung Wien",
+      "Bad renovieren Wien",
       "Altbau Wohnung Wien",
     ],
   },
@@ -407,22 +406,23 @@ const de: LocaleDictionary = {
 
 const en: LocaleDictionary = {
   meta: {
-    title: "Apartment Renovation Vienna | Microcement Bathrooms",
+    title: "Handyman Vienna | Painting & Microcement | Wien Handwerk Profis",
     description:
-      "Apartment renovation in Vienna: painting, plastering, full refurbishment. Seamless microcement bathrooms with Murexin designcoat & Cemher. Fair fixed price via WhatsApp.",
+      "Your reliable handyman in Vienna. Expert in painting, microcement, full renovations & small repairs. Request your free quote today!",
     ogImageAlt:
-      "Wien Handwerk Profis – apartment renovation and microcement Vienna",
+      "Wien Handwerk Profis – handyman, painting and microcement in Vienna",
     keywords: [
-      "apartment renovation Vienna",
-      "home renovation Vienna",
-      "microcement Vienna",
-      "seamless bathroom Vienna",
-      "concrete effect walls Vienna",
-      "Murexin designcoat Vienna",
-      "Cemher Vienna",
-      "painter Vienna",
-      "bathroom renovation Vienna",
       "handyman Vienna",
+      "painting Vienna",
+      "microcement Vienna",
+      "full renovation Vienna",
+      "small repairs Vienna",
+      "apartment renovation Vienna",
+      "seamless bathroom Vienna",
+      "painter handyman Vienna",
+      "home renovation Vienna",
+      "bathroom renovation Vienna",
+      "period apartment Vienna",
     ],
   },
   header: {
