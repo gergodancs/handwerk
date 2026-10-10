@@ -206,11 +206,12 @@ const de: LocaleDictionary = {
   },
   about: {
     title: "Über mich",
-    role: "Wohnungssanierung & Mikrocement in Wien",
-    imageAlt: "Gergely Dancs – Wohnungssanierung und Mikrocement in Wien",
+    role: "Spezialist für Handwerk, Mikrozement & Designwände",
+    imageAlt:
+      "Gergely Dancs – Handwerk, Mikrozement und Designwände in Wien",
     paragraphs: [
-      "Mein Name ist Gergely Dancs. Ich renoviere Wohnungen in Wien von der ersten Vorbereitung bis zum bezugsfertigen Ergebnis – Malen, Spachteln, Bodenarbeiten und detailverliebte Ausführung inklusive.",
-      "Als Zusatz-Spezialisierung setze ich fugenlose Mikrocement- und Betonoptik-Oberflächen mit Murexin designcoat und Cemher um – ideal für moderne Bäder, WCs und Wandflächen. Dazu kommen Altbau-Fenster und zuverlässiger Allrounder-Service, alles aus einer Hand und ohne Subunternehmer.",
+      "Mein Name ist Gergely Dancs. Ich stehe für hochwertige handwerkliche Ausführung in Wien – von der durchdachten Wohnungssanierung über saubere Wohnungs-Refreshs bis hin zu maßgefertigten Designwänden.",
+      "Mein besonderer Fokus liegt auf exklusiven Oberflächen: Fugenloser Mikrozement für Bäder sowie kreative Putz- und Spachteltechniken – von moderner Betonoptik und edlem Limewash über Marmorino bis hin zu hochglänzendem Venetian Plaster (Stucco Veneziano) als echte Luxus-Akzente im Wohnbereich. Ich arbeite persönlich, transparent und mit höchstem Anspruch an Sauberkeit und Präzision – direkt vom Meisterhandwerk, ohne wechselnde Subunternehmer.",
     ],
   },
   sectionCta: {
@@ -499,11 +500,12 @@ const en: LocaleDictionary = {
   },
   about: {
     title: "About Me",
-    role: "Apartment Renovation & Microcement in Vienna",
-    imageAlt: "Gergely Dancs – apartment renovation and microcement in Vienna",
+    role: "Specialist for craftsmanship, microcement & design walls",
+    imageAlt:
+      "Gergely Dancs – craftsmanship, microcement and design walls in Vienna",
     paragraphs: [
-      "My name is Gergely Dancs. I renovate apartments across Vienna from initial preparation to a finished, move-in ready result – including painting, plastering, flooring coordination, and meticulous detail work.",
-      "I also specialize in seamless microcement and concrete-effect surfaces using Murexin designcoat and Cemher – perfect for modern bathrooms, WCs, and feature walls. Period window restoration and reliable handyman work are available as complementary services, all from one contact with no subcontractors.",
+      "My name is Gergely Dancs. I stand for high-quality craftsmanship in Vienna – from thoughtful full renovations and clean apartment refreshes to bespoke design walls.",
+      "My particular focus is exclusive surfaces: seamless microcement for bathrooms and creative plaster techniques – from modern concrete look and refined limewash to marmorino and high-gloss Venetian plaster (Stucco Veneziano) as true luxury accents in living spaces. I work personally, transparently and with the highest standards of cleanliness and precision – master craftsmanship direct to you, without rotating subcontractors.",
     ],
   },
   sectionCta: {

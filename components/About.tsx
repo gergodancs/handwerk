@@ -25,11 +25,11 @@ export function About({ dict }: AboutProps) {
               priority={false}
             />
           </div>
-          <p className="mt-4 text-center text-sm font-medium text-emerald-400">
-            {dict.about.role}
-          </p>
-          <p className="text-center text-lg font-semibold text-white">
+          <p className="mt-4 text-center text-lg font-semibold text-white">
             {OWNER_NAME}
+          </p>
+          <p className="mt-1 text-center text-sm font-medium leading-snug text-emerald-400">
+            {dict.about.role}
           </p>
         </div>
 
