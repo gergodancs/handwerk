@@ -50,7 +50,7 @@ export default async function HomePage({ params }: PageProps) {
       <main className="pb-24 md:pb-0">
         <Hero dict={dict} />
         <About dict={dict} />
-        <Services dict={dict} />
+        <Services lang={lang} dict={dict} />
         <Reviews dict={dict} lang={lang} />
         <Gallery dict={dict} />
         <TrustFactors dict={dict} />

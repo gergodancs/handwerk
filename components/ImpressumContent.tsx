@@ -49,8 +49,7 @@ export function ImpressumContent({ lang, dict }: ImpressumContentProps) {
             {page.responsibleTitle}
           </h2>
           <dl className="mt-4 rounded-2xl border border-slate-200 bg-white px-6">
-            <InfoRow label={page.nameLabel}>{IMPRESSUM.name}</InfoRow>
-            <InfoRow label={page.companyLabel}>{IMPRESSUM.company}</InfoRow>
+            <InfoRow label={page.companyLabel}>{IMPRESSUM.name}</InfoRow>
             <InfoRow label={page.addressLabel}>{page.address}</InfoRow>
           </dl>
         </section>
@@ -94,7 +93,6 @@ export function ImpressumContent({ lang, dict }: ImpressumContentProps) {
             {page.businessTitle}
           </h2>
           <dl className="mt-4 rounded-2xl border border-slate-200 bg-white px-6">
-            <InfoRow label={page.gisaLabel}>{IMPRESSUM.gisaNumber}</InfoRow>
             <InfoRow label={page.authorityLabel}>{page.authority}</InfoRow>
             <InfoRow label={page.membershipLabel}>{page.membership}</InfoRow>
             <InfoRow label={page.legalLabel}>

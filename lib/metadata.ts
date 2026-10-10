@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import { getDictionary } from "./dictionaries";
 import type { Locale } from "./i18n";
+import {
+  getApartmentRefreshPath,
+  getDesignWallsPath,
+  getServiceLandingAlternates,
+  type ServiceLandingKey,
+} from "./service-routes";
 import { OWNER_NAME, SITE_NAME, SITE_URL } from "./site";
 
 function buildAlternates(lang: Locale, slug?: string) {
@@ -115,6 +121,56 @@ export function buildPrivacyMetadata(lang: Locale): Metadata {
       title: dict.privacyPage.metaTitle,
       description: dict.privacyPage.metaDescription,
       images: [`/${lang}/opengraph-image`],
+    },
+  };
+}
+
+export function buildServiceLandingMetadata(
+  lang: Locale,
+  key: ServiceLandingKey,
+): Metadata {
+  const dict = getDictionary(lang);
+  const page =
+    key === "designWalls" ? dict.designWallsPage : dict.apartmentRefreshPage;
+  const path =
+    key === "designWalls"
+      ? getDesignWallsPath(lang)
+      : getApartmentRefreshPath(lang);
+
+  return {
+    ...baseMetadata(lang),
+    title: page.metaTitle,
+    description: page.metaDescription,
+    keywords: page.metaKeywords,
+    alternates: {
+      canonical: path,
+      ...getServiceLandingAlternates(key),
+    },
+    openGraph: {
+      title: page.metaTitle,
+      description: page.metaDescription,
+      url: `${SITE_URL}${path}`,
+      siteName: SITE_NAME,
+      locale: lang === "de" ? "de_AT" : "en_US",
+      alternateLocale: [lang === "de" ? "en_US" : "de_AT"],
+      type: "website",
+      images: [
+        {
+          url: `/${lang}/opengraph-image`,
+          width: 1200,
+          height: 630,
+          alt: SITE_NAME,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: page.metaTitle,
+      description: page.metaDescription,
+      images: [`/${lang}/opengraph-image`],
+    },
+    other: {
+      ...(baseMetadata(lang).other ?? {}),
     },
   };
 }

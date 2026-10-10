@@ -1,6 +1,10 @@
 import Link from "next/link";
 import type { Dictionary } from "@/lib/dictionaries";
 import type { Locale } from "@/lib/i18n";
+import {
+  getApartmentRefreshPath,
+  getDesignWallsPath,
+} from "@/lib/service-routes";
 import { buildMailtoHref, GOOGLE_VIEW_REVIEWS_URL, PHONE_DISPLAY, PHONE_HREF, WHATSAPP_HREF } from "@/lib/constants";
 import { PhoneIcon } from "./icons/PhoneIcon";
 import { WhatsAppIcon } from "./icons/WhatsAppIcon";
@@ -41,6 +45,27 @@ export function Footer({ lang, dict }: FooterProps) {
             <p className="mt-3 text-sm leading-relaxed text-slate-500">
               {dict.footer.impressumTeaser} {dict.footer.privacyTeaser}
             </p>
+            <p className="mt-6 text-sm font-semibold uppercase tracking-wider text-slate-400">
+              {dict.footer.serviceLinksTitle}
+            </p>
+            <ul className="mt-3 space-y-2">
+              <li>
+                <Link
+                  href={getDesignWallsPath(lang)}
+                  className="text-sm text-slate-300 transition-colors hover:text-white"
+                >
+                  {dict.footer.designWallsLink}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={getApartmentRefreshPath(lang)}
+                  className="text-sm text-slate-300 transition-colors hover:text-white"
+                >
+                  {dict.footer.apartmentRefreshLink}
+                </Link>
+              </li>
+            </ul>
           </div>
 
           <div>

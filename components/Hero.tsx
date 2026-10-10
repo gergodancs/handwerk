@@ -40,6 +40,32 @@ export function Hero({ dict }: HeroProps) {
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-300 sm:text-xl">
           {dict.hero.subtitle}
         </p>
+        <p className="mt-4 max-w-2xl text-lg leading-relaxed text-slate-300 sm:text-xl">
+          {dict.hero.subtitleSecondary}
+        </p>
+
+        <ul className="mt-8 flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:gap-x-6 sm:gap-y-2">
+          {dict.hero.trustBadges.map((badge) => (
+            <li
+              key={badge}
+              className="flex items-center gap-2 text-sm font-medium text-emerald-300"
+            >
+              <svg
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                className="h-5 w-5 shrink-0 text-emerald-400"
+                aria-hidden="true"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                  clipRule="evenodd"
+                />
+              </svg>
+              {badge}
+            </li>
+          ))}
+        </ul>
 
         <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center">
           <a

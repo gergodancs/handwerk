@@ -3,17 +3,25 @@ import { getPlaceReviews } from "@/lib/google-places";
 import { HERO_BACKGROUND, OWNER_PROFILE_IMAGE } from "@/lib/images";
 import { getDictionary } from "@/lib/dictionaries";
 import type { Locale } from "@/lib/i18n";
+import {
+  getApartmentRefreshPath,
+  getDesignWallsPath,
+  resolveServiceLandingPath,
+  type ServiceLandingKey,
+} from "@/lib/service-routes";
 import { getAreaServedSchema, isSchemaSafeReviews, VIENNA_GEO } from "@/lib/seo";
 import { BUSINESS_NAME, OWNER_NAME, SITE_NAME, SITE_URL } from "@/lib/site";
 
 type StructuredDataProps = {
   lang: Locale;
   page?: "home" | "impressum" | "privacy";
+  serviceLanding?: ServiceLandingKey;
 };
 
 export async function StructuredData({
   lang,
   page = "home",
+  serviceLanding,
 }: StructuredDataProps) {
   const dict = getDictionary(lang);
   const phone = PHONE_HREF.replace("tel:", "");
@@ -104,18 +112,34 @@ export async function StructuredData({
       url: SITE_URL,
       name: SITE_NAME,
       description: dict.meta.description,
-      inLanguage: lang === "de" ? "de-AT" : "en",
+      inLanguage: ["de-AT", "en"],
       publisher: { "@id": `${SITE_URL}/#business` },
     },
   ];
 
   if (page === "home") {
+    graph.push({
+      "@type": "WebPage",
+      "@id": `${SITE_URL}/${lang}#webpage`,
+      name: dict.meta.title,
+      description: dict.meta.description,
+      url: `${SITE_URL}/${lang}`,
+      inLanguage: lang === "de" ? "de-AT" : "en",
+      isPartOf: { "@id": `${SITE_URL}/#website` },
+      about: { "@id": `${SITE_URL}/#business` },
+    });
+
     dict.services.items.forEach((service, index) => {
+      const serviceUrl = service.landing
+        ? `${SITE_URL}${resolveServiceLandingPath(lang, service.landing)}`
+        : `${SITE_URL}/${lang}#leistungen`;
+
       graph.push({
         "@type": "Service",
         "@id": `${SITE_URL}/${lang}#service-${index + 1}`,
         name: service.title,
         description: service.description,
+        url: serviceUrl,
         provider: { "@id": `${SITE_URL}/#business` },
         areaServed: getAreaServedSchema(lang),
       });
@@ -215,6 +239,67 @@ export async function StructuredData({
           item: `${SITE_URL}/${lang}/datenschutz`,
         },
       ],
+    });
+  }
+
+  if (serviceLanding) {
+    const landingDict =
+      serviceLanding === "designWalls"
+        ? dict.designWallsPage
+        : dict.apartmentRefreshPage;
+    const pagePath =
+      serviceLanding === "designWalls"
+        ? getDesignWallsPath(lang)
+        : getApartmentRefreshPath(lang);
+    const pageUrl = `${SITE_URL}${pagePath}`;
+    const serviceId = `${pageUrl}#service`;
+
+    graph.push({
+      "@type": "Service",
+      "@id": serviceId,
+      name: landingDict.hero.title,
+      description: landingDict.metaDescription,
+      provider: { "@id": `${SITE_URL}/#business` },
+      areaServed: getAreaServedSchema(lang),
+      url: pageUrl,
+    });
+    graph.push({
+      "@type": "WebPage",
+      "@id": `${pageUrl}#webpage`,
+      name: landingDict.metaTitle,
+      description: landingDict.metaDescription,
+      url: pageUrl,
+      isPartOf: { "@id": `${SITE_URL}/#website` },
+      about: { "@id": serviceId },
+    });
+    graph.push({
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: landingDict.breadcrumbHome,
+          item: `${SITE_URL}/${lang}`,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: landingDict.breadcrumbCurrent,
+          item: pageUrl,
+        },
+      ],
+    });
+    graph.push({
+      "@type": "FAQPage",
+      "@id": `${pageUrl}#faq`,
+      mainEntity: landingDict.faq.map((item) => ({
+        "@type": "Question" as const,
+        name: item.question,
+        acceptedAnswer: {
+          "@type": "Answer" as const,
+          text: item.answer,
+        },
+      })),
     });
   }
 

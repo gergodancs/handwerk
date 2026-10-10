@@ -4,6 +4,7 @@ const MIKROCEMENT = `${REF}/mikrocement`;
 const ALTBAU = `${REF}/altbau-sanierung`;
 const ALLROUNDER = `${REF}/allrounder-maler`;
 const LEISTUNGEN = "/images/leistungen";
+const DESIGNWAENDE = "/images/designwaende";
 const PROFIL = "/images/profil";
 
 export const OWNER_PROFILE_IMAGE = `${PROFIL}/profil-pic.jpg`;
@@ -40,20 +41,77 @@ export const LEISTUNG_IMAGES = {
 export const HERO_BACKGROUND =
   "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80";
 
-export const SERVICE_IMAGES = [
+/** Preview images for design-wall technique cards (order matches techniques in copy). */
+export const DESIGN_WALL_TECHNIQUE_PREVIEWS = [
+  {
+    src: `${DESIGNWAENDE}/betonoptik-tv-wand.png`,
+    alt: "Betonoptik TV-Wand mit Steinspachtel-Paneelen",
+  },
+  {
+    src: `${DESIGNWAENDE}/marmorino-struktur.png`,
+    alt: "Marmorino Marmormehl-Struktur matt und seidenmatt",
+  },
+  {
+    src: `${DESIGNWAENDE}/venetian-plaster.jpg`,
+    alt: "Venetian Plaster Stucco Veneziano im Bad und Wohnraum",
+  },
+  {
+    src: `${DESIGNWAENDE}/limewash-wohnzimmer.png`,
+    alt: "Limewash Cloud-Effect Akzentwand im Wohnzimmer",
+  },
+] as const;
+
+/** Sample-board thumbnails (order matches sampleBoardLabels in copy). */
+export const DESIGN_WALL_SAMPLE_BOARDS = [
+  {
+    src: `${DESIGNWAENDE}/betonoptik-muster.webp`,
+    alt: "Musterplatte Betonoptik Struktur",
+  },
+  {
+    src: `${DESIGNWAENDE}/marmorino-muster.jpg`,
+    alt: "Musterplatte Marmorino Marmormehl Detail",
+  },
+  {
+    src: `${DESIGNWAENDE}/venetian-plaster-muster.jpg`,
+    alt: "Musterplatte Venetian Plaster Hochglanz",
+  },
+  {
+    src: `${DESIGNWAENDE}/limewash-muster.jpg`,
+    alt: "Musterplatte Limewash Kalkwasch-Optik",
+  },
+] as const;
+
+export type ServiceCardImage = {
+  src: string;
+  alt: string;
+  /** Show upper portion of photo (hides lower crop in 16:10 cards). */
+  cropTopHalf?: boolean;
+};
+
+export const SERVICE_IMAGES: ServiceCardImage[] = [
   {
     src: `${LEISTUNGEN}/${LEISTUNG_IMAGES.wohnungssanierung}`,
     alt: "Wohnungssanierung Wien Vorher Nachher Malerarbeiten",
   },
   {
-    src: `${LEISTUNGEN}/${LEISTUNG_IMAGES.mikrocementBad}`,
-    alt: "Mikrocement Bad fugenlos Wien Murexin designcoat Cemher",
+    src: `${LEISTUNGEN}/microzement-oberflaeche-detail.jpg`,
+    alt: "Mikrozement Oberfläche fugenlos Wien Bad und Dusche",
+    cropTopHalf: true,
   },
   {
     src: `${LEISTUNGEN}/${LEISTUNG_IMAGES.handwerkerWien}`,
     alt: "Handwerker Wien Altbau Fenster Malerarbeiten Allrounder",
   },
-] as const;
+  {
+    src: `${LEISTUNGEN}/${LEISTUNG_IMAGES.wohnungssanierung}`,
+    alt: "Wohnungs-Refresh Wien Ausmalen Modernisierung",
+  },
+  {
+    src: `${DESIGNWAENDE}/venetian-plaster.jpg`,
+    alt: "Designwände Venetian Plaster und Edelputz Wien",
+    cropTopHalf: true,
+  },
+];
 
 export const GALLERY_PHASES = [
   {

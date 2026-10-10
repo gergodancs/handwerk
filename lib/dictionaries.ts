@@ -1,4 +1,15 @@
 import type { Locale } from "./i18n";
+import type { ServiceLandingKey } from "./service-routes";
+import {
+  apartmentRefreshPageDe,
+  apartmentRefreshPageEn,
+  designWallsPageDe,
+  designWallsPageEn,
+} from "./service-pages";
+import type {
+  ApartmentRefreshPageDict,
+  DesignWallsPageDict,
+} from "./service-page-types";
 
 type ReviewsLabels = {
   title: string;
@@ -33,6 +44,8 @@ export type Dictionary = {
   hero: {
     title: string;
     subtitle: string;
+    subtitleSecondary: string;
+    trustBadges: string[];
     ctaWhatsApp: string;
     ctaCall: string;
   };
@@ -53,9 +66,11 @@ export type Dictionary = {
   };
   services: {
     title: string;
+    learnMore: string;
     items: Array<{
       title: string;
       description: string;
+      landing?: ServiceLandingKey;
     }>;
   };
   gallery: {
@@ -91,6 +106,9 @@ export type Dictionary = {
     impressumTeaser: string;
     privacy: string;
     privacyTeaser: string;
+    serviceLinksTitle: string;
+    designWallsLink: string;
+    apartmentRefreshLink: string;
     contactTitle: string;
     rights: string;
   };
@@ -100,7 +118,6 @@ export type Dictionary = {
     title: string;
     backToHome: string;
     responsibleTitle: string;
-    nameLabel: string;
     companyLabel: string;
     addressLabel: string;
     address: string;
@@ -109,7 +126,6 @@ export type Dictionary = {
     emailLabel: string;
     webLabel: string;
     businessTitle: string;
-    gisaLabel: string;
     authorityLabel: string;
     authority: string;
     membershipLabel: string;
@@ -135,27 +151,33 @@ export type Dictionary = {
     whatsapp: string;
     call: string;
   };
+  designWallsPage: DesignWallsPageDict;
+  apartmentRefreshPage: ApartmentRefreshPageDict;
 };
 
 const de: LocaleDictionary = {
   meta: {
-    title: "Handwerker Wien | Malerarbeiten & Mikrozement | Wien Handwerk Profis",
+    title:
+      "Handwerker Wien | Wohnungssanierung, Mikrozement & Designwände | Wien Handwerk Profis",
     description:
-      "Ihr zuverlässiger Handwerker in Wien. Profi für Malerarbeiten, Mikrozement, Komplettsanierung & Kleinreparaturen. Jetzt kostenloses Angebot anfordern!",
+      "Handwerker in Wien: Wohnungssanierung, Mikrozement-Bad, Wohnungs-Refresh & Designwände/TV-Wand. Malerarbeiten, Fixpreis, Musterplatten – jetzt anfragen!",
     ogImageAlt:
       "Wien Handwerk Profis – Handwerker, Malerarbeiten und Mikrozement in Wien",
     keywords: [
       "Handwerker Wien",
       "Malerarbeiten Wien",
       "Mikrozement Wien",
-      "Komplettsanierung Wien",
-      "Kleinreparaturen Wien",
       "Wohnungssanierung Wien",
+      "Komplettsanierung Wien",
+      "Wohnungs-Refresh Wien",
+      "Designwände Wien",
+      "TV-Wand Wien",
+      "Edelputz Wien",
       "fugenloses Bad Wien",
-      "Handwerker Maler Wien",
-      "Renovierung Wien",
-      "Bad renovieren Wien",
+      "Venetian Plaster Wien",
+      "Betonoptik Wand Wien",
       "Altbau Wohnung Wien",
+      "Fixpreis Handwerker Wien",
     ],
   },
   header: {
@@ -168,9 +190,17 @@ const de: LocaleDictionary = {
     },
   },
   hero: {
-    title: "Ihr Spezialist für Wohnungssanierung & Mikrocement in Wien",
+    title:
+      "Ihr Spezialist für Wohnungssanierung, Mikrozement & Designwände in Wien",
     subtitle:
-      "Komplette Wohnungsrenovierung von Malerarbeiten und Spachteln bis zur fertigen Wohnung – plus fugenlose Mikrocement-Oberflächen in Bad und WC. Ich arbeite sauber, termingerecht und mit Premium-Materialien wie Murexin designcoat und Cemher. Altbau-Fenster und Allrounder-Leistungen als Ergänzung.",
+      "Von der kompletten Renovierung über fugenlosen Mikrozement bis hin zu smarten Wohnungs-Updates und exklusiven Designwänden.",
+    subtitleSecondary:
+      "Ich arbeite sauber, termingerecht und mit Premium-Materialien wie Murexin designcoat und Cemher – für Ihr perfektes Zuhause in Wien.",
+    trustBadges: [
+      "Sauber & Termingerecht",
+      "Festpreis-Garantie",
+      "Musterplatten vor Ort",
+    ],
     ctaWhatsApp: "WhatsApp Chat",
     ctaCall: "Anrufen",
   },
@@ -203,21 +233,34 @@ const de: LocaleDictionary = {
   },
   services: {
     title: "Meine Leistungen",
+    learnMore: "Mehr erfahren",
     items: [
       {
-        title: "Wohnungssanierung Wien",
+        title: "Komplette Wohnungssanierung Wien",
         description:
-          "Komplette Renovierung Ihrer Wohnung: Vorbereitung, Spachteln, Streichen, Detailarbeiten und saubere Übergabe. Ideal für Vermietung, Verkauf oder frisches Wohngefühl – von der Küche bis zum Wohnzimmer, termingerecht und mit Fixpreis.",
+          "Komplette Renovierung Ihrer Wohnung: Vorbereitung, Spachteln, Streichen, Detailarbeiten und saubere Übergabe. Ideal für Vermietung, Verkauf oder frisches Wohngefühl – termingerecht und mit Fixpreis.",
       },
       {
-        title: "Mikrocement & fugenlose Bäder",
+        title: "Mikrozement & fugenlose Bäder",
         description:
-          "Fugenlose Mikrocement-Oberflächen für Bad, Dusche und WC – wasserfest, pflegeleicht und in modernem Betonlook. Verarbeitung mit Murexin designcoat und Cemher für langlebige, nahtlose Ergebnisse ohne Fliesenfugen.",
+          "Fugenlose Mikrocement-Oberflächen für Bad, Dusche und WC – wasserfest, pflegeleicht und in modernem Betonlook. Verarbeitung mit Murexin designcoat und Cemher.",
       },
       {
-        title: "Altbau Fenster & Allrounder",
+        title: "Altbau-Spezialist",
         description:
-          "Ergänzend Altbau-Fenster- und Türensanierung, Nutenfräsen, Malerarbeiten und Montagen im Alltag. Wenn neben der Wohnungssanierung noch Fenster, Wände oder Einbauten anstehen – alles aus einer Hand.",
+          "Altbau-Fenster- und Türensanierung, Nutenfräsen, Malerarbeiten und Montagen – ergänzend zur Wohnungssanierung, alles aus einer Hand.",
+      },
+      {
+        title: "Wohnungs-Refresh",
+        description:
+          "Smartes Update ohne Großbaustelle: Ausmalen, Schalter, Griffe, Lampen und mehr – in wenigen Tagen bezugsfertig und sauber.",
+        landing: "apartmentRefresh",
+      },
+      {
+        title: "Designwände & Edelputz",
+        description:
+          "TV-Wände und Akzentflächen: Betonoptik, Marmorino, Limewash und Kreativputz – mit Musterplatten vor Ort.",
+        landing: "designWalls",
       },
     ],
   },
@@ -307,6 +350,9 @@ const de: LocaleDictionary = {
     impressumTeaser: "Rechtliche Informationen und Kontaktdaten.",
     privacy: "Datenschutz",
     privacyTeaser: "Informationen zur Verarbeitung Ihrer Daten (DSGVO).",
+    serviceLinksTitle: "Spezial-Leistungen",
+    designWallsLink: "Designwände & TV-Wand",
+    apartmentRefreshLink: "Wohnungs-Refresh",
     contactTitle: "Kontakt",
     rights: "© Wien Handwerk Profis. Alle Rechte vorbehalten.",
   },
@@ -317,7 +363,6 @@ const de: LocaleDictionary = {
     title: "Impressum",
     backToHome: "← Zurück zur Startseite",
     responsibleTitle: "Für den Inhalt verantwortlich",
-    nameLabel: "Name",
     companyLabel: "Unternehmensbezeichnung",
     addressLabel: "Standort der Gewerbeberechtigung",
     address: "Penzinger Str. 29-31/3/12, 1140 Wien",
@@ -326,7 +371,6 @@ const de: LocaleDictionary = {
     emailLabel: "E-Mail",
     webLabel: "Web",
     businessTitle: "Gewerbeinformationen",
-    gisaLabel: "GISA-Zahl",
     authorityLabel: "Behörde gem. ECG",
     authority: "Magistratisches Bezirksamt des XIV. Bezirkes",
     membershipLabel: "Mitgliedschaft",
@@ -402,27 +446,31 @@ const de: LocaleDictionary = {
     whatsapp: "WhatsApp",
     call: "Anruf",
   },
+  designWallsPage: designWallsPageDe,
+  apartmentRefreshPage: apartmentRefreshPageDe,
 };
 
 const en: LocaleDictionary = {
   meta: {
-    title: "Handyman Vienna | Painting & Microcement | Wien Handwerk Profis",
+    title:
+      "Handyman Vienna | Renovation, Microcement & Design Walls | Wien Handwerk Profis",
     description:
-      "Your reliable handyman in Vienna. Expert in painting, microcement, full renovations & small repairs. Request your free quote today!",
+      "Handyman in Vienna: apartment renovation, microcement bathrooms, apartment refresh & design/TV walls. Painting, fixed prices, sample boards – get in touch!",
     ogImageAlt:
       "Wien Handwerk Profis – handyman, painting and microcement in Vienna",
     keywords: [
       "handyman Vienna",
       "painting Vienna",
       "microcement Vienna",
-      "full renovation Vienna",
-      "small repairs Vienna",
       "apartment renovation Vienna",
+      "apartment refresh Vienna",
+      "design walls Vienna",
+      "TV feature wall Vienna",
+      "Venetian plaster Vienna",
       "seamless bathroom Vienna",
-      "painter handyman Vienna",
-      "home renovation Vienna",
-      "bathroom renovation Vienna",
+      "full renovation Vienna",
       "period apartment Vienna",
+      "fixed price handyman Vienna",
     ],
   },
   header: {
@@ -435,9 +483,17 @@ const en: LocaleDictionary = {
     },
   },
   hero: {
-    title: "Your Specialist for Apartment Renovation & Microcement in Vienna",
+    title:
+      "Your Specialist for Renovation, Microcement & Design Walls in Vienna",
     subtitle:
-      "Complete apartment refurbishment from painting and plastering to move-in ready results – plus seamless microcement surfaces for bathrooms and WCs. I work cleanly and on schedule with premium materials including Murexin designcoat and Cemher. Period windows and handyman services available as add-ons.",
+      "From full refurbishment and seamless microcement to smart apartment refreshes and exclusive design walls.",
+    subtitleSecondary:
+      "I work cleanly, on schedule and with premium materials including Murexin designcoat and Cemher – for your perfect home in Vienna.",
+    trustBadges: [
+      "Clean & on schedule",
+      "Fixed-price guarantee",
+      "Sample boards on site",
+    ],
     ctaWhatsApp: "WhatsApp Chat",
     ctaCall: "Call Now",
   },
@@ -470,21 +526,34 @@ const en: LocaleDictionary = {
   },
   services: {
     title: "My Services",
+    learnMore: "Learn more",
     items: [
       {
-        title: "Apartment Renovation Vienna",
+        title: "Complete Apartment Renovation Vienna",
         description:
-          "Complete apartment refurbishment: preparation, plastering, painting, detail work, and a clean handover. Ideal for rental, sale, or a fresh living space – from kitchen to living room, on schedule with fixed pricing.",
+          "Full apartment refurbishment: preparation, plastering, painting, detail work and clean handover. Ideal for rental, sale or a fresh start – on schedule with fixed pricing.",
       },
       {
         title: "Microcement & Seamless Bathrooms",
         description:
-          "Seamless microcement surfaces for bathrooms, showers, and WCs – waterproof, low-maintenance, and in a modern concrete look. Applied with Murexin designcoat and Cemher for durable, joint-free results.",
+          "Seamless microcement for bathroom, shower and WC – waterproof, low-maintenance concrete look. Applied with Murexin designcoat and Cemher.",
       },
       {
-        title: "Period Windows & Handyman",
+        title: "Period Building Specialist",
         description:
-          "Complementary period window and door restoration, routed sealing, painting, and everyday installations. When apartment renovation is combined with windows, walls, or fittings – everything from one source.",
+          "Period windows and doors, routed sealing, painting and installations – complementary to full renovation, one contact.",
+      },
+      {
+        title: "Apartment Refresh",
+        description:
+          "Smart update without major works: painting, switches, handles, lights and more – move-in ready in a few days.",
+        landing: "apartmentRefresh",
+      },
+      {
+        title: "Design Walls & Premium Plaster",
+        description:
+          "TV walls and feature surfaces: concrete look, marmorino, limewash and creative plaster – sample boards on site.",
+        landing: "designWalls",
       },
     ],
   },
@@ -574,6 +643,9 @@ const en: LocaleDictionary = {
     impressumTeaser: "Legal information and contact details.",
     privacy: "Privacy Policy",
     privacyTeaser: "How we process your personal data (GDPR).",
+    serviceLinksTitle: "Specialist services",
+    designWallsLink: "Design walls & TV wall",
+    apartmentRefreshLink: "Apartment refresh",
     contactTitle: "Contact",
     rights: "© Wien Handwerk Profis. All rights reserved.",
   },
@@ -584,7 +656,6 @@ const en: LocaleDictionary = {
     title: "Legal Notice (Impressum)",
     backToHome: "← Back to homepage",
     responsibleTitle: "Responsible for content",
-    nameLabel: "Name",
     companyLabel: "Company name",
     addressLabel: "Registered business address",
     address: "Penzinger Str. 29-31/3/12, 1140 Vienna",
@@ -593,7 +664,6 @@ const en: LocaleDictionary = {
     emailLabel: "E-mail",
     webLabel: "Website",
     businessTitle: "Business information",
-    gisaLabel: "GISA number",
     authorityLabel: "Authority pursuant to ECG",
     authority: "Magistrate of the 14th District",
     membershipLabel: "Membership",
@@ -669,6 +739,8 @@ const en: LocaleDictionary = {
     whatsapp: "WhatsApp",
     call: "Call",
   },
+  designWallsPage: designWallsPageEn,
+  apartmentRefreshPage: apartmentRefreshPageEn,
 };
 
 const dictionaries: Record<Locale, LocaleDictionary> = { de, en };
