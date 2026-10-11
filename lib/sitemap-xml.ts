@@ -1,8 +1,7 @@
 import { locales, type Locale } from "@/lib/i18n";
 import {
-  getApartmentRefreshSlug,
-  getDesignWallsSlug,
-  getMicrocementBathroomSlug,
+  SERVICE_LANDING_KEYS,
+  getServiceLandingSlug,
 } from "@/lib/service-routes";
 import { SITE_URL } from "@/lib/site";
 
@@ -12,7 +11,7 @@ type SitemapPageGroup = {
   priority: string;
 };
 
-const SITEMAP_GROUPS: SitemapPageGroup[] = [
+const STATIC_SITEMAP_GROUPS: SitemapPageGroup[] = [
   {
     slugs: { de: "", en: "" },
     changeFrequency: "weekly",
@@ -28,30 +27,21 @@ const SITEMAP_GROUPS: SitemapPageGroup[] = [
     changeFrequency: "monthly",
     priority: "0.5",
   },
-  {
+];
+
+const SERVICE_LANDING_SITEMAP_GROUPS: SitemapPageGroup[] =
+  SERVICE_LANDING_KEYS.map((key) => ({
     slugs: {
-      de: `/${getDesignWallsSlug("de")}`,
-      en: `/${getDesignWallsSlug("en")}`,
+      de: `/${getServiceLandingSlug(key, "de")}`,
+      en: `/${getServiceLandingSlug(key, "en")}`,
     },
-    changeFrequency: "monthly",
-    priority: "0.85",
-  },
-  {
-    slugs: {
-      de: `/${getApartmentRefreshSlug("de")}`,
-      en: `/${getApartmentRefreshSlug("en")}`,
-    },
-    changeFrequency: "monthly",
-    priority: "0.85",
-  },
-  {
-    slugs: {
-      de: `/${getMicrocementBathroomSlug("de")}`,
-      en: `/${getMicrocementBathroomSlug("en")}`,
-    },
-    changeFrequency: "monthly",
-    priority: "0.85",
-  },
+    changeFrequency: "weekly",
+    priority: "0.9",
+  }));
+
+const SITEMAP_GROUPS: SitemapPageGroup[] = [
+  ...STATIC_SITEMAP_GROUPS,
+  ...SERVICE_LANDING_SITEMAP_GROUPS,
 ];
 
 function escapeXml(value: string): string {

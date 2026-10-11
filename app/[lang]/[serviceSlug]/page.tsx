@@ -15,6 +15,7 @@ import {
   getServiceLandingSlug,
   isServiceSlugForLocale,
   resolveServiceLandingPath,
+  SERVICE_LANDING_KEYS,
   type ServiceLandingKey,
 } from "@/lib/service-routes";
 
@@ -22,15 +23,9 @@ type PageProps = {
   params: Promise<{ lang: string; serviceSlug: string }>;
 };
 
-const LANDING_KEYS: ServiceLandingKey[] = [
-  "designWalls",
-  "apartmentRefresh",
-  "microcementBathroom",
-];
-
 export async function generateStaticParams() {
   return locales.flatMap((lang) =>
-    LANDING_KEYS.map((key) => ({
+    SERVICE_LANDING_KEYS.map((key) => ({
       lang,
       serviceSlug: getServiceLandingSlug(key, lang),
     })),

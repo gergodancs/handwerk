@@ -5,6 +5,13 @@ export type ServiceLandingKey =
   | "apartmentRefresh"
   | "microcementBathroom";
 
+/** All service landing pages – keep in sync with sitemap and static generation. */
+export const SERVICE_LANDING_KEYS: readonly ServiceLandingKey[] = [
+  "designWalls",
+  "apartmentRefresh",
+  "microcementBathroom",
+];
+
 const SERVICE_LANDING_SLUGS: Record<
   ServiceLandingKey,
   Record<Locale, string>
@@ -70,14 +77,11 @@ export function resolveServiceLandingPath(
 
 export function getSitemapPathsByLocale(lang: Locale): string[] {
   const base = ["", "/impressum", "/datenschutz"];
-  const keys: ServiceLandingKey[] = [
-    "designWalls",
-    "apartmentRefresh",
-    "microcementBathroom",
-  ];
   return [
     ...base,
-    ...keys.map((key) => getServiceLandingPath(key, lang).replace(`/${lang}`, "")),
+    ...SERVICE_LANDING_KEYS.map((key) =>
+      getServiceLandingPath(key, lang).replace(`/${lang}`, ""),
+    ),
   ];
 }
 
