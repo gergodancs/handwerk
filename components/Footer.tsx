@@ -4,6 +4,7 @@ import type { Locale } from "@/lib/i18n";
 import {
   getApartmentRefreshPath,
   getDesignWallsPath,
+  getMicrocementBathroomPath,
 } from "@/lib/service-routes";
 import { buildMailtoHref, GOOGLE_VIEW_REVIEWS_URL, PHONE_DISPLAY, PHONE_HREF, WHATSAPP_HREF } from "@/lib/constants";
 import { PhoneIcon } from "./icons/PhoneIcon";
@@ -49,6 +50,14 @@ export function Footer({ lang, dict }: FooterProps) {
               {dict.footer.serviceLinksTitle}
             </p>
             <ul className="mt-3 space-y-2">
+              <li>
+                <Link
+                  href={getMicrocementBathroomPath(lang)}
+                  className="text-sm text-slate-300 transition-colors hover:text-white"
+                >
+                  {dict.footer.microcementBathroomLink}
+                </Link>
+              </li>
               <li>
                 <Link
                   href={getDesignWallsPath(lang)}

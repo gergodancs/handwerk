@@ -4,8 +4,11 @@ import { HERO_BACKGROUND, OWNER_PROFILE_IMAGE } from "@/lib/images";
 import { getDictionary } from "@/lib/dictionaries";
 import type { Locale } from "@/lib/i18n";
 import {
-  getApartmentRefreshPath,
-  getDesignWallsPath,
+  getServiceLandingFaqItems,
+  getServiceLandingPageDict,
+} from "@/lib/service-landing";
+import {
+  getServiceLandingPath,
   resolveServiceLandingPath,
   type ServiceLandingKey,
 } from "@/lib/service-routes";
@@ -157,14 +160,6 @@ export async function StructuredData({
             text: item.answer,
           },
         })),
-        ...dict.microcementFaq.items.map((item) => ({
-          "@type": "Question" as const,
-          name: item.question,
-          acceptedAnswer: {
-            "@type": "Answer" as const,
-            text: item.answer,
-          },
-        })),
       ],
     });
 
@@ -243,15 +238,10 @@ export async function StructuredData({
   }
 
   if (serviceLanding) {
-    const landingDict =
-      serviceLanding === "designWalls"
-        ? dict.designWallsPage
-        : dict.apartmentRefreshPage;
-    const pagePath =
-      serviceLanding === "designWalls"
-        ? getDesignWallsPath(lang)
-        : getApartmentRefreshPath(lang);
+    const landingDict = getServiceLandingPageDict(dict, serviceLanding);
+    const pagePath = getServiceLandingPath(serviceLanding, lang);
     const pageUrl = `${SITE_URL}${pagePath}`;
+    const faqItems = getServiceLandingFaqItems(dict, serviceLanding);
     const serviceId = `${pageUrl}#service`;
 
     graph.push({
@@ -292,7 +282,7 @@ export async function StructuredData({
     graph.push({
       "@type": "FAQPage",
       "@id": `${pageUrl}#faq`,
-      mainEntity: landingDict.faq.map((item) => ({
+      mainEntity: faqItems.map((item) => ({
         "@type": "Question" as const,
         name: item.question,
         acceptedAnswer: {

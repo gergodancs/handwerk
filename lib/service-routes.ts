@@ -1,60 +1,92 @@
 import type { Locale } from "./i18n";
 
-export type ServiceLandingKey = "designWalls" | "apartmentRefresh";
+export type ServiceLandingKey =
+  | "designWalls"
+  | "apartmentRefresh"
+  | "microcementBathroom";
 
-const DESIGN_WALLS_SLUG: Record<Locale, string> = {
-  de: "designwaende",
-  en: "design-walls",
+const SERVICE_LANDING_SLUGS: Record<
+  ServiceLandingKey,
+  Record<Locale, string>
+> = {
+  designWalls: {
+    de: "designwaende",
+    en: "design-walls",
+  },
+  apartmentRefresh: {
+    de: "wohnungs-refresh",
+    en: "apartment-refresh",
+  },
+  microcementBathroom: {
+    de: "mikrozement-bad",
+    en: "microcement-bathroom",
+  },
 };
 
-const APARTMENT_REFRESH_SLUG: Record<Locale, string> = {
-  de: "wohnungs-refresh",
-  en: "apartment-refresh",
-};
+export function getServiceLandingSlug(
+  key: ServiceLandingKey,
+  lang: Locale,
+): string {
+  return SERVICE_LANDING_SLUGS[key][lang];
+}
 
 export function getDesignWallsSlug(lang: Locale): string {
-  return DESIGN_WALLS_SLUG[lang];
+  return getServiceLandingSlug("designWalls", lang);
 }
 
 export function getApartmentRefreshSlug(lang: Locale): string {
-  return APARTMENT_REFRESH_SLUG[lang];
+  return getServiceLandingSlug("apartmentRefresh", lang);
+}
+
+export function getMicrocementBathroomSlug(lang: Locale): string {
+  return getServiceLandingSlug("microcementBathroom", lang);
+}
+
+export function getServiceLandingPath(
+  key: ServiceLandingKey,
+  lang: Locale,
+): string {
+  return `/${lang}/${getServiceLandingSlug(key, lang)}`;
 }
 
 export function getDesignWallsPath(lang: Locale): string {
-  return `/${lang}/${getDesignWallsSlug(lang)}`;
+  return getServiceLandingPath("designWalls", lang);
 }
 
 export function getApartmentRefreshPath(lang: Locale): string {
-  return `/${lang}/${getApartmentRefreshSlug(lang)}`;
+  return getServiceLandingPath("apartmentRefresh", lang);
+}
+
+export function getMicrocementBathroomPath(lang: Locale): string {
+  return getServiceLandingPath("microcementBathroom", lang);
 }
 
 export function resolveServiceLandingPath(
   lang: Locale,
   key: ServiceLandingKey,
 ): string {
-  return key === "designWalls"
-    ? getDesignWallsPath(lang)
-    : getApartmentRefreshPath(lang);
+  return getServiceLandingPath(key, lang);
 }
 
 export function getSitemapPathsByLocale(lang: Locale): string[] {
   const base = ["", "/impressum", "/datenschutz"];
+  const keys: ServiceLandingKey[] = [
+    "designWalls",
+    "apartmentRefresh",
+    "microcementBathroom",
+  ];
   return [
     ...base,
-    getDesignWallsPath(lang).replace(`/${lang}`, ""),
-    getApartmentRefreshPath(lang).replace(`/${lang}`, ""),
+    ...keys.map((key) => getServiceLandingPath(key, lang).replace(`/${lang}`, "")),
   ];
 }
 
 export function findLandingKeyBySlug(slug: string): ServiceLandingKey | null {
-  if (slug === DESIGN_WALLS_SLUG.de || slug === DESIGN_WALLS_SLUG.en) {
-    return "designWalls";
-  }
-  if (
-    slug === APARTMENT_REFRESH_SLUG.de ||
-    slug === APARTMENT_REFRESH_SLUG.en
-  ) {
-    return "apartmentRefresh";
+  for (const key of Object.keys(SERVICE_LANDING_SLUGS) as ServiceLandingKey[]) {
+    const slugs = SERVICE_LANDING_SLUGS[key];
+    if (slug === slugs.de || slug === slugs.en) {
+      return key;
+    }
   }
   return null;
 }
@@ -64,12 +96,7 @@ export function isServiceSlugForLocale(
   key: ServiceLandingKey,
   slug: string,
 ): boolean {
-  return (
-    slug ===
-    (key === "designWalls"
-      ? DESIGN_WALLS_SLUG[lang]
-      : APARTMENT_REFRESH_SLUG[lang])
-  );
+  return slug === SERVICE_LANDING_SLUGS[key][lang];
 }
 
 export function getServiceLandingAlternates(key: ServiceLandingKey) {

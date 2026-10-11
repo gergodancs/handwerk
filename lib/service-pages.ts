@@ -1,6 +1,7 @@
 import type {
   ApartmentRefreshPageDict,
   DesignWallsPageDict,
+  MicrocementBathroomPageDict,
 } from "./service-page-types";
 
 export const designWallsPageDe: DesignWallsPageDict = {
@@ -341,7 +342,7 @@ export const designWallsPageEn: DesignWallsPageDict = {
 export const apartmentRefreshPageDe: ApartmentRefreshPageDict = {
   metaTitle: "Wohnungs-Refresh Wien | Smartes Update ohne Großbaustelle",
   metaDescription:
-    "Wohnungs-Refresh in Wien: Ausmalen, Schalter, Griffe, Lampen & Jalousien in 2–5 Tagen. Fixpreis, sauber, bezugsfertig – für Vermieter, Verkauf & Neubezug.",
+    "Wohnungs-Refresh in Wien und Umgebung: Ausmalen, Schalter, Griffe, Lampen & Jalousien in 2–5 Tagen. Orientierungspreise in der FAQ – Fixpreis nach Besichtigung.",
   metaKeywords: [
     "Wohnungs-Refresh Wien",
     "Wohnung auffrischen Wien",
@@ -357,9 +358,9 @@ export const apartmentRefreshPageDe: ApartmentRefreshPageDict = {
   breadcrumbHome: "Startseite",
   breadcrumbCurrent: "Wohnungs-Refresh",
   hero: {
-    title: "Wohnungs-Refresh in Wien",
+    title: "Wohnungs-Refresh",
     subtitle:
-      "Kleine Veränderungen, maximale Wirkung – ganz ohne Großbaustelle.",
+      "Kleine Veränderungen, maximale Wirkung – in Wien und Umgebung, ganz ohne Großbaustelle.",
     tagline: "Sauber · Fixpreis · Bezugsfertig",
   },
   positioningTitle: "Smartes Update – keine Billig-Sanierung",
@@ -479,8 +480,13 @@ export const apartmentRefreshPageDe: ApartmentRefreshPageDict = {
         "Saubere Demontage & Maßmontage moderner Sonnenschutz-Systeme.",
     },
   ],
-  faqTitle: "Häufige Fragen zum Wohnungs-Refresh",
+  faqTitle: "Häufige Fragen zum Wohnungs-Refresh & Preisen",
   faq: [
+    {
+      question: "Was kosten Malerarbeiten pro m²? (Orientierung)",
+      answer:
+        "Als unverbindliche Orientierung: einfaches Ausmalen mit kleineren Wandreparaturen (z. B. Dübellöcher, kleine Risse) ab 12 € pro m²; Spachteln/Glätten der Wände ab 15 € pro m². Der tatsächliche Preis hängt davon ab, ob die Wohnung leer ist, wie stark die Wände beansprucht sind und welche Qualität Sie wünschen. Nach Fotos oder Besichtigung erhalten Sie einen transparenten Fixpreis.",
+    },
     {
       question: "Wie lange dauert ein Refresh?",
       answer:
@@ -511,7 +517,7 @@ export const apartmentRefreshPageDe: ApartmentRefreshPageDict = {
 export const apartmentRefreshPageEn: ApartmentRefreshPageDict = {
   metaTitle: "Apartment Refresh Vienna | Smart Update Without Major Works",
   metaDescription:
-    "Apartment refresh in Vienna: painting, switches, handles, lights & blinds in 2–5 days. Fixed price, clean, move-in ready – landlords, sale & new tenants.",
+    "Apartment refresh in Vienna and surroundings: painting, switches, handles, lights & blinds in 2–5 days. Guide prices in the FAQ – fixed quote after viewing.",
   metaKeywords: [
     "apartment refresh Vienna",
     "refresh apartment Vienna",
@@ -527,8 +533,9 @@ export const apartmentRefreshPageEn: ApartmentRefreshPageDict = {
   breadcrumbHome: "Home",
   breadcrumbCurrent: "Apartment refresh",
   hero: {
-    title: "Apartment Refresh in Vienna",
-    subtitle: "Small changes, maximum impact – without a major construction site.",
+    title: "Apartment Refresh",
+    subtitle:
+      "Small changes, maximum impact – in Vienna and surroundings, without a major construction site.",
     tagline: "Clean · Fixed price · Move-in ready",
   },
   positioningTitle: "Smart update – not a cheap full renovation",
@@ -648,8 +655,13 @@ export const apartmentRefreshPageEn: ApartmentRefreshPageDict = {
         "Careful removal and custom fitting of sun protection systems.",
     },
   ],
-  faqTitle: "FAQ – apartment refresh",
+  faqTitle: "FAQ – apartment refresh & pricing",
   faq: [
+    {
+      question: "What do painting works cost per m²? (guide prices)",
+      answer:
+        "As a guide only: simple repainting with minor wall repairs (e.g. plug holes, small cracks) from €12 per m²; skimming/smoothing walls from €15 per m². The actual price depends on whether the flat is empty, how worn the walls are and the finish you want. After photos or a viewing you receive a transparent fixed quote.",
+    },
     {
       question: "How long does a refresh take?",
       answer:
@@ -672,6 +684,174 @@ export const apartmentRefreshPageEn: ApartmentRefreshPageDict = {
   cta: {
     title: "Request a refresh",
     text: "Send photos via WhatsApp – I will get back to you quickly with a fair fixed price.",
+    whatsapp: "WhatsApp inquiry",
+    email: "Send e-mail",
+  },
+};
+
+export const microcementBathroomPageDe: MicrocementBathroomPageDict = {
+  metaTitle: "Fugenloses Mikrozement-Bad Wien | Wasserdicht & nahtlos",
+  metaDescription:
+    "Mikrozement-Bad und WC in Wien und Umgebung: fugenlos, wasserdicht, premium mit Cemher und Murexin designcoat. Orientierungspreise in der FAQ.",
+  metaKeywords: [
+    "Mikrozement Bad Wien",
+    "fugenloses Bad Wien",
+    "Mikrozement Dusche Wien",
+    "Mikrozement WC Wien",
+    "Cemher Wien",
+    "Murexin designcoat Wien",
+    "Betonoptik Bad Wien",
+    "Bad ohne Fliesen Wien",
+  ],
+  breadcrumbHome: "Startseite",
+  breadcrumbCurrent: "Mikrozement-Bad",
+  hero: {
+    title: "Fugenloses Mikrozement-Bad & WC",
+    subtitle:
+      "Hochwertige, wasserfeste und fugenlose Oberflächen mit Cemher und Murexin designcoat – in Wien und Umgebung.",
+  },
+  benefitsTitle: "Warum Mikrozement im Bad?",
+  benefits: [
+    {
+      title: "Fugenlos & wasserdicht",
+      description:
+        "Keine Fugen, keine Silikonfugen – eine durchgängige, versiegelte Oberfläche für Dusche, Boden und Wand.",
+    },
+    {
+      title: "Premium-Systeme",
+      description:
+        "Verarbeitung mit Murexin designcoat und Cemher – mehrstufiges System mit Gewebe, Versiegelung und Herstellervorgaben.",
+    },
+    {
+      title: "Modern & pflegeleicht",
+      description:
+        "Betonoptik, minimalistisch und leicht zu reinigen – ideal für zeitgemäße Bäder und WCs.",
+    },
+  ],
+  applicationsTitle: "Einsatzbereiche",
+  applications: [
+    "Dusche & Walk-in-Bereich",
+    "Badezimmer-Wände und Boden",
+    "WC und Gästetoilette",
+    "Waschtisch-Umfeld und Nischen",
+  ],
+  galleryTitle: "Referenzen Mikrozement",
+  galleryIntro:
+    "Echte Projekte aus Wien – von der Verarbeitung bis zur fertigen, fugenlosen Oberfläche.",
+  processTitle: "So läuft Ihr Mikrozement-Bad ab",
+  processStepLabel: "Schritt",
+  processSteps: [
+    {
+      title: "Anfrage & Fotos",
+      description:
+        "Sie senden Fotos per WhatsApp – ich prüfe Untergrund und Machbarkeit.",
+    },
+    {
+      title: "Besichtigung & Festpreis",
+      description:
+        "Vor Ort klären wir Details; Sie erhalten ein transparentes Angebot inkl. Vorarbeiten.",
+    },
+    {
+      title: "Vorbereitung & Schichten",
+      description:
+        "Untergrund, Gewebe, Mikrozement-Schichten und Versiegelung nach System – mit Trocknungszeiten.",
+    },
+    {
+      title: "Übergabe",
+      description:
+        "Saubere Baustelle, pflegehinweise und bezugsfertige Oberfläche – termingerecht.",
+    },
+  ],
+  whatsappPrefill:
+    "Hallo, ich interessiere mich für ein fugenloses Mikrozement-Bad in Wien. ",
+  learnMore: "Mehr erfahren",
+  cta: {
+    title: "Mikrozement-Bad anfragen",
+    text: "Senden Sie mir Fotos Ihres Bads – ich melde mich mit einer ehrlichen Einschätzung und einem fairen Angebot.",
+    whatsapp: "WhatsApp Anfrage",
+    email: "E-Mail senden",
+  },
+};
+
+export const microcementBathroomPageEn: MicrocementBathroomPageDict = {
+  metaTitle: "Seamless Microcement Bathroom Vienna | Waterproof & joint-free",
+  metaDescription:
+    "Microcement bathroom and WC in Vienna and surroundings: seamless, waterproof, premium Cemher and Murexin designcoat. Guide prices in the FAQ.",
+  metaKeywords: [
+    "microcement bathroom Vienna",
+    "seamless bathroom Vienna",
+    "microcement shower Vienna",
+    "waterproof bathroom Vienna",
+    "Cemher Vienna",
+    "Murexin designcoat Vienna",
+    "concrete look bathroom Vienna",
+    "bathroom without tiles Vienna",
+  ],
+  breadcrumbHome: "Home",
+  breadcrumbCurrent: "Microcement bathroom",
+  hero: {
+    title: "Seamless microcement bathroom & WC",
+    subtitle:
+      "High-quality, waterproof and joint-free surfaces with Cemher and Murexin designcoat – in Vienna and surroundings.",
+  },
+  benefitsTitle: "Why microcement in the bathroom?",
+  benefits: [
+    {
+      title: "Joint-free & waterproof",
+      description:
+        "No tile grout or silicone joints – one sealed surface for shower, floor and walls.",
+    },
+    {
+      title: "Premium systems",
+      description:
+        "Applied with Murexin designcoat and Cemher – multi-layer system with mesh, sealers and manufacturer specs.",
+    },
+    {
+      title: "Modern & easy-care",
+      description:
+        "Concrete look, minimal and easy to clean – perfect for contemporary bathrooms and WCs.",
+    },
+  ],
+  applicationsTitle: "Applications",
+  applications: [
+    "Shower & walk-in area",
+    "Bathroom walls and floor",
+    "WC and guest toilet",
+    "Vanity surrounds and niches",
+  ],
+  galleryTitle: "Microcement projects",
+  galleryIntro:
+    "Real work in Vienna – from application to the finished seamless surface.",
+  processTitle: "How your microcement bathroom works",
+  processStepLabel: "Step",
+  processSteps: [
+    {
+      title: "Inquiry & photos",
+      description:
+        "Send photos via WhatsApp – I check substrate and feasibility.",
+    },
+    {
+      title: "Viewing & fixed price",
+      description:
+        "We clarify details on site; you receive a transparent quote including prep work.",
+    },
+    {
+      title: "Prep & layers",
+      description:
+        "Substrate, mesh, microcement coats and sealing per system – with drying times.",
+    },
+    {
+      title: "Handover",
+      description:
+        "Clean site, care notes and a finished surface – on schedule.",
+    },
+  ],
+  whatsappPrefill:
+    "Hello, I am interested in a seamless microcement bathroom in Vienna. ",
+  learnMore: "Learn more",
+  cta: {
+    title: "Request a microcement bathroom",
+    text: "Send photos of your bathroom – I will reply with an honest assessment and a fair quote.",
     whatsapp: "WhatsApp inquiry",
     email: "Send e-mail",
   },

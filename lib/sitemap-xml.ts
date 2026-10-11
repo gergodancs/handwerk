@@ -2,6 +2,7 @@ import { locales, type Locale } from "@/lib/i18n";
 import {
   getApartmentRefreshSlug,
   getDesignWallsSlug,
+  getMicrocementBathroomSlug,
 } from "@/lib/service-routes";
 import { SITE_URL } from "@/lib/site";
 
@@ -39,6 +40,14 @@ const SITEMAP_GROUPS: SitemapPageGroup[] = [
     slugs: {
       de: `/${getApartmentRefreshSlug("de")}`,
       en: `/${getApartmentRefreshSlug("en")}`,
+    },
+    changeFrequency: "monthly",
+    priority: "0.85",
+  },
+  {
+    slugs: {
+      de: `/${getMicrocementBathroomSlug("de")}`,
+      en: `/${getMicrocementBathroomSlug("en")}`,
     },
     changeFrequency: "monthly",
     priority: "0.85",

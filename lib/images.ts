@@ -5,13 +5,13 @@ const ALTBAU = `${REF}/altbau-sanierung`;
 const ALLROUNDER = `${REF}/allrounder-maler`;
 const LEISTUNGEN = "/images/leistungen";
 const DESIGNWAENDE = "/images/designwaende";
+const MIKROZEMENT_BAD = "/images/mikrozement-bad";
 const PROFIL = "/images/profil";
 
 export const OWNER_PROFILE_IMAGE = `${PROFIL}/profil-pic.jpg`;
 
 export const WOHNUNG_GALLERY_IMAGES = {
   vorherNachher: "wohnung-sanierung-vorher-nachher-wien.jpg",
-  ausgangszustandZimmer: "wien-wohnung-zimmer-sanierung-fertig.png",
 } as const;
 
 export const ALTBAU_GALLERY_IMAGES = {
@@ -28,7 +28,7 @@ export const ALLROUNDER_GALLERY_IMAGES = {
 
 export const MIKROCEMENT_GALLERY_IMAGES = {
   anwendung: "mikrocement-anwendung-wien-murexin.jpg",
-  badDusche: "mikrocement-bad-dusche-fugenlos-wien.jpg",
+  oberflaecheTextur: "mikrozement-oberflaeche-textur.jpg",
   wc: "mikrocement-wc-fugenlos-wien.jpg",
 } as const;
 
@@ -62,6 +62,29 @@ export const DESIGN_WALL_TECHNIQUE_PREVIEWS = [
 ] as const;
 
 /** Sample-board thumbnails (order matches sampleBoardLabels in copy). */
+export const MICROCEMENT_LANDING_GALLERY = [
+  {
+    src: `${MIKROZEMENT_BAD}/badezimmer-fertig.jpg`,
+    alt: "Fertiges Mikrozement-Badezimmer Wien fugenlos",
+  },
+  {
+    src: `${MIKROZEMENT_BAD}/dusche-fugenlos.jpg`,
+    alt: "Fugenlose Mikrozement-Dusche Wien",
+  },
+  {
+    src: `${MIKROZEMENT_BAD}/verarbeitung-wien.jpg`,
+    alt: "Mikrozement Verarbeitung Handwerk Wien",
+  },
+  {
+    src: `${MIKROZEMENT_BAD}/oberflaeche-textur.jpg`,
+    alt: "Mikrozement Oberfläche Textur Detail",
+  },
+  {
+    src: `${MIKROZEMENT_BAD}/oberflaeche-detail.jpg`,
+    alt: "Mikrozement Wand Oberfläche Detail",
+  },
+] as const;
+
 export const DESIGN_WALL_SAMPLE_BOARDS = [
   {
     src: `${DESIGNWAENDE}/betonoptik-muster.webp`,
@@ -90,10 +113,6 @@ export type ServiceCardImage = {
 
 export const SERVICE_IMAGES: ServiceCardImage[] = [
   {
-    src: `${LEISTUNGEN}/${LEISTUNG_IMAGES.wohnungssanierung}`,
-    alt: "Wohnungssanierung Wien Vorher Nachher Malerarbeiten",
-  },
-  {
     src: `${LEISTUNGEN}/microzement-oberflaeche-detail.jpg`,
     alt: "Mikrozement Oberfläche fugenlos Wien Bad und Dusche",
     cropTopHalf: true,
@@ -121,21 +140,15 @@ export const GALLERY_PHASES = [
     objectPosition: "center center",
   },
   {
-    src: `${WOHNUNG}/${WOHNUNG_GALLERY_IMAGES.ausgangszustandZimmer}`,
-    alt: "Wohnungssanierung Wien Ausgangszustand Zimmer",
-    aspectRatio: "3/4" as const,
-    objectFit: "cover" as const,
-    objectPosition: "center center",
-  },
-  {
     src: `${MIKROCEMENT}/${MIKROCEMENT_GALLERY_IMAGES.anwendung}`,
     alt: "Mikrocement Verarbeitung Wien Murexin designcoat",
     objectFit: "contain" as const,
     objectPosition: "center center",
   },
   {
-    src: `${MIKROCEMENT}/${MIKROCEMENT_GALLERY_IMAGES.badDusche}`,
-    alt: "Fugenloses Bad Mikrocement Dusche Wien Betonoptik",
+    src: `${MIKROCEMENT}/${MIKROCEMENT_GALLERY_IMAGES.oberflaecheTextur}`,
+    alt: "Mikrozement Oberfläche Textur Detail fugenlos Wien",
+    aspectRatio: "3/4" as const,
     objectFit: "cover" as const,
     objectPosition: "center center",
   },

@@ -5,10 +5,13 @@ import {
   apartmentRefreshPageEn,
   designWallsPageDe,
   designWallsPageEn,
+  microcementBathroomPageDe,
+  microcementBathroomPageEn,
 } from "./service-pages";
 import type {
   ApartmentRefreshPageDict,
   DesignWallsPageDict,
+  MicrocementBathroomPageDict,
 } from "./service-page-types";
 
 type ReviewsLabels = {
@@ -36,10 +39,20 @@ export type Dictionary = {
     companyName: string;
     nav: {
       services: string;
+      servicesOverview: string;
+      home: string;
+      homeSections: string;
+      menuTitle: string;
+      menuOpen: string;
+      menuClose: string;
       gallery: string;
       reviews: string;
       faq: string;
     };
+  };
+  serviceLandingCrossNav: {
+    label: string;
+    ariaLabel: string;
   };
   hero: {
     title: string;
@@ -107,6 +120,7 @@ export type Dictionary = {
     privacy: string;
     privacyTeaser: string;
     serviceLinksTitle: string;
+    microcementBathroomLink: string;
     designWallsLink: string;
     apartmentRefreshLink: string;
     contactTitle: string;
@@ -153,6 +167,7 @@ export type Dictionary = {
   };
   designWallsPage: DesignWallsPageDict;
   apartmentRefreshPage: ApartmentRefreshPageDict;
+  microcementBathroomPage: MicrocementBathroomPageDict;
 };
 
 const de: LocaleDictionary = {
@@ -184,10 +199,20 @@ const de: LocaleDictionary = {
     companyName: "Wien Handwerk Profis",
     nav: {
       services: "Leistungen",
+      servicesOverview: "Übersicht auf der Startseite",
+      home: "Startseite",
+      homeSections: "Auf der Startseite",
+      menuTitle: "Menü",
+      menuOpen: "Menü öffnen",
+      menuClose: "Schließen",
       gallery: "Referenzen",
       reviews: "Bewertungen",
       faq: "FAQ",
     },
+  },
+  serviceLandingCrossNav: {
+    label: "Weitere Leistungen",
+    ariaLabel: "Zu anderen Spezial-Leistungen wechseln",
   },
   hero: {
     title:
@@ -237,19 +262,15 @@ const de: LocaleDictionary = {
     learnMore: "Mehr erfahren",
     items: [
       {
-        title: "Komplette Wohnungssanierung Wien",
-        description:
-          "Komplette Renovierung Ihrer Wohnung: Vorbereitung, Spachteln, Streichen, Detailarbeiten und saubere Übergabe. Ideal für Vermietung, Verkauf oder frisches Wohngefühl – termingerecht und mit Fixpreis.",
-      },
-      {
         title: "Mikrozement & fugenlose Bäder",
         description:
           "Fugenlose Mikrocement-Oberflächen für Bad, Dusche und WC – wasserfest, pflegeleicht und in modernem Betonlook. Verarbeitung mit Murexin designcoat und Cemher.",
+        landing: "microcementBathroom",
       },
       {
-        title: "Altbau-Spezialist",
+        title: "Allrounder Handwerk & Montage",
         description:
-          "Altbau-Fenster- und Türensanierung, Nutenfräsen, Malerarbeiten und Montagen – ergänzend zur Wohnungssanierung, alles aus einer Hand.",
+          "Kleinere Montage- und Reparaturarbeiten, Ergänzungen im Zuge von Sanierungen und praktische Hilfestellungen im Haushalt – zuverlässig aus einer Hand.",
       },
       {
         title: "Wohnungs-Refresh",
@@ -271,9 +292,8 @@ const de: LocaleDictionary = {
       "Ausgewählte Projekte – Wohnungssanierung, Mikrocement, Altbau-Fenster und Allrounder-Arbeiten in Wien.",
     phases: [
       { label: "Vorher Nachher Wohnung" },
-      { label: "Ausgangszustand Zimmer" },
       { label: "Mikrocement Verarbeitung" },
-      { label: "Fugenloses Bad Dusche" },
+      { label: "Mikrozement Oberfläche" },
       { label: "Mikrocement WC Betonoptik" },
       { label: "Altbau Fenster Reparatur Wien" },
       { label: "Bohrlöcher spachteln Wien" },
@@ -284,6 +304,16 @@ const de: LocaleDictionary = {
   microcementFaq: {
     title: "Häufig gestellte Fragen zu Mikrozement & Preisen",
     items: [
+      {
+        question: "Was kostet Mikrozement pro m²?",
+        answer:
+          "Als Orientierung: ab 160 € pro m² (bei Flächen ab ca. 10 m²) inklusive Material und Verarbeitung mit Premium-Mikrozement (z. B. Cemher) – abhängig von Fläche, Untergrund und Detailgrad. Nach Fotos und Besichtigung erhalten Sie einen transparenten Festpreis.",
+      },
+      {
+        question: "Was wird bei Vorarbeiten extra berechnet?",
+        answer:
+          "Demontage und Wiederanbringung von Sanitäranlagen (WC, Waschbecken, Armaturen) sowie spezielle Untergrundvorbereitungen werden individuell nach Aufwand separat kalkuliert – vor Beginn der Arbeiten schriftlich fixiert.",
+      },
       {
         question: "Ist Mikrozement eine günstige Alternative zu Fliesen?",
         answer:
@@ -352,6 +382,7 @@ const de: LocaleDictionary = {
     privacy: "Datenschutz",
     privacyTeaser: "Informationen zur Verarbeitung Ihrer Daten (DSGVO).",
     serviceLinksTitle: "Spezial-Leistungen",
+    microcementBathroomLink: "Mikrozement-Bad",
     designWallsLink: "Designwände & TV-Wand",
     apartmentRefreshLink: "Wohnungs-Refresh",
     contactTitle: "Kontakt",
@@ -449,6 +480,7 @@ const de: LocaleDictionary = {
   },
   designWallsPage: designWallsPageDe,
   apartmentRefreshPage: apartmentRefreshPageDe,
+  microcementBathroomPage: microcementBathroomPageDe,
 };
 
 const en: LocaleDictionary = {
@@ -478,10 +510,20 @@ const en: LocaleDictionary = {
     companyName: "Wien Handwerk Profis",
     nav: {
       services: "Services",
+      servicesOverview: "Overview on homepage",
+      home: "Home",
+      homeSections: "On the homepage",
+      menuTitle: "Menu",
+      menuOpen: "Open menu",
+      menuClose: "Close",
       gallery: "Projects",
       reviews: "Reviews",
       faq: "FAQ",
     },
+  },
+  serviceLandingCrossNav: {
+    label: "More services",
+    ariaLabel: "Switch to another specialist service page",
   },
   hero: {
     title:
@@ -531,19 +573,15 @@ const en: LocaleDictionary = {
     learnMore: "Learn more",
     items: [
       {
-        title: "Complete Apartment Renovation Vienna",
-        description:
-          "Full apartment refurbishment: preparation, plastering, painting, detail work and clean handover. Ideal for rental, sale or a fresh start – on schedule with fixed pricing.",
-      },
-      {
         title: "Microcement & Seamless Bathrooms",
         description:
           "Seamless microcement for bathroom, shower and WC – waterproof, low-maintenance concrete look. Applied with Murexin designcoat and Cemher.",
+        landing: "microcementBathroom",
       },
       {
-        title: "Period Building Specialist",
+        title: "Handyman work & installation",
         description:
-          "Period windows and doors, routed sealing, painting and installations – complementary to full renovation, one contact.",
+          "Smaller installation and repair jobs, add-ons during renovations and practical help around the home – reliably from one contact.",
       },
       {
         title: "Apartment Refresh",
@@ -565,9 +603,8 @@ const en: LocaleDictionary = {
       "Selected projects – apartment renovation, microcement, period windows, and handyman work in Vienna.",
     phases: [
       { label: "Before & after apartment" },
-      { label: "Room starting condition" },
       { label: "Microcement application" },
-      { label: "Seamless shower" },
+      { label: "Microcement surface detail" },
       { label: "Microcement WC" },
       { label: "Period window repair Vienna" },
       { label: "Patching drill holes Vienna" },
@@ -578,6 +615,16 @@ const en: LocaleDictionary = {
   microcementFaq: {
     title: "Frequently asked questions about microcement & pricing",
     items: [
+      {
+        question: "What does microcement cost per m²?",
+        answer:
+          "As a guide: from €160 per m² (for areas from approx. 10 m²) including materials and application with premium microcement (e.g. Cemher) – depending on area, substrate and detail. After photos and a viewing you receive a transparent fixed price.",
+      },
+      {
+        question: "What preparation work is charged separately?",
+        answer:
+          "Removal and reinstallation of sanitary fittings (WC, basin, taps) and special substrate preparation are quoted individually based on effort – fixed in writing before work begins.",
+      },
       {
         question: "Is microcement a cheap alternative to tiles?",
         answer:
@@ -646,6 +693,7 @@ const en: LocaleDictionary = {
     privacy: "Privacy Policy",
     privacyTeaser: "How we process your personal data (GDPR).",
     serviceLinksTitle: "Specialist services",
+    microcementBathroomLink: "Microcement bathroom",
     designWallsLink: "Design walls & TV wall",
     apartmentRefreshLink: "Apartment refresh",
     contactTitle: "Contact",
@@ -743,6 +791,7 @@ const en: LocaleDictionary = {
   },
   designWallsPage: designWallsPageEn,
   apartmentRefreshPage: apartmentRefreshPageEn,
+  microcementBathroomPage: microcementBathroomPageEn,
 };
 
 const dictionaries: Record<Locale, LocaleDictionary> = { de, en };

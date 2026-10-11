@@ -2,6 +2,8 @@ import Link from "next/link";
 import type { Dictionary } from "@/lib/dictionaries";
 import type { Locale } from "@/lib/i18n";
 import { buildMailtoHref, PHONE_DISPLAY, PHONE_HREF } from "@/lib/constants";
+import { HeaderNav } from "./HeaderNav";
+import { MobileNavMenu } from "./MobileNavMenu";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { PhoneIcon } from "./icons/PhoneIcon";
 import { EmailIcon } from "./icons/EmailIcon";
@@ -10,13 +12,6 @@ type HeaderProps = {
   lang: Locale;
   dict: Dictionary;
 };
-
-const NAV_ITEMS = [
-  { key: "services" as const, href: "#leistungen" },
-  { key: "gallery" as const, href: "#referenzen" },
-  { key: "reviews" as const, href: "#bewertungen" },
-  { key: "faq" as const, href: "#faq" },
-];
 
 export function Header({ lang, dict }: HeaderProps) {
   return (
@@ -29,22 +24,10 @@ export function Header({ lang, dict }: HeaderProps) {
           {dict.header.companyName}
         </Link>
 
-        <nav
-          className="hidden items-center gap-5 lg:flex"
-          aria-label={lang === "de" ? "Seitennavigation" : "Page navigation"}
-        >
-          {NAV_ITEMS.map((item) => (
-            <a
-              key={item.key}
-              href={item.href}
-              className="text-sm font-medium text-slate-300 transition-colors hover:text-white"
-            >
-              {dict.header.nav[item.key]}
-            </a>
-          ))}
-        </nav>
+        <HeaderNav lang={lang} dict={dict} />
 
-        <div className="flex items-center gap-3 sm:gap-4">
+        <div className="flex items-center gap-2 sm:gap-4">
+          <MobileNavMenu lang={lang} dict={dict} />
           <LanguageSwitcher lang={lang} />
 
           <a

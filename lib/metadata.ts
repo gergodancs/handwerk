@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { getDictionary } from "./dictionaries";
 import type { Locale } from "./i18n";
+import { getServiceLandingPageDict } from "./service-landing";
 import {
-  getApartmentRefreshPath,
-  getDesignWallsPath,
   getServiceLandingAlternates,
+  getServiceLandingPath,
   type ServiceLandingKey,
 } from "./service-routes";
 import { OWNER_NAME, SITE_NAME, SITE_URL } from "./site";
@@ -130,12 +130,8 @@ export function buildServiceLandingMetadata(
   key: ServiceLandingKey,
 ): Metadata {
   const dict = getDictionary(lang);
-  const page =
-    key === "designWalls" ? dict.designWallsPage : dict.apartmentRefreshPage;
-  const path =
-    key === "designWalls"
-      ? getDesignWallsPath(lang)
-      : getApartmentRefreshPath(lang);
+  const page = getServiceLandingPageDict(dict, key);
+  const path = getServiceLandingPath(key, lang);
 
   return {
     ...baseMetadata(lang),

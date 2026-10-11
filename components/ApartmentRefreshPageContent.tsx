@@ -42,8 +42,8 @@ export function ApartmentRefreshPageContent({
   return (
     <ServicePageShell
       lang={lang}
-      breadcrumbHome={page.breadcrumbHome}
-      breadcrumbCurrent={page.breadcrumbCurrent}
+      dict={dict}
+      activeLandingKey="apartmentRefresh"
     >
       <section className="bg-slate-950 px-4 py-16 sm:px-6 sm:py-24">
         <div className="mx-auto max-w-6xl">
@@ -209,13 +209,15 @@ export function ApartmentRefreshPageContent({
         </section>
 
         <div className="mt-16">
+          <ServiceLandingFaq title={page.faqTitle} items={page.faq} />
+        </div>
+
+        <div className="mt-16">
           <ServiceLandingCta
             cta={page.cta}
             whatsappPrefill={page.whatsappPrefill}
           />
         </div>
-
-        <ServiceLandingFaq title={page.faqTitle} items={page.faq} />
       </div>
     </ServicePageShell>
   );

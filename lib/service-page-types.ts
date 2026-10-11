@@ -65,6 +65,21 @@ export type DesignWallsPageDict = ServiceLandingPageDict & {
   processSteps: Array<{ title: string; description: string }>;
 };
 
+export type MicrocementBathroomPageDict = Omit<
+  ServiceLandingPageDict,
+  "faqTitle" | "faq"
+> & {
+  benefitsTitle: string;
+  benefits: Array<{ title: string; description: string }>;
+  applicationsTitle: string;
+  applications: string[];
+  galleryTitle: string;
+  galleryIntro: string;
+  processTitle: string;
+  processStepLabel: string;
+  processSteps: Array<{ title: string; description: string }>;
+};
+
 export type ApartmentRefreshPageDict = ServiceLandingPageDict & {
   positioningTitle: string;
   positioningText: string;

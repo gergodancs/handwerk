@@ -4,7 +4,6 @@ import type { Dictionary } from "@/lib/dictionaries";
 import type { Locale } from "@/lib/i18n";
 import { SERVICE_IMAGES } from "@/lib/images";
 import { resolveServiceLandingPath } from "@/lib/service-routes";
-import { MicrocementFAQ } from "./MicrocementFAQ";
 import { SectionCTA } from "./SectionCTA";
 
 type ServicesProps = {
@@ -23,7 +22,7 @@ export function Services({ lang, dict }: ServicesProps) {
           {dict.services.title}
         </h2>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-6 sm:grid-cols-2">
           {dict.services.items.map((service, index) => {
             const image = SERVICE_IMAGES[index];
             const landingHref = service.landing
@@ -57,21 +56,21 @@ export function Services({ lang, dict }: ServicesProps) {
                   <p className="mt-3 flex-1 leading-relaxed text-slate-600">
                     {service.description}
                   </p>
-                  {landingHref && (
-                    <Link
-                      href={landingHref}
-                      className="mt-5 inline-flex text-sm font-semibold text-emerald-700 hover:text-emerald-600"
-                    >
-                      {dict.services.learnMore} →
-                    </Link>
-                  )}
+                  <div className="mt-5 min-h-7">
+                    {landingHref && (
+                      <Link
+                        href={landingHref}
+                        className="inline-flex text-sm font-semibold text-emerald-700 hover:text-emerald-600"
+                      >
+                        {dict.services.learnMore} →
+                      </Link>
+                    )}
+                  </div>
                 </div>
               </article>
             );
           })}
         </div>
-
-        <MicrocementFAQ dict={dict} embedded />
 
         <SectionCTA dict={dict} />
       </div>

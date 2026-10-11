@@ -2,6 +2,7 @@ import { notFound, redirect } from "next/navigation";
 import type { Metadata } from "next";
 import { ApartmentRefreshPageContent } from "@/components/ApartmentRefreshPageContent";
 import { DesignWallsPageContent } from "@/components/DesignWallsPageContent";
+import { MicrocementBathroomPageContent } from "@/components/MicrocementBathroomPageContent";
 import { FloatingCTA } from "@/components/FloatingCTA";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
@@ -11,21 +12,29 @@ import { isValidLocale, locales, type Locale } from "@/lib/i18n";
 import { buildServiceLandingMetadata } from "@/lib/metadata";
 import {
   findLandingKeyBySlug,
-  getApartmentRefreshSlug,
-  getDesignWallsSlug,
+  getServiceLandingSlug,
   isServiceSlugForLocale,
   resolveServiceLandingPath,
+  type ServiceLandingKey,
 } from "@/lib/service-routes";
 
 type PageProps = {
   params: Promise<{ lang: string; serviceSlug: string }>;
 };
 
+const LANDING_KEYS: ServiceLandingKey[] = [
+  "designWalls",
+  "apartmentRefresh",
+  "microcementBathroom",
+];
+
 export async function generateStaticParams() {
-  return locales.flatMap((lang) => [
-    { lang, serviceSlug: getDesignWallsSlug(lang) },
-    { lang, serviceSlug: getApartmentRefreshSlug(lang) },
-  ]);
+  return locales.flatMap((lang) =>
+    LANDING_KEYS.map((key) => ({
+      lang,
+      serviceSlug: getServiceLandingSlug(key, lang),
+    })),
+  );
 }
 
 export async function generateMetadata({
@@ -43,6 +52,25 @@ export async function generateMetadata({
   }
 
   return buildServiceLandingMetadata(lang as Locale, key);
+}
+
+function ServiceLandingContent({
+  landingKey,
+  lang,
+  dict,
+}: {
+  landingKey: ServiceLandingKey;
+  lang: Locale;
+  dict: ReturnType<typeof getDictionary>;
+}) {
+  switch (landingKey) {
+    case "designWalls":
+      return <DesignWallsPageContent lang={lang} dict={dict} />;
+    case "apartmentRefresh":
+      return <ApartmentRefreshPageContent lang={lang} dict={dict} />;
+    case "microcementBathroom":
+      return <MicrocementBathroomPageContent lang={lang} dict={dict} />;
+  }
 }
 
 export default async function ServiceLandingPage({ params }: PageProps) {
@@ -68,11 +96,7 @@ export default async function ServiceLandingPage({ params }: PageProps) {
       <StructuredData lang={lang} serviceLanding={key} />
       <Header lang={lang} dict={dict} />
       <main className="pb-24 md:pb-0">
-        {key === "designWalls" ? (
-          <DesignWallsPageContent lang={lang} dict={dict} />
-        ) : (
-          <ApartmentRefreshPageContent lang={lang} dict={dict} />
-        )}
+        <ServiceLandingContent landingKey={key} lang={lang} dict={dict} />
       </main>
       <Footer lang={lang} dict={dict} />
       <FloatingCTA dict={dict} />
