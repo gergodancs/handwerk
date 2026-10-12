@@ -6,18 +6,18 @@ export const contentType = "image/png";
 
 const COPY = {
   de: {
-    alt: "Wien Handwerk Profis – Handwerker, Malerarbeiten und Mikrozement in Wien",
+    alt: "Wien Handwerk Profis – Mikrozement, Allrounder, Refresh und Designwände in Wien",
     brand: "Wien Handwerk Profis",
     name: "Gergely Dancs",
-    tagline: "Handwerker · Malerarbeiten · Mikrozement · Wien",
-    bullets: ["Fixpreise", "Komplettsanierung", "Ganz Wien"],
+    tagline: "Mikrozement · Allrounder · Refresh · Designwände",
+    bullets: ["Fixpreise", "4 Spezial-Leistungen", "Wien & Umgebung"],
   },
   en: {
-    alt: "Wien Handwerk Profis – handyman, painting and microcement in Vienna",
+    alt: "Wien Handwerk Profis – microcement, handyman, refresh and design walls in Vienna",
     brand: "Wien Handwerk Profis",
     name: "Gergely Dancs",
-    tagline: "Handyman · Painting · Microcement · Vienna",
-    bullets: ["Fixed prices", "Full renovation", "All Vienna"],
+    tagline: "Microcement · Handyman · Refresh · Design walls",
+    bullets: ["Fixed prices", "4 specialist pages", "Vienna & area"],
   },
 } as const;
 

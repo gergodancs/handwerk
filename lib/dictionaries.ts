@@ -7,8 +7,11 @@ import {
   designWallsPageEn,
   microcementBathroomPageDe,
   microcementBathroomPageEn,
+  allrounderPageDe,
+  allrounderPageEn,
 } from "./service-pages";
 import type {
+  AllrounderPageDict,
   ApartmentRefreshPageDict,
   DesignWallsPageDict,
   MicrocementBathroomPageDict,
@@ -121,6 +124,7 @@ export type Dictionary = {
     privacyTeaser: string;
     serviceLinksTitle: string;
     microcementBathroomLink: string;
+    allrounderMontageLink: string;
     designWallsLink: string;
     apartmentRefreshLink: string;
     contactTitle: string;
@@ -168,30 +172,32 @@ export type Dictionary = {
   designWallsPage: DesignWallsPageDict;
   apartmentRefreshPage: ApartmentRefreshPageDict;
   microcementBathroomPage: MicrocementBathroomPageDict;
+  allrounderPage: AllrounderPageDict;
 };
 
 const de: LocaleDictionary = {
   meta: {
     title:
-      "Handwerker Wien | Wohnungssanierung, Mikrozement & Designwände | Wien Handwerk Profis",
+      "Handwerker Wien | Mikrozement, Allrounder, Refresh & Designwände",
     description:
-      "Handwerker in Wien: Wohnungssanierung, Mikrozement-Bad, Wohnungs-Refresh & Designwände/TV-Wand. Malerarbeiten, Fixpreis, Musterplatten – jetzt anfragen!",
+      "Handwerker in Wien und Umgebung: Mikrozement-Bad, Allrounder Montage & Reparatur, Wohnungs-Refresh und Designwände/TV-Wand. Fixpreis, sauber – mit Detailseiten und FAQ zu jeder Leistung.",
     ogImageAlt:
-      "Wien Handwerk Profis – Handwerker, Malerarbeiten und Mikrozement in Wien",
+      "Wien Handwerk Profis – Mikrozement, Allrounder, Refresh und Designwände in Wien",
     keywords: [
       "Handwerker Wien",
-      "Malerarbeiten Wien",
-      "Mikrozement Wien",
-      "Wohnungssanierung Wien",
-      "Komplettsanierung Wien",
+      "Mikrozement Bad Wien",
+      "fugenloses Bad Wien",
+      "Allrounder Wien",
+      "Montage Handwerker Wien",
+      "Lampen montieren Wien",
+      "TV Wandhalterung montieren Wien",
+      "Möbelmontage Wien",
       "Wohnungs-Refresh Wien",
       "Designwände Wien",
       "TV-Wand Wien",
       "Edelputz Wien",
-      "fugenloses Bad Wien",
-      "Venetian Plaster Wien",
-      "Betonoptik Wand Wien",
-      "Altbau Wohnung Wien",
+      "Silikonfugen erneuern Wien",
+      "Malerarbeiten Wien",
       "Fixpreis Handwerker Wien",
     ],
   },
@@ -216,11 +222,11 @@ const de: LocaleDictionary = {
   },
   hero: {
     title:
-      "Ihr Spezialist für Wohnungssanierung, Mikrozement & Designwände in Wien",
+      "Mikrozement, Allrounder-Montage, Wohnungs-Refresh & Designwände",
     subtitle:
-      "Von der kompletten Renovierung über fugenlosen Mikrozement bis hin zu smarten Wohnungs-Updates und exklusiven Designwänden.",
+      "Fugenlose Bäder, Montage & Reparaturen im Haushalt, smarte Wohnungs-Updates und exklusive Designwände – in Wien und Umgebung.",
     subtitleSecondary:
-      "Ich arbeite sauber, termingerecht und mit Premium-Materialien wie Murexin designcoat und Cemher – für Ihr perfektes Zuhause in Wien.",
+      "Ich arbeite sauber, termingerecht und mit Premium-Materialien wie Murexin designcoat und Cemher – persönlich, transparent, ohne wechselnde Subunternehmer.",
     trustBadges: [
       "Sauber & Termingerecht",
       "Festpreis-Garantie",
@@ -271,6 +277,7 @@ const de: LocaleDictionary = {
         title: "Allrounder Handwerk & Montage",
         description:
           "Kleinere Montage- und Reparaturarbeiten, Ergänzungen im Zuge von Sanierungen und praktische Hilfestellungen im Haushalt – zuverlässig aus einer Hand.",
+        landing: "allrounderMontage",
       },
       {
         title: "Wohnungs-Refresh",
@@ -289,7 +296,7 @@ const de: LocaleDictionary = {
   gallery: {
     title: "Meine Arbeiten in Wien",
     subtitle:
-      "Ausgewählte Projekte – Wohnungssanierung, Mikrocement, Altbau-Fenster und Allrounder-Arbeiten in Wien.",
+      "Ausgewählte Projekte – Mikrozement, Montage & Reparatur, Wohnungs-Refresh, Designwände und Altbau-Arbeiten in Wien und Umgebung.",
     phases: [
       { label: "Vorher Nachher Wohnung" },
       { label: "Mikrocement Verarbeitung" },
@@ -352,7 +359,7 @@ const de: LocaleDictionary = {
       {
         question: "In welchen Bezirken in Wien sind Sie tätig?",
         answer:
-          "Ich bin im gesamten Wiener Raum im Einsatz – Wohnungssanierung, Mikrocement-Bäder und ergänzend Altbau-Fenster. Besonders häufig in Bezirken wie Innere Stadt, Hietzing, Währing und Döbling; kurzfristige Termine sind in ganz Wien möglich.",
+          "Ich bin im gesamten Wiener Raum und Umgebung im Einsatz – Mikrozement-Bäder, Wohnungs-Refresh, Designwände und Allrounder-Montage. Besonders häufig in Bezirken wie Innere Stadt, Hietzing, Währing und Döbling; kurzfristige Termine sind in ganz Wien möglich.",
       },
     ],
   },
@@ -372,7 +379,7 @@ const de: LocaleDictionary = {
       {
         title: "Alles aus einer Hand",
         description:
-          "Wohnungssanierung, Mikrocement und ergänzend Altbau-Fenster – ein Ansprechpartner, keine Subunternehmer.",
+          "Mikrozement, Refresh, Designwände und Allrounder-Montage – ein Ansprechpartner mit eigenen Detailseiten und klaren Leistungen.",
       },
     ],
   },
@@ -383,6 +390,7 @@ const de: LocaleDictionary = {
     privacyTeaser: "Informationen zur Verarbeitung Ihrer Daten (DSGVO).",
     serviceLinksTitle: "Spezial-Leistungen",
     microcementBathroomLink: "Mikrozement-Bad",
+    allrounderMontageLink: "Allrounder & Montage",
     designWallsLink: "Designwände & TV-Wand",
     apartmentRefreshLink: "Wohnungs-Refresh",
     contactTitle: "Kontakt",
@@ -481,28 +489,30 @@ const de: LocaleDictionary = {
   designWallsPage: designWallsPageDe,
   apartmentRefreshPage: apartmentRefreshPageDe,
   microcementBathroomPage: microcementBathroomPageDe,
+  allrounderPage: allrounderPageDe,
 };
 
 const en: LocaleDictionary = {
   meta: {
     title:
-      "Handyman Vienna | Renovation, Microcement & Design Walls | Wien Handwerk Profis",
+      "Handyman Vienna | Microcement, Mounting, Refresh & Design Walls",
     description:
-      "Handyman in Vienna: apartment renovation, microcement bathrooms, apartment refresh & design/TV walls. Painting, fixed prices, sample boards – get in touch!",
+      "Handyman in Vienna and surroundings: microcement bathrooms, mounting & repairs, apartment refresh and design/TV walls. Fixed prices, specialist landing pages with FAQ – get in touch!",
     ogImageAlt:
-      "Wien Handwerk Profis – handyman, painting and microcement in Vienna",
+      "Wien Handwerk Profis – microcement, handyman mounting, refresh and design walls in Vienna",
     keywords: [
       "handyman Vienna",
-      "painting Vienna",
-      "microcement Vienna",
-      "apartment renovation Vienna",
+      "microcement bathroom Vienna",
+      "seamless bathroom Vienna",
+      "mounting service Vienna",
+      "lamp installation Vienna",
+      "TV wall mount Vienna",
+      "furniture assembly Vienna",
       "apartment refresh Vienna",
       "design walls Vienna",
       "TV feature wall Vienna",
-      "Venetian plaster Vienna",
-      "seamless bathroom Vienna",
-      "full renovation Vienna",
-      "period apartment Vienna",
+      "silicone renewal bathroom Vienna",
+      "painting Vienna",
       "fixed price handyman Vienna",
     ],
   },
@@ -527,11 +537,11 @@ const en: LocaleDictionary = {
   },
   hero: {
     title:
-      "Your Specialist for Renovation, Microcement & Design Walls in Vienna",
+      "Microcement, handyman mounting, apartment refresh & design walls",
     subtitle:
-      "From full refurbishment and seamless microcement to smart apartment refreshes and exclusive design walls.",
+      "Seamless bathrooms, home mounting and repairs, smart refreshes and exclusive design walls – in Vienna and surroundings.",
     subtitleSecondary:
-      "I work cleanly, on schedule and with premium materials including Murexin designcoat and Cemher – for your perfect home in Vienna.",
+      "I work cleanly, on schedule and with premium materials including Murexin designcoat and Cemher – personally, transparently, without rotating subcontractors.",
     trustBadges: [
       "Clean & on schedule",
       "Fixed-price guarantee",
@@ -582,6 +592,7 @@ const en: LocaleDictionary = {
         title: "Handyman work & installation",
         description:
           "Smaller installation and repair jobs, add-ons during renovations and practical help around the home – reliably from one contact.",
+        landing: "allrounderMontage",
       },
       {
         title: "Apartment Refresh",
@@ -600,7 +611,7 @@ const en: LocaleDictionary = {
   gallery: {
     title: "My Work in Vienna",
     subtitle:
-      "Selected projects – apartment renovation, microcement, period windows, and handyman work in Vienna.",
+      "Selected projects – microcement, mounting & repairs, apartment refresh, design walls and period building work in Vienna and surroundings.",
     phases: [
       { label: "Before & after apartment" },
       { label: "Microcement application" },
@@ -663,7 +674,7 @@ const en: LocaleDictionary = {
       {
         question: "Which districts in Vienna do you cover?",
         answer:
-          "I work across Vienna – apartment renovation, microcement bathrooms, and complementary period window work. Especially active in districts such as Innere Stadt, Hietzing, Währing, and Döbling; short-notice appointments are possible city-wide.",
+          "I work across Vienna and the surrounding area – microcement bathrooms, apartment refresh, design walls and handyman mounting. Especially active in districts such as Innere Stadt, Hietzing, Währing, and Döbling; short-notice appointments are possible city-wide.",
       },
     ],
   },
@@ -683,7 +694,7 @@ const en: LocaleDictionary = {
       {
         title: "Everything from One Source",
         description:
-          "Apartment renovation, microcement, and complementary period windows – one contact, no subcontractors.",
+          "Microcement, refresh, design walls and handyman mounting – one contact with dedicated detail pages.",
       },
     ],
   },
@@ -694,6 +705,7 @@ const en: LocaleDictionary = {
     privacyTeaser: "How we process your personal data (GDPR).",
     serviceLinksTitle: "Specialist services",
     microcementBathroomLink: "Microcement bathroom",
+    allrounderMontageLink: "Handyman & mounting",
     designWallsLink: "Design walls & TV wall",
     apartmentRefreshLink: "Apartment refresh",
     contactTitle: "Contact",
@@ -792,6 +804,7 @@ const en: LocaleDictionary = {
   designWallsPage: designWallsPageEn,
   apartmentRefreshPage: apartmentRefreshPageEn,
   microcementBathroomPage: microcementBathroomPageEn,
+  allrounderPage: allrounderPageEn,
 };
 
 const dictionaries: Record<Locale, LocaleDictionary> = { de, en };

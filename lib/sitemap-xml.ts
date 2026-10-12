@@ -29,6 +29,7 @@ const STATIC_SITEMAP_GROUPS: SitemapPageGroup[] = [
   },
 ];
 
+/** Specialist landings – order matches SERVICE_LANDING_KEYS in service-routes.ts */
 const SERVICE_LANDING_SITEMAP_GROUPS: SitemapPageGroup[] =
   SERVICE_LANDING_KEYS.map((key) => ({
     slugs: {

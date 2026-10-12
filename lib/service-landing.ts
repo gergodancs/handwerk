@@ -17,6 +17,8 @@ export function getServiceLandingPageDict(
       return dict.apartmentRefreshPage;
     case "microcementBathroom":
       return dict.microcementBathroomPage;
+    case "allrounderMontage":
+      return dict.allrounderPage;
   }
 }
 
@@ -30,7 +32,13 @@ export function getServiceLandingFaqItems(
   if (key === "designWalls") {
     return dict.designWallsPage.faq;
   }
-  return dict.apartmentRefreshPage.faq;
+  if (key === "apartmentRefresh") {
+    return dict.apartmentRefreshPage.faq;
+  }
+  if (key === "allrounderMontage") {
+    return dict.allrounderPage.faq;
+  }
+  return [];
 }
 
 export function resolveServiceLandingUrl(

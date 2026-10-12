@@ -80,6 +80,16 @@ export type MicrocementBathroomPageDict = Omit<
   processSteps: Array<{ title: string; description: string }>;
 };
 
+export type AllrounderPageDict = ServiceLandingPageDict & {
+  servicesTitle: string;
+  categories: Array<{
+    title: string;
+    items: string[];
+  }>;
+  benefitsTitle: string;
+  benefits: Array<{ title: string; description: string }>;
+};
+
 export type ApartmentRefreshPageDict = ServiceLandingPageDict & {
   positioningTitle: string;
   positioningText: string;

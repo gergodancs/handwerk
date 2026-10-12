@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Dictionary } from "@/lib/dictionaries";
 import type { Locale } from "@/lib/i18n";
 import {
+  getAllrounderMontagePath,
   getApartmentRefreshPath,
   getDesignWallsPath,
   getMicrocementBathroomPath,
@@ -56,6 +57,14 @@ export function Footer({ lang, dict }: FooterProps) {
                   className="text-sm text-slate-300 transition-colors hover:text-white"
                 >
                   {dict.footer.microcementBathroomLink}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={getAllrounderMontagePath(lang)}
+                  className="text-sm text-slate-300 transition-colors hover:text-white"
+                >
+                  {dict.footer.allrounderMontageLink}
                 </Link>
               </li>
               <li>

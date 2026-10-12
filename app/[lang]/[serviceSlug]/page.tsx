@@ -1,5 +1,6 @@
 import { notFound, redirect } from "next/navigation";
 import type { Metadata } from "next";
+import { AllrounderPageContent } from "@/components/AllrounderPageContent";
 import { ApartmentRefreshPageContent } from "@/components/ApartmentRefreshPageContent";
 import { DesignWallsPageContent } from "@/components/DesignWallsPageContent";
 import { MicrocementBathroomPageContent } from "@/components/MicrocementBathroomPageContent";
@@ -65,6 +66,8 @@ function ServiceLandingContent({
       return <ApartmentRefreshPageContent lang={lang} dict={dict} />;
     case "microcementBathroom":
       return <MicrocementBathroomPageContent lang={lang} dict={dict} />;
+    case "allrounderMontage":
+      return <AllrounderPageContent lang={lang} dict={dict} />;
   }
 }
 

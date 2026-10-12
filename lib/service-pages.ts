@@ -1,4 +1,5 @@
 import type {
+  AllrounderPageDict,
   ApartmentRefreshPageDict,
   DesignWallsPageDict,
   MicrocementBathroomPageDict,
@@ -7,7 +8,7 @@ import type {
 export const designWallsPageDe: DesignWallsPageDict = {
   metaTitle: "Designwände & Edelputz Wien | TV-Wand & Akzentwände",
   metaDescription:
-    "Designwände in Wien: Betonoptik, Marmorino, Venetian Plaster & Limewash. TV-Wand ohne Spiegelung, Musterplatten vor Ort – Fixpreis nach Besichtigung.",
+    "Designwände in Wien und Umgebung: Betonoptik, Marmorino, Venetian Plaster & Limewash. TV-Wand ohne Spiegelung, Musterplatten vor Ort – Fixpreis nach Besichtigung.",
   metaKeywords: [
     "Designwände Wien",
     "TV-Wand Wien",
@@ -23,7 +24,7 @@ export const designWallsPageDe: DesignWallsPageDict = {
   breadcrumbHome: "Startseite",
   breadcrumbCurrent: "Designwände",
   hero: {
-    title: "Exklusive Designwände & Edelputz in Wien",
+    title: "Exklusive Designwände & Edelputz",
     subtitle:
       "Akzentwände, TV-Hintergründe und handgefertigte Unikate – mit spürbarer Haptik, feinen Strukturen und eleganten Lichtreflexen.",
   },
@@ -175,7 +176,7 @@ export const designWallsPageDe: DesignWallsPageDict = {
 export const designWallsPageEn: DesignWallsPageDict = {
   metaTitle: "Design Walls & Premium Plaster Vienna | TV Feature Walls",
   metaDescription:
-    "Design walls in Vienna: concrete look, marmorino, Venetian plaster & limewash. TV walls without glare, sample boards on site – fixed price after viewing.",
+    "Design walls in Vienna and surroundings: concrete look, marmorino, Venetian plaster & limewash. TV walls without glare, sample boards on site – fixed price after viewing.",
   metaKeywords: [
     "design walls Vienna",
     "TV feature wall Vienna",
@@ -191,7 +192,7 @@ export const designWallsPageEn: DesignWallsPageDict = {
   breadcrumbHome: "Home",
   breadcrumbCurrent: "Design walls",
   hero: {
-    title: "Exclusive Design Walls & Premium Plaster in Vienna",
+    title: "Exclusive design walls & premium plaster",
     subtitle:
       "Feature walls, TV backgrounds and handcrafted one-offs – tactile surfaces, fine structure and elegant light reflections.",
   },
@@ -852,6 +853,228 @@ export const microcementBathroomPageEn: MicrocementBathroomPageDict = {
   cta: {
     title: "Request a microcement bathroom",
     text: "Send photos of your bathroom – I will reply with an honest assessment and a fair quote.",
+    whatsapp: "WhatsApp inquiry",
+    email: "Send e-mail",
+  },
+};
+
+export const allrounderPageDe: AllrounderPageDict = {
+  metaTitle:
+    "Allrounder Handwerk & Montage Wien | Reparaturen & Haushalts-Service",
+  metaDescription:
+    "Allrounder in Wien und Umgebung: Montage, Lampen, TV-Halterung, Möbel, Sanitär, Silikonfugen & Kleinreparaturen – schnell, sauber, fair abgerechnet.",
+  metaKeywords: [
+    "Allrounder Wien",
+    "Handwerker Montage Wien",
+    "Lampen montieren Wien",
+    "TV Wandhalterung montieren Wien",
+    "Möbelmontage Wien",
+    "Karniese montieren Wien",
+    "Silikonfugen erneuern Wien",
+    "Armaturenwechsel Wien",
+    "Kleinreparaturen Wohnung Wien",
+    "Haushalts Handwerker Wien",
+  ],
+  breadcrumbHome: "Startseite",
+  breadcrumbCurrent: "Allrounder & Montage",
+  hero: {
+    title: "Allrounder Handwerk & Montageservice",
+    subtitle:
+      "Kleine und große Handwerksarbeiten, professionelle Montage und Reparaturen im Haushalt – schnell, sauber und zuverlässig aus einer Hand, in Wien und Umgebung.",
+    tagline: "Montage · Reparatur · Sauberkeit",
+  },
+  servicesTitle: "Leistungen im Überblick",
+  categories: [
+    {
+      title: "Montage & Befestigung",
+      items: [
+        "Vorhangstangen & Karniese: fachgerechte Montage von Schienen und Stangen",
+        "Bilder & Spiegel: sichere Befestigung von Galerien, schweren Bildern und Großspiegeln",
+        "TV-Wandhalterungen: stabile Montage an Beton-, Ziegel- oder Rigipswänden inkl. sauberer Kabelführung",
+        "Möbelmontage: Zusammenbau und Aufstellen (IKEA, XXXLutz, Mömax u. a.) sowie Schrankmontagen",
+      ],
+    },
+    {
+      title: "Sanitär & Reparaturen im Bad",
+      items: [
+        "Armaturenwechsel: Tausch von Wasserhähnen, Mischbatterien und Brausegarnituren",
+        "Sanitär-Tausch: Austausch von Waschbecken, WCs und Spülkästen (nach Absprache)",
+        "Silikonfugen: Entfernung alter Fugen und professionelles Ziehen neuer, wasserdichter Sanitärfugen",
+      ],
+    },
+    {
+      title: "Elektro & Kleinreparaturen",
+      items: [
+        "Lampenmontage: Anbringen und Anschließen von Decken-, Wand- und LED-Leuchten (nach österreichischem Regelwerk)",
+        "Kleine Ausbesserungen: Dübellöcher, Risse und kleine Transportschäden an Wänden",
+        "Haushalts-Hilfe: allgemeine Handwerks- und Reparaturarbeiten rund um Wohnung und Haus",
+      ],
+    },
+  ],
+  benefitsTitle: "Warum Wien Handwerk Profis?",
+  benefits: [
+    {
+      title: "Alles aus einer Hand",
+      description:
+        "Für viele kleinere Jobs brauchen Sie keinen separaten Installateur, Elektriker und Monteur – ein Ansprechpartner, klare Absprache.",
+    },
+    {
+      title: "Profi-Werkzeug",
+      description:
+        "Bohrhammer, Laser, Absaugung und Qualitäts-Dübel (z. B. Fischer) – auch an Beton, Ziegel und Rigips.",
+    },
+    {
+      title: "Transparente Preise",
+      description:
+        "Fairer Stundensatz oder Fixpreis bei klar umrissenen Paketen – vor Beginn schriftlich, ohne versteckte Kosten.",
+    },
+    {
+      title: "Sauberkeit",
+      description:
+        "Geschützte Böden, ordentliche Baustelle und saubere Übergabe nach jedem Einsatz.",
+    },
+  ],
+  faqTitle: "Häufige Fragen zu Allrounder & Montage",
+  faq: [
+    {
+      question: "Wie wird abgerechnet (Stundensatz oder Pauschalpreis)?",
+      answer:
+        "Für kleinere Arbeiten verrechne ich einen fairen Stundensatz. Bei klar definierten Projekten – z. B. Tausch mehrerer Armaturen oder Montage mehrerer Möbelstücke – erstelle ich gerne vorab ein Fixpreis-Angebot.",
+    },
+    {
+      question: "Muss ich Dübel, Schrauben oder Kleinmaterial selbst kaufen?",
+      answer:
+        "Standard-Montagematerial (Qualitäts-Dübel, Schrauben, Dichtungsbänder) habe ich im Fahrzeug. Spezielle Halterungen, Lampen, Armaturen oder Möbel besorgen Sie als Kunde – oder wir klären die Beschaffung vorab.",
+    },
+    {
+      question: "Übernehmen Sie auch Arbeiten an Betonwänden (z. B. im Neubau)?",
+      answer:
+        "Ja. Mit professioneller Bohrhammer-Technik und passenden Dübeln montiere ich auch an Stahlbeton, Ziegel und Rigips – stabil und sauber.",
+    },
+    {
+      question: "Wie schnell bekomme ich einen Termin?",
+      answer:
+        "Bei kleineren Einsätzen finden wir meist innerhalb weniger Tage einen passenden Termin – schreiben Sie mir am besten mit kurzer Beschreibung und Fotos per WhatsApp.",
+    },
+  ],
+  whatsappPrefill:
+    "Hallo, ich brauche Hilfe bei Montage/Reparatur im Haushalt (Allrounder). ",
+  learnMore: "Mehr erfahren",
+  cta: {
+    title: "Hilfe im Haushalt anfragen",
+    text:
+      "Schicken Sie mir kurz Ihre Wünsche – gerne mit Fotos der Aufgaben – per WhatsApp oder E-Mail. Sie erhalten umgehend eine Rückmeldung.",
+    whatsapp: "WhatsApp Anfrage",
+    email: "E-Mail senden",
+  },
+};
+
+export const allrounderPageEn: AllrounderPageDict = {
+  metaTitle:
+    "Handyman Mounting & Repairs Vienna | Home Installation Service",
+  metaDescription:
+    "Handyman in Vienna and surroundings: mounting, lights, TV brackets, furniture, sanitary, silicone joints & small repairs – fast, clean, fairly priced.",
+  metaKeywords: [
+    "handyman Vienna",
+    "mounting service Vienna",
+    "lamp installation Vienna",
+    "TV wall mount Vienna",
+    "furniture assembly Vienna",
+    "curtain rail Vienna",
+    "silicone renewal bathroom Vienna",
+    "tap replacement Vienna",
+    "home repairs Vienna",
+    "allrounder handyman Vienna",
+  ],
+  breadcrumbHome: "Home",
+  breadcrumbCurrent: "Handyman & mounting",
+  hero: {
+    title: "Handyman work & mounting service",
+    subtitle:
+      "Small and larger jobs, professional mounting and household repairs – fast, clean and reliable from one contact, in Vienna and surroundings.",
+    tagline: "Mounting · Repair · Clean handover",
+  },
+  servicesTitle: "Services at a glance",
+  categories: [
+    {
+      title: "Mounting & fixing",
+      items: [
+        "Curtain rails & poles: professional fitting of tracks and rods",
+        "Pictures & mirrors: secure fixing of galleries, heavy frames and large mirrors",
+        "TV wall mounts: solid installation on concrete, brick or plasterboard with tidy cabling",
+        "Furniture assembly: build and place flat-pack and cabinet furniture (IKEA, etc.)",
+      ],
+    },
+    {
+      title: "Sanitary & bathroom repairs",
+      items: [
+        "Tap & mixer replacement in kitchen and bathroom",
+        "Sanitary swap: basins, WCs and cisterns (by agreement)",
+        "Silicone joints: removal of old sealant and new waterproof bathroom silicone",
+      ],
+    },
+    {
+      title: "Electrical & small repairs",
+      items: [
+        "Light fittings: mounting and connection of ceiling, wall and LED lights (per Austrian rules)",
+        "Touch-ups: plug holes, cracks and minor wall damage",
+        "Household help: general handyman work around your flat or home",
+      ],
+    },
+  ],
+  benefitsTitle: "Why Wien Handwerk Profis?",
+  benefits: [
+    {
+      title: "One contact",
+      description:
+        "For many small jobs you do not need separate trades – one person, clear communication.",
+    },
+    {
+      title: "Pro tools",
+      description:
+        "Hammer drill, laser level, dust extraction and quality fixings – concrete, brick and drywall.",
+    },
+    {
+      title: "Transparent pricing",
+      description:
+        "Fair hourly rate or fixed price for defined packages – agreed in writing upfront.",
+    },
+    {
+      title: "Clean work",
+      description:
+        "Protected floors, tidy site and a clean handover after every visit.",
+    },
+  ],
+  faqTitle: "FAQ – handyman & mounting",
+  faq: [
+    {
+      question: "Hourly rate or fixed price?",
+      answer:
+        "Smaller tasks are billed at a fair hourly rate. For clearly defined projects – e.g. several tap swaps or furniture assemblies – I am happy to quote a fixed price in advance.",
+    },
+    {
+      question: "Do I need to buy plugs, screws and consumables?",
+      answer:
+        "Standard fixings and small consumables are on board. Special brackets, lights, fittings or furniture are supplied by you – or we arrange sourcing in advance.",
+    },
+    {
+      question: "Can you drill into concrete walls (e.g. new builds)?",
+      answer:
+        "Yes. With professional hammer-drill gear and the right anchors I mount securely on concrete, brick and plasterboard.",
+    },
+    {
+      question: "How soon can I get an appointment?",
+      answer:
+        "For smaller jobs we usually find a slot within a few days – send a short description and photos via WhatsApp.",
+    },
+  ],
+  whatsappPrefill:
+    "Hello, I need help with mounting/repairs at home (handyman). ",
+  learnMore: "Learn more",
+  cta: {
+    title: "Request household help",
+    text:
+      "Send a short message with your tasks – photos welcome – via WhatsApp or e-mail. I will reply promptly.",
     whatsapp: "WhatsApp inquiry",
     email: "Send e-mail",
   },

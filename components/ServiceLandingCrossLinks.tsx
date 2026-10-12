@@ -1,11 +1,9 @@
 import Link from "next/link";
 import type { Dictionary } from "@/lib/dictionaries";
 import type { Locale } from "@/lib/i18n";
+import { getServiceLandingChipLabel } from "@/lib/site-navigation";
 import {
-  SERVICE_LANDING_NAV_ORDER,
-  getServiceLandingChipLabel,
-} from "@/lib/site-navigation";
-import {
+  SERVICE_LANDING_KEYS,
   resolveServiceLandingPath,
   type ServiceLandingKey,
 } from "@/lib/service-routes";
@@ -31,7 +29,7 @@ export function ServiceLandingCrossLinks({
           {dict.serviceLandingCrossNav.label}
         </p>
         <div className="-mx-1 mt-2 flex gap-2 overflow-x-auto pb-1">
-          {SERVICE_LANDING_NAV_ORDER.map((key) => {
+          {SERVICE_LANDING_KEYS.map((key) => {
             const href = resolveServiceLandingPath(lang, key);
             const isActive = key === activeKey;
             const label = getServiceLandingChipLabel(dict, key);

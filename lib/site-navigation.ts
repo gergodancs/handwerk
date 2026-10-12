@@ -1,17 +1,11 @@
 import type { Dictionary } from "@/lib/dictionaries";
-import type { ServiceLandingKey } from "@/lib/service-routes";
+import { SERVICE_LANDING_KEYS, type ServiceLandingKey } from "@/lib/service-routes";
 
 export const HOME_SECTION_NAV = [
   { key: "gallery" as const, href: "#referenzen" },
   { key: "reviews" as const, href: "#bewertungen" },
   { key: "faq" as const, href: "#faq" },
 ] as const;
-
-export const SERVICE_LANDING_NAV_ORDER: ServiceLandingKey[] = [
-  "microcementBathroom",
-  "apartmentRefresh",
-  "designWalls",
-];
 
 export function getServiceLandingNavItems(dict: Dictionary) {
   const byKey = new Map(
@@ -20,7 +14,7 @@ export function getServiceLandingNavItems(dict: Dictionary) {
       .map((item) => [item.landing!, item]),
   );
 
-  return SERVICE_LANDING_NAV_ORDER.flatMap((key) => {
+  return SERVICE_LANDING_KEYS.flatMap((key) => {
     const item = byKey.get(key);
     return item ? [{ key, title: item.title }] : [];
   });
@@ -37,5 +31,7 @@ export function getServiceLandingChipLabel(
       return dict.footer.apartmentRefreshLink;
     case "designWalls":
       return dict.footer.designWallsLink;
+    case "allrounderMontage":
+      return dict.footer.allrounderMontageLink;
   }
 }

@@ -8,6 +8,7 @@ import {
   getServiceLandingPageDict,
 } from "@/lib/service-landing";
 import {
+  SERVICE_LANDING_KEYS,
   getServiceLandingPath,
   resolveServiceLandingPath,
   type ServiceLandingKey,
@@ -107,6 +108,14 @@ export async function StructuredData({
     };
   }
 
+  const specialistWebPages =
+    page === "home"
+      ? SERVICE_LANDING_KEYS.map((key) => {
+          const path = getServiceLandingPath(key, lang);
+          return { "@id": `${SITE_URL}${path}#webpage` };
+        })
+      : undefined;
+
   const graph: object[] = [
     localBusiness,
     {
@@ -117,6 +126,7 @@ export async function StructuredData({
       description: dict.meta.description,
       inLanguage: ["de-AT", "en"],
       publisher: { "@id": `${SITE_URL}/#business` },
+      ...(specialistWebPages ? { hasPart: specialistWebPages } : {}),
     },
   ];
 
@@ -146,6 +156,31 @@ export async function StructuredData({
         provider: { "@id": `${SITE_URL}/#business` },
         areaServed: getAreaServedSchema(lang),
       });
+    });
+
+    graph.push({
+      "@type": "ItemList",
+      "@id": `${SITE_URL}/${lang}#specialist-services`,
+      name:
+        lang === "de"
+          ? "Spezial-Leistungen mit Detailseiten"
+          : "Specialist services with detail pages",
+      itemListElement: SERVICE_LANDING_KEYS.map((key, index) => {
+        const landingDict = getServiceLandingPageDict(dict, key);
+        const url = `${SITE_URL}${getServiceLandingPath(key, lang)}`;
+
+        return {
+          "@type": "ListItem",
+          position: index + 1,
+          item: {
+            "@type": "WebPage",
+            "@id": `${url}#webpage`,
+            name: landingDict.hero.title,
+            description: landingDict.metaDescription,
+            url,
+          },
+        };
+      }),
     });
 
     graph.push({

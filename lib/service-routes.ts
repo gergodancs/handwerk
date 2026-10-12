@@ -3,13 +3,17 @@ import type { Locale } from "./i18n";
 export type ServiceLandingKey =
   | "designWalls"
   | "apartmentRefresh"
-  | "microcementBathroom";
+  | "microcementBathroom"
+  | "allrounderMontage";
 
-/** All service landing pages – keep in sync with sitemap and static generation. */
+/**
+ * All service landing pages – single source for sitemap, static params, and nav order.
+ */
 export const SERVICE_LANDING_KEYS: readonly ServiceLandingKey[] = [
-  "designWalls",
-  "apartmentRefresh",
   "microcementBathroom",
+  "allrounderMontage",
+  "apartmentRefresh",
+  "designWalls",
 ];
 
 const SERVICE_LANDING_SLUGS: Record<
@@ -27,6 +31,10 @@ const SERVICE_LANDING_SLUGS: Record<
   microcementBathroom: {
     de: "mikrozement-bad",
     en: "microcement-bathroom",
+  },
+  allrounderMontage: {
+    de: "allrounder-montage-reparatur",
+    en: "handyman-mounting-repairs",
   },
 };
 
@@ -66,6 +74,10 @@ export function getApartmentRefreshPath(lang: Locale): string {
 
 export function getMicrocementBathroomPath(lang: Locale): string {
   return getServiceLandingPath("microcementBathroom", lang);
+}
+
+export function getAllrounderMontagePath(lang: Locale): string {
+  return getServiceLandingPath("allrounderMontage", lang);
 }
 
 export function resolveServiceLandingPath(
