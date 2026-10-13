@@ -1,6 +1,10 @@
 import { EMAIL, GOOGLE_BUSINESS_URL, GOOGLE_PLACE_ID, GOOGLE_VIEW_REVIEWS_URL, PHONE_HREF, WEBSITE_URL } from "@/lib/constants";
 import { getPlaceReviews } from "@/lib/google-places";
-import { HERO_BACKGROUND, OWNER_PROFILE_IMAGE } from "@/lib/images";
+import {
+  HERO_BACKGROUND,
+  INSTITUTIONAL_EMBASSY_IMAGE,
+  OWNER_PROFILE_IMAGE,
+} from "@/lib/images";
 import { getDictionary } from "@/lib/dictionaries";
 import type { Locale } from "@/lib/i18n";
 import {
@@ -13,6 +17,7 @@ import {
   resolveServiceLandingPath,
   type ServiceLandingKey,
 } from "@/lib/service-routes";
+import { getKnowsAbout, getSchemaBusinessDescription } from "@/lib/knows-about";
 import { getAreaServedSchema, isSchemaSafeReviews, VIENNA_GEO } from "@/lib/seo";
 import { BUSINESS_NAME, OWNER_NAME, SITE_NAME, SITE_URL } from "@/lib/site";
 
@@ -42,20 +47,26 @@ export async function StructuredData({
     ? HERO_BACKGROUND
     : `${SITE_URL}${HERO_BACKGROUND}`;
 
+  const businessImages = [
+    `${SITE_URL}/${lang}/opengraph-image`,
+    heroImageUrl,
+    `${SITE_URL}${OWNER_PROFILE_IMAGE}`,
+    ...(page === "home"
+      ? [`${SITE_URL}${INSTITUTIONAL_EMBASSY_IMAGE}`]
+      : []),
+  ];
+
   const localBusiness: Record<string, unknown> = {
     "@type": "HomeAndConstructionBusiness",
     "@id": `${SITE_URL}/#business`,
     name: SITE_NAME,
     alternateName: BUSINESS_NAME,
-    description: dict.meta.description,
+    description: getSchemaBusinessDescription(lang),
     url: `${SITE_URL}/${lang}`,
+    knowsAbout: [...getKnowsAbout(lang)],
     telephone: phone,
     email: EMAIL,
-    image: [
-      `${SITE_URL}/${lang}/opengraph-image`,
-      heroImageUrl,
-      `${SITE_URL}${OWNER_PROFILE_IMAGE}`,
-    ],
+    image: businessImages,
     address: {
       "@type": "PostalAddress",
       streetAddress: "Penzinger Str. 29-31/3/12",
@@ -123,7 +134,10 @@ export async function StructuredData({
       "@id": `${SITE_URL}/#website`,
       url: SITE_URL,
       name: SITE_NAME,
-      description: dict.meta.description,
+      description:
+        page === "home"
+          ? getSchemaBusinessDescription(lang)
+          : dict.meta.description,
       inLanguage: ["de-AT", "en"],
       publisher: { "@id": `${SITE_URL}/#business` },
       ...(specialistWebPages ? { hasPart: specialistWebPages } : {}),
@@ -135,7 +149,7 @@ export async function StructuredData({
       "@type": "WebPage",
       "@id": `${SITE_URL}/${lang}#webpage`,
       name: dict.meta.title,
-      description: dict.meta.description,
+      description: getSchemaBusinessDescription(lang),
       url: `${SITE_URL}/${lang}`,
       inLanguage: lang === "de" ? "de-AT" : "en",
       isPartOf: { "@id": `${SITE_URL}/#website` },

@@ -10,6 +10,9 @@ const PROFIL = "/images/profil";
 
 export const OWNER_PROFILE_IMAGE = `${PROFIL}/profil-pic.jpg`;
 
+export const INSTITUTIONAL_EMBASSY_IMAGE =
+  "/images/institutional/indische-botschaft-wien-handwerker.jpg";
+
 export const WOHNUNG_GALLERY_IMAGES = {
   vorherNachher: "wohnung-sanierung-vorher-nachher-wien.jpg",
 } as const;

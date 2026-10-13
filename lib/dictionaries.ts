@@ -57,6 +57,15 @@ export type Dictionary = {
     label: string;
     ariaLabel: string;
   };
+  institutionalCare: {
+    eyebrow: string;
+    title: string;
+    intro: string;
+    highlight: string;
+    imageAlt: string;
+    bullets: string[];
+    ctaLabel: string;
+  };
   hero: {
     title: string;
     subtitle: string;
@@ -180,7 +189,7 @@ const de: LocaleDictionary = {
     title:
       "Handwerker Wien | Mikrozement, Allrounder, Refresh & Designwände",
     description:
-      "Handwerker in Wien und Umgebung: Mikrozement-Bad, Allrounder Montage & Reparatur, Wohnungs-Refresh und Designwände/TV-Wand. Fixpreis, sauber – mit Detailseiten und FAQ zu jeder Leistung.",
+      "Handwerker in Wien und Umgebung: Mikrozement-Bad, Allrounder (TV, Bilder, Lampen), Refresh & Designwände. Instandhaltung Indische Botschaft Wien & 25-Einheiten-Portfolio – Fixpreis, Detailseiten mit FAQ.",
     ogImageAlt:
       "Wien Handwerk Profis – Mikrozement, Allrounder, Refresh und Designwände in Wien",
     keywords: [
@@ -199,6 +208,10 @@ const de: LocaleDictionary = {
       "Silikonfugen erneuern Wien",
       "Malerarbeiten Wien",
       "Fixpreis Handwerker Wien",
+      "TV Wandhalterung montieren Wien",
+      "Bilder aufhängen Wien",
+      "Indische Botschaft Wien Handwerker",
+      "Objektbetreuung Immobilien Wien",
     ],
   },
   header: {
@@ -219,6 +232,23 @@ const de: LocaleDictionary = {
   serviceLandingCrossNav: {
     label: "Weitere Leistungen",
     ariaLabel: "Zu anderen Spezial-Leistungen wechseln",
+  },
+  institutionalCare: {
+    eyebrow: "Gewerbe & institutionelle Betreuung",
+    title: "Verlässliche Instandhaltung – auch für große Objekte",
+    intro:
+      "Neben privaten Aufträgen betreue ich laufend gewerbliche und institutionelle Liegenschaften in Wien: planbare Termine, saubere Ausführung und ein fester Ansprechpartner für alle typischen Handwerks- und Montagearbeiten.",
+    highlight:
+      "Seit Februar 2026 übernehme ich die laufende Instandhaltung der Indischen Botschaft in Wien sowie ein Mietportfolio mit 25 Wohneinheiten – von Kleinreparaturen über Montage bis zu Übergaben.",
+    imageAlt:
+      "Gergely Dancs vor dem Hintergrund der Embassy of India in Wien – Handwerker und Allrounder",
+    bullets: [
+      "TV-Wandhalterungen, Bilder, Spiegel und Lampen – fachgerecht und sauber",
+      "Sanitär-Kleinaufträge, Silikonfugen, Armaturen und Übergabereparaturen",
+      "Möbelmontage, Karniese und Allrounder-Arbeiten aus einer Hand",
+      "Transparente Abrechnung – Stundensatz oder Paket nach Absprache",
+    ],
+    ctaLabel: "Zum Allrounder & Montage-Service",
   },
   hero: {
     title:
@@ -361,6 +391,11 @@ const de: LocaleDictionary = {
         answer:
           "Ich bin im gesamten Wiener Raum und Umgebung im Einsatz – Mikrozement-Bäder, Wohnungs-Refresh, Designwände und Allrounder-Montage. Besonders häufig in Bezirken wie Innere Stadt, Hietzing, Währing und Döbling; kurzfristige Termine sind in ganz Wien möglich.",
       },
+      {
+        question: "Betreuen Sie auch institutionelle Objekte?",
+        answer:
+          "Ja. Seit Februar 2026 übernehme ich die laufende Instandhaltung der Indischen Botschaft in Wien sowie ein Mietportfolio mit 25 Wohneinheiten – neben privaten Aufträgen für Montage, Sanitär-Kleinaufträge und Refresh.",
+      },
     ],
   },
   trust: {
@@ -497,7 +532,7 @@ const en: LocaleDictionary = {
     title:
       "Handyman Vienna | Microcement, Mounting, Refresh & Design Walls",
     description:
-      "Handyman in Vienna and surroundings: microcement bathrooms, mounting & repairs, apartment refresh and design/TV walls. Fixed prices, specialist landing pages with FAQ – get in touch!",
+      "Handyman in Vienna and surroundings: microcement bathrooms, mounting (TV, pictures, lights), refresh & design walls. Maintenance Indian Embassy Vienna & 25-unit portfolio – fixed prices, FAQ on every service page.",
     ogImageAlt:
       "Wien Handwerk Profis – microcement, handyman mounting, refresh and design walls in Vienna",
     keywords: [
@@ -514,6 +549,10 @@ const en: LocaleDictionary = {
       "silicone renewal bathroom Vienna",
       "painting Vienna",
       "fixed price handyman Vienna",
+      "TV wall mount installation Vienna",
+      "picture hanging Vienna",
+      "Indian Embassy Vienna maintenance",
+      "property portfolio maintenance Vienna",
     ],
   },
   header: {
@@ -534,6 +573,23 @@ const en: LocaleDictionary = {
   serviceLandingCrossNav: {
     label: "More services",
     ariaLabel: "Switch to another specialist service page",
+  },
+  institutionalCare: {
+    eyebrow: "Commercial & institutional care",
+    title: "Reliable maintenance – including larger properties",
+    intro:
+      "Alongside private jobs I maintain commercial and institutional buildings in Vienna: reliable scheduling, clean work and one contact for typical handyman and mounting tasks.",
+    highlight:
+      "Since February 2026 I have been responsible for ongoing maintenance at the Indian Embassy in Vienna and a rental portfolio of 25 residential units – from small repairs and mounting to handover work.",
+    imageAlt:
+      "Gergely Dancs in front of the Embassy of India backdrop in Vienna – handyman and all-round craftsman",
+    bullets: [
+      "TV brackets, pictures, mirrors and lights – installed neatly and securely",
+      "Small sanitary jobs, silicone joints, taps and handover touch-ups",
+      "Furniture assembly, curtain rails and all-round handyman work",
+      "Transparent billing – hourly rate or agreed packages",
+    ],
+    ctaLabel: "Handyman & mounting service",
   },
   hero: {
     title:
@@ -675,6 +731,11 @@ const en: LocaleDictionary = {
         question: "Which districts in Vienna do you cover?",
         answer:
           "I work across Vienna and the surrounding area – microcement bathrooms, apartment refresh, design walls and handyman mounting. Especially active in districts such as Innere Stadt, Hietzing, Währing, and Döbling; short-notice appointments are possible city-wide.",
+      },
+      {
+        question: "Do you maintain institutional properties?",
+        answer:
+          "Yes. Since February 2026 I have been responsible for ongoing maintenance at the Indian Embassy in Vienna and a rental portfolio of 25 units – alongside private jobs for mounting, small sanitary work and refresh.",
       },
     ],
   },

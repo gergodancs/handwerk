@@ -12,6 +12,17 @@ export function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
+  // Legacy URLs (e.g. old site or GBP) – no /home route in this app
+  if (pathname === "/home" || pathname === "/home/") {
+    return NextResponse.redirect(new URL(`/${defaultLocale}`, request.url), 308);
+  }
+  if (pathname === "/de/home" || pathname === "/de/home/") {
+    return NextResponse.redirect(new URL("/de", request.url), 308);
+  }
+  if (pathname === "/en/home" || pathname === "/en/home/") {
+    return NextResponse.redirect(new URL("/en", request.url), 308);
+  }
+
   const pathnameLocale = pathname.split("/")[1];
 
   if (pathname === "/") {

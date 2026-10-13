@@ -7,6 +7,7 @@ import { Hero } from "@/components/Hero";
 import { Services } from "@/components/Services";
 import { Gallery } from "@/components/Gallery";
 import { FAQ } from "@/components/FAQ";
+import { InstitutionalCare } from "@/components/InstitutionalCare";
 import { TrustFactors } from "@/components/TrustFactors";
 import { Footer } from "@/components/Footer";
 import { FloatingCTA } from "@/components/FloatingCTA";
@@ -51,6 +52,7 @@ export default async function HomePage({ params }: PageProps) {
         <Hero dict={dict} />
         <About dict={dict} />
         <Services lang={lang} dict={dict} />
+        <InstitutionalCare lang={lang} dict={dict} />
         <Reviews dict={dict} lang={lang} />
         <Gallery dict={dict} />
         <TrustFactors dict={dict} />
