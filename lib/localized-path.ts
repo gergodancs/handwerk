@@ -1,63 +1,73 @@
-import { getBioRefreshPath, getBioRefreshSubSlug } from "./bio-refresh-routes";
-import type { Locale } from "./i18n";
+import { getBioRefreshSubSlug } from "./bio-refresh-routes";
+import { isValidLocale, type Locale } from "./i18n";
 import {
   findLandingKeyBySlug,
-  getServiceLandingPath,
+  getServiceLandingSlug,
 } from "./service-routes";
 
 const STATIC_LOCALIZED_SEGMENTS = new Set(["impressum", "datenschutz"]);
 
-/**
- * Maps the current pathname to the equivalent route in another locale
- * (localized service slugs and nested bio-refresh sub-pages).
- */
-export function resolveLocalizedPath(
-  pathname: string,
-  fromLang: Locale,
-  toLang: Locale,
-): string {
-  if (fromLang === toLang) {
-    return pathname;
+function splitPathname(pathname: string): { rest: string[] } {
+  const clean =
+    pathname.split("?")[0].split("#")[0].replace(/\/+$/, "") || "/";
+  const parts = clean.split("/").filter(Boolean);
+
+  if (parts.length > 0 && isValidLocale(parts[0])) {
+    return { rest: parts.slice(1) };
   }
 
-  const prefix = `/${fromLang}`;
+  return { rest: parts };
+}
 
-  if (pathname === prefix) {
-    return `/${toLang}`;
+function translateRestSegments(rest: string[], toLang: Locale): string[] {
+  if (rest.length === 0) {
+    return [];
   }
 
-  if (!pathname.startsWith(`${prefix}/`)) {
-    return `/${toLang}`;
+  if (rest.length === 1) {
+    const [segment] = rest;
+    if (STATIC_LOCALIZED_SEGMENTS.has(segment)) {
+      return [segment];
+    }
+    const landingKey = findLandingKeyBySlug(segment);
+    if (landingKey) {
+      return [getServiceLandingSlug(landingKey, toLang)];
+    }
+    return rest;
   }
 
-  const segments = pathname.slice(prefix.length + 1).split("/").filter(Boolean);
-
-  if (segments.length === 0) {
-    return `/${toLang}`;
-  }
-
-  if (segments.length === 1 && STATIC_LOCALIZED_SEGMENTS.has(segments[0])) {
-    return `/${toLang}/${segments[0]}`;
-  }
-
-  if (segments.length === 2) {
-    const [serviceSlug, subSlug] = segments;
+  if (rest.length === 2) {
+    const [serviceSlug, subSlug] = rest;
     const landingKey = findLandingKeyBySlug(serviceSlug);
     const isBioSubSlug =
       subSlug === getBioRefreshSubSlug("de") ||
       subSlug === getBioRefreshSubSlug("en");
 
     if (landingKey === "apartmentRefresh" && isBioSubSlug) {
-      return getBioRefreshPath(toLang);
+      return [
+        getServiceLandingSlug("apartmentRefresh", toLang),
+        getBioRefreshSubSlug(toLang),
+      ];
     }
   }
 
-  if (segments.length === 1) {
-    const landingKey = findLandingKeyBySlug(segments[0]);
-    if (landingKey) {
-      return getServiceLandingPath(landingKey, toLang);
-    }
-  }
+  return rest;
+}
 
-  return pathname.replace(`/${fromLang}`, `/${toLang}`);
+function buildLocalizedPath(toLang: Locale, rest: string[]): string {
+  const translated = translateRestSegments(rest, toLang);
+  if (translated.length === 0) {
+    return `/${toLang}`;
+  }
+  return `/${toLang}/${translated.join("/")}`;
+}
+
+/**
+ * Maps the current pathname to the equivalent route in `toLang`.
+ * Infers the page from path segments (DE or EN slugs) — does not rely on a
+ * separate locale prop, so slug translation still works when they disagree.
+ */
+export function resolveLocalizedPath(pathname: string, toLang: Locale): string {
+  const { rest } = splitPathname(pathname);
+  return buildLocalizedPath(toLang, rest);
 }

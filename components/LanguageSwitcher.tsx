@@ -19,7 +19,7 @@ export function LanguageSwitcher({ lang }: { lang: Locale }) {
             </span>
           )}
           <Link
-            href={resolveLocalizedPath(pathname, lang, locale)}
+            href={resolveLocalizedPath(pathname ?? "/", locale)}
             className={`px-1.5 py-0.5 text-sm font-medium transition-colors ${
               lang === locale
                 ? "text-emerald-400"
