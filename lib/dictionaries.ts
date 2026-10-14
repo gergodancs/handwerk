@@ -1,6 +1,10 @@
 import type { Locale } from "./i18n";
 import type { ServiceLandingKey } from "./service-routes";
 import {
+  bioRefreshPageDe,
+  bioRefreshPageEn,
+} from "./bio-refresh-pages";
+import {
   apartmentRefreshPageDe,
   apartmentRefreshPageEn,
   designWallsPageDe,
@@ -13,6 +17,7 @@ import {
 import type {
   AllrounderPageDict,
   ApartmentRefreshPageDict,
+  BioRefreshPageDict,
   DesignWallsPageDict,
   MicrocementBathroomPageDict,
 } from "./service-page-types";
@@ -180,6 +185,7 @@ export type Dictionary = {
   };
   designWallsPage: DesignWallsPageDict;
   apartmentRefreshPage: ApartmentRefreshPageDict;
+  bioRefreshPage: BioRefreshPageDict;
   microcementBathroomPage: MicrocementBathroomPageDict;
   allrounderPage: AllrounderPageDict;
 };
@@ -523,6 +529,7 @@ const de: LocaleDictionary = {
   },
   designWallsPage: designWallsPageDe,
   apartmentRefreshPage: apartmentRefreshPageDe,
+  bioRefreshPage: bioRefreshPageDe,
   microcementBathroomPage: microcementBathroomPageDe,
   allrounderPage: allrounderPageDe,
 };
@@ -864,6 +871,7 @@ const en: LocaleDictionary = {
   },
   designWallsPage: designWallsPageEn,
   apartmentRefreshPage: apartmentRefreshPageEn,
+  bioRefreshPage: bioRefreshPageEn,
   microcementBathroomPage: microcementBathroomPageEn,
   allrounderPage: allrounderPageEn,
 };

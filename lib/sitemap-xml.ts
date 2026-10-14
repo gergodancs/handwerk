@@ -1,4 +1,5 @@
 import { locales, type Locale } from "@/lib/i18n";
+import { getBioRefreshSubSlug } from "@/lib/bio-refresh-routes";
 import {
   SERVICE_LANDING_KEYS,
   getServiceLandingSlug,
@@ -40,9 +41,19 @@ const SERVICE_LANDING_SITEMAP_GROUPS: SitemapPageGroup[] =
     priority: "0.9",
   }));
 
+const BIO_REFRESH_SITEMAP_GROUP: SitemapPageGroup = {
+  slugs: {
+    de: `/${getServiceLandingSlug("apartmentRefresh", "de")}/${getBioRefreshSubSlug("de")}`,
+    en: `/${getServiceLandingSlug("apartmentRefresh", "en")}/${getBioRefreshSubSlug("en")}`,
+  },
+  changeFrequency: "monthly",
+  priority: "0.85",
+};
+
 const SITEMAP_GROUPS: SitemapPageGroup[] = [
   ...STATIC_SITEMAP_GROUPS,
   ...SERVICE_LANDING_SITEMAP_GROUPS,
+  BIO_REFRESH_SITEMAP_GROUP,
 ];
 
 function escapeXml(value: string): string {

@@ -11,6 +11,7 @@ import {
   getServiceLandingFaqItems,
   getServiceLandingPageDict,
 } from "@/lib/service-landing";
+import { getBioRefreshPath } from "@/lib/bio-refresh-routes";
 import {
   SERVICE_LANDING_KEYS,
   getServiceLandingPath,
@@ -25,12 +26,14 @@ type StructuredDataProps = {
   lang: Locale;
   page?: "home" | "impressum" | "privacy";
   serviceLanding?: ServiceLandingKey;
+  bioRefresh?: boolean;
 };
 
 export async function StructuredData({
   lang,
   page = "home",
   serviceLanding,
+  bioRefresh = false,
 }: StructuredDataProps) {
   const dict = getDictionary(lang);
   const phone = PHONE_HREF.replace("tel:", "");
@@ -286,7 +289,68 @@ export async function StructuredData({
     });
   }
 
-  if (serviceLanding) {
+  if (bioRefresh) {
+    const bioDict = dict.bioRefreshPage;
+    const pagePath = getBioRefreshPath(lang);
+    const pageUrl = `${SITE_URL}${pagePath}`;
+    const parentPath = getServiceLandingPath("apartmentRefresh", lang);
+    const parentUrl = `${SITE_URL}${parentPath}`;
+    const serviceId = `${pageUrl}#service`;
+
+    graph.push({
+      "@type": "Service",
+      "@id": serviceId,
+      name: bioDict.hero.title,
+      description: bioDict.metaDescription,
+      provider: { "@id": `${SITE_URL}/#business` },
+      areaServed: getAreaServedSchema(lang),
+      url: pageUrl,
+    });
+    graph.push({
+      "@type": "WebPage",
+      "@id": `${pageUrl}#webpage`,
+      name: bioDict.metaTitle,
+      description: bioDict.metaDescription,
+      url: pageUrl,
+      isPartOf: { "@id": `${SITE_URL}/#website` },
+      about: { "@id": serviceId },
+    });
+    graph.push({
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: bioDict.breadcrumbHome,
+          item: `${SITE_URL}/${lang}`,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: bioDict.breadcrumbParent,
+          item: parentUrl,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: bioDict.breadcrumbCurrent,
+          item: pageUrl,
+        },
+      ],
+    });
+    graph.push({
+      "@type": "FAQPage",
+      "@id": `${pageUrl}#faq`,
+      mainEntity: bioDict.faq.map((item) => ({
+        "@type": "Question" as const,
+        name: item.question,
+        acceptedAnswer: {
+          "@type": "Answer" as const,
+          text: item.answer,
+        },
+      })),
+    });
+  } else if (serviceLanding) {
     const landingDict = getServiceLandingPageDict(dict, serviceLanding);
     const pagePath = getServiceLandingPath(serviceLanding, lang);
     const pageUrl = `${SITE_URL}${pagePath}`;

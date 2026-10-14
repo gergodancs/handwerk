@@ -114,4 +114,37 @@ export type ApartmentRefreshPageDict = ServiceLandingPageDict & {
   upsellText: string;
   upsellLinkLabel: string;
   refreshIcons: Array<{ label: string; description: string }>;
+  bioPaintingMoreLinkLabel: string;
+  ecoUpgradeTitle: string;
+  ecoUpgradeIntro: string;
+  ecoUpgradeBullets: string[];
+};
+
+export type BioRefreshPageDict = ServiceLandingPageDict & {
+  breadcrumbParent: string;
+  heroBadge: string;
+  heroSecondaryCta: string;
+  comparisonTitle: string;
+  comparisonProblemTitle: string;
+  comparisonProblemText: string;
+  comparisonSolutionTitle: string;
+  comparisonSolutionText: string;
+  benefitsTitle: string;
+  benefits: Array<{ title: string; description: string }>;
+  scopeSectionId: string;
+  scopeTitle: string;
+  scopeIdealForLabel: string;
+  scopeStepsLabel: string;
+  scopeAdvantageLabel: string;
+  scopeOptions: Array<{
+    name: string;
+    idealFor: string;
+    steps: string[];
+    advantage: string;
+  }>;
+  dustFreeTitle: string;
+  dustFreeText: string;
+  designWallsUpsellTitle: string;
+  designWallsUpsellText: string;
+  designWallsUpsellLinkLabel: string;
 };

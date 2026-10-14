@@ -1,4 +1,5 @@
 import { EMAIL, PHONE_DISPLAY, WEBSITE_URL } from "@/lib/constants";
+import { getBioRefreshPath } from "@/lib/bio-refresh-routes";
 import {
   SERVICE_LANDING_KEYS,
   getServiceLandingPath,
@@ -54,6 +55,11 @@ export function buildLlmsTxt(): string {
     const url = `${SITE_URL}${getServiceLandingPath(key, "de")}`;
     lines.push(`- [${title}](${url}): ${blurb}`);
   }
+
+  lines.push(
+    `- [Bio- & Klima-Ausmalen](${SITE_URL}${getBioRefreshPath("de")}): Silikat- und Kalkfarben, lösemittelarm – Unterseite zum Wohnungs-Refresh.`,
+    "",
+  );
 
   lines.push(
     "",

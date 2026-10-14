@@ -454,11 +454,20 @@ export const apartmentRefreshPageDe: ApartmentRefreshPageDict = {
   upsellText:
     "Kombinieren Sie Ihren Refresh mit einer Designwand oder TV-Akzentfläche im Wohnzimmer.",
   upsellLinkLabel: "Zu Designwänden & Edelputz →",
+  bioPaintingMoreLinkLabel: "Mehr zum Bio-Refresh & Klimafarben erfahren →",
+  ecoUpgradeTitle: "Öko- & Klima-Upgrade Option",
+  ecoUpgradeIntro:
+    "Für alle Pakete (Basis, Komfort, Komplett) buchbar – schadstoffarm und atmungsaktiv:",
+  ecoUpgradeBullets: [
+    "Staubreduziertes Schleifen mit professioneller Absaugung",
+    "Mineralischer Quarzsand-Haftgrund",
+    "Lösemittelarme, dampfdiffusionsoffene Silikat- oder Kalkfinishs",
+  ],
   refreshIcons: [
     {
-      label: "Ausmalen",
+      label: "Wohngesundes Ausmalen & Bio-Option",
       description:
-        "Frischer Anstrich mit hochwertigen, geruchsarmen Qualitätsfarben.",
+        "Schadstoff- & lösemittelarme Anstriche mit Silikat- und Kalkfarben für ein optimales Raumklima.",
     },
     {
       label: "Schalter & Steckdosen",
@@ -629,11 +638,20 @@ export const apartmentRefreshPageEn: ApartmentRefreshPageDict = {
   upsellText:
     "Combine your refresh with a design or TV feature wall in the living room.",
   upsellLinkLabel: "Design walls & premium plaster →",
+  bioPaintingMoreLinkLabel: "Learn more about eco refresh & climate paints →",
+  ecoUpgradeTitle: "Eco & climate upgrade option",
+  ecoUpgradeIntro:
+    "Available for all packages (Basic, Comfort, Complete) – low-emission and breathable:",
+  ecoUpgradeBullets: [
+    "Dust-reduced sanding with professional extraction",
+    "Mineral quartz-sand bonding primer",
+    "Low-VOC breathable silicate or lime topcoats",
+  ],
   refreshIcons: [
     {
-      label: "Painting",
+      label: "Healthy & eco painting option",
       description:
-        "Fresh coats with high-quality, low-odour trade paints.",
+        "Low-emission coats with silicate and lime paints for a more comfortable indoor climate.",
     },
     {
       label: "Switches & sockets",

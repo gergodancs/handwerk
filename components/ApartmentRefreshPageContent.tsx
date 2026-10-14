@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Dictionary } from "@/lib/dictionaries";
 import type { Locale } from "@/lib/i18n";
+import { getBioRefreshPath } from "@/lib/bio-refresh-routes";
 import { getDesignWallsPath } from "@/lib/service-routes";
 import { ApartmentRefreshServiceIcon } from "./ApartmentRefreshServiceIcons";
 import { ServiceLandingCta } from "./ServiceLandingCta";
@@ -91,6 +92,14 @@ export function ApartmentRefreshPageContent({
                 <p className="mt-2 text-sm leading-relaxed text-slate-600">
                   {feature.description}
                 </p>
+                {index === 0 && (
+                  <Link
+                    href={getBioRefreshPath(lang)}
+                    className="mt-4 inline-flex text-sm font-semibold text-emerald-700 hover:text-emerald-600"
+                  >
+                    {page.bioPaintingMoreLinkLabel}
+                  </Link>
+                )}
               </article>
             ))}
           </div>
@@ -140,6 +149,26 @@ export function ApartmentRefreshPageContent({
               </li>
             ))}
           </ol>
+        </section>
+
+        <section className="mt-16 rounded-2xl border border-emerald-200 bg-emerald-50/70 p-6 sm:p-8">
+          <h2 className="text-xl font-bold text-emerald-900">
+            {page.ecoUpgradeTitle}
+          </h2>
+          <p className="mt-2 text-sm leading-relaxed text-slate-700">
+            {page.ecoUpgradeIntro}
+          </p>
+          <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-slate-700">
+            {page.ecoUpgradeBullets.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+          <Link
+            href={getBioRefreshPath(lang)}
+            className="mt-4 inline-flex text-sm font-semibold text-emerald-800 hover:text-emerald-700"
+          >
+            {page.bioPaintingMoreLinkLabel}
+          </Link>
         </section>
 
         <section className="mt-16">

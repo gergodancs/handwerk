@@ -3,6 +3,10 @@ import { getDictionary } from "./dictionaries";
 import type { Locale } from "./i18n";
 import { getServiceLandingPageDict } from "./service-landing";
 import {
+  getBioRefreshAlternates,
+  getBioRefreshPath,
+} from "./bio-refresh-routes";
+import {
   getServiceLandingAlternates,
   getServiceLandingPath,
   type ServiceLandingKey,
@@ -141,6 +145,49 @@ export function buildServiceLandingMetadata(
     alternates: {
       canonical: path,
       ...getServiceLandingAlternates(key),
+    },
+    openGraph: {
+      title: page.metaTitle,
+      description: page.metaDescription,
+      url: `${SITE_URL}${path}`,
+      siteName: SITE_NAME,
+      locale: lang === "de" ? "de_AT" : "en_US",
+      alternateLocale: [lang === "de" ? "en_US" : "de_AT"],
+      type: "website",
+      images: [
+        {
+          url: `/${lang}/opengraph-image`,
+          width: 1200,
+          height: 630,
+          alt: SITE_NAME,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: page.metaTitle,
+      description: page.metaDescription,
+      images: [`/${lang}/opengraph-image`],
+    },
+    other: {
+      ...(baseMetadata(lang).other ?? {}),
+    },
+  };
+}
+
+export function buildBioRefreshMetadata(lang: Locale): Metadata {
+  const dict = getDictionary(lang);
+  const page = dict.bioRefreshPage;
+  const path = getBioRefreshPath(lang);
+
+  return {
+    ...baseMetadata(lang),
+    title: page.metaTitle,
+    description: page.metaDescription,
+    keywords: page.metaKeywords,
+    alternates: {
+      canonical: path,
+      ...getBioRefreshAlternates(),
     },
     openGraph: {
       title: page.metaTitle,
