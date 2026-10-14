@@ -4,14 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { Locale } from "@/lib/i18n";
 import { locales } from "@/lib/i18n";
-
-function getLocaleHref(pathname: string, currentLang: Locale, targetLang: Locale) {
-  if (pathname === `/${currentLang}` || pathname.startsWith(`/${currentLang}/`)) {
-    return pathname.replace(`/${currentLang}`, `/${targetLang}`);
-  }
-
-  return `/${targetLang}`;
-}
+import { resolveLocalizedPath } from "@/lib/localized-path";
 
 export function LanguageSwitcher({ lang }: { lang: Locale }) {
   const pathname = usePathname();
@@ -26,7 +19,7 @@ export function LanguageSwitcher({ lang }: { lang: Locale }) {
             </span>
           )}
           <Link
-            href={getLocaleHref(pathname, lang, locale)}
+            href={resolveLocalizedPath(pathname, lang, locale)}
             className={`px-1.5 py-0.5 text-sm font-medium transition-colors ${
               lang === locale
                 ? "text-emerald-400"
