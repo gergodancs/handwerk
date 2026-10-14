@@ -4,6 +4,7 @@ import type {
   DesignWallsPageDict,
   MicrocementBathroomPageDict,
 } from "./service-page-types";
+import { SITE_URL } from "./site";
 
 export const designWallsPageDe: DesignWallsPageDict = {
   metaTitle: "Designwände & Edelputz Wien | TV-Wand & Akzentwände",
@@ -341,13 +342,16 @@ export const designWallsPageEn: DesignWallsPageDict = {
 };
 
 export const apartmentRefreshPageDe: ApartmentRefreshPageDict = {
-  metaTitle: "Wohnungs-Refresh Wien | Smartes Update ohne Großbaustelle",
+  metaTitle: "Wohnungs-Refresh Wien | Ausmalen & Bio-Option",
   metaDescription:
-    "Wohnungs-Refresh in Wien und Umgebung: Ausmalen, Schalter, Griffe, Lampen & Jalousien in 2–5 Tagen. Orientierungspreise in der FAQ – Fixpreis nach Besichtigung.",
+    "Wohnungs-Refresh in Wien: Ausmalen, Schalter, Lampen & Jalousien in 2–5 Tagen – optional lösemittelarmes Bio- & Silikat-Ausmalen. Orientierungspreise in der FAQ, Fixpreis nach Besichtigung.",
   metaKeywords: [
     "Wohnungs-Refresh Wien",
     "Wohnung auffrischen Wien",
     "Ausmalen Wohnung Wien",
+    "Bio Ausmalen Wien",
+    "Silikatfarbe Wien",
+    "schadstoffarm streichen Wien",
     "Wohnung renovieren ohne Umbau",
     "Vermieter Renovierung Wien",
     "bezugsfertig wohnung Wien",
@@ -512,6 +516,11 @@ export const apartmentRefreshPageDe: ApartmentRefreshPageDict = {
       answer:
         "Ja. Nach Fotos und kurzer Beschreibung nenne ich Ihnen in der Regel einen fairen Pauschalpreis ohne versteckte Kosten.",
     },
+    {
+      question: "Bieten Sie wohngesundes / Bio-Ausmalen an?",
+      answer:
+        `Ja – als Öko- & Klima-Upgrade zu allen Paketen mit Silikat- und Kalkfarben, staubreduziert verarbeitet. Details: ${SITE_URL}/de/wohnungs-refresh/bio-oeko`,
+    },
   ],
   whatsappPrefill:
     "Hallo, ich interessiere mich für einen Wohnungs-Refresh in Wien. ",
@@ -525,13 +534,16 @@ export const apartmentRefreshPageDe: ApartmentRefreshPageDict = {
 };
 
 export const apartmentRefreshPageEn: ApartmentRefreshPageDict = {
-  metaTitle: "Apartment Refresh Vienna | Smart Update Without Major Works",
+  metaTitle: "Apartment Refresh Vienna | Painting & Eco Option",
   metaDescription:
-    "Apartment refresh in Vienna and surroundings: painting, switches, handles, lights & blinds in 2–5 days. Guide prices in the FAQ – fixed quote after viewing.",
+    "Apartment refresh in Vienna: painting, switches, lights & blinds in 2–5 days – optional low-VOC eco silicate and lime painting. Guide prices in the FAQ, fixed quote after viewing.",
   metaKeywords: [
     "apartment refresh Vienna",
     "refresh apartment Vienna",
     "painting apartment Vienna",
+    "eco painting Vienna",
+    "silicate paint Vienna",
+    "low VOC painting Vienna",
     "renovation without major works Vienna",
     "landlord renovation Vienna",
     "move-in ready apartment Vienna",
@@ -695,6 +707,11 @@ export const apartmentRefreshPageEn: ApartmentRefreshPageDict = {
       question: "Is there a fixed price?",
       answer:
         "Yes. After photos and a short description I usually provide a fair lump sum with no hidden costs.",
+    },
+    {
+      question: "Do you offer healthy / eco interior painting?",
+      answer:
+        `Yes – as an eco & climate upgrade for all packages with silicate and lime paints, applied dust-reduced. Details: ${SITE_URL}/en/apartment-refresh/eco-healthy-painting`,
     },
   ],
   whatsappPrefill:

@@ -195,7 +195,7 @@ const de: LocaleDictionary = {
     title:
       "Handwerker Wien | Mikrozement, Allrounder, Refresh & Designwände",
     description:
-      "Handwerker in Wien und Umgebung: Mikrozement-Bad, Allrounder (TV, Bilder, Lampen), Refresh & Designwände. Instandhaltung Indische Botschaft Wien & 25-Einheiten-Portfolio – Fixpreis, Detailseiten mit FAQ.",
+      "Handwerker in Wien und Umgebung: Mikrozement-Bad, Allrounder, Wohnungs-Refresh inkl. Bio-/Silikat-Ausmalen, Designwände. Instandhaltung Indische Botschaft Wien & 25-Einheiten-Portfolio – Fixpreis, Detailseiten mit FAQ.",
     ogImageAlt:
       "Wien Handwerk Profis – Mikrozement, Allrounder, Refresh und Designwände in Wien",
     keywords: [
@@ -218,6 +218,9 @@ const de: LocaleDictionary = {
       "Bilder aufhängen Wien",
       "Indische Botschaft Wien Handwerker",
       "Objektbetreuung Immobilien Wien",
+      "Bio Ausmalen Wien",
+      "Silikatfarbe Wien",
+      "schadstoffarm streichen Wien",
     ],
   },
   header: {
@@ -402,6 +405,11 @@ const de: LocaleDictionary = {
         answer:
           "Ja. Seit Februar 2026 übernehme ich die laufende Instandhaltung der Indischen Botschaft in Wien sowie ein Mietportfolio mit 25 Wohneinheiten – neben privaten Aufträgen für Montage, Sanitär-Kleinaufträge und Refresh.",
       },
+      {
+        question: "Bieten Sie schadstoffarmes Bio- bzw. Silikat-Ausmalen an?",
+        answer:
+          "Ja – als Öko- & Klima-Upgrade zum Wohnungs-Refresh mit lösemittelarmen Silikat- und Kalkfarben, staubreduziert verarbeitet. Ausführliche Infos, Ablauf und FAQ finden Sie auf der Unterseite „Bio- & Klima-Ausmalen“ (über Wohnungs-Refresh erreichbar).",
+      },
     ],
   },
   trust: {
@@ -539,7 +547,7 @@ const en: LocaleDictionary = {
     title:
       "Handyman Vienna | Microcement, Mounting, Refresh & Design Walls",
     description:
-      "Handyman in Vienna and surroundings: microcement bathrooms, mounting (TV, pictures, lights), refresh & design walls. Maintenance Indian Embassy Vienna & 25-unit portfolio – fixed prices, FAQ on every service page.",
+      "Handyman in Vienna and surroundings: microcement bathrooms, mounting, apartment refresh with eco silicate & lime painting, design walls. Maintenance Indian Embassy Vienna & 25-unit portfolio – fixed prices, FAQ on every service page.",
     ogImageAlt:
       "Wien Handwerk Profis – microcement, handyman mounting, refresh and design walls in Vienna",
     keywords: [
@@ -560,6 +568,9 @@ const en: LocaleDictionary = {
       "picture hanging Vienna",
       "Indian Embassy Vienna maintenance",
       "property portfolio maintenance Vienna",
+      "eco painting Vienna",
+      "silicate paint Vienna",
+      "low VOC painting Vienna",
     ],
   },
   header: {
@@ -743,6 +754,11 @@ const en: LocaleDictionary = {
         question: "Do you maintain institutional properties?",
         answer:
           "Yes. Since February 2026 I have been responsible for ongoing maintenance at the Indian Embassy in Vienna and a rental portfolio of 25 units – alongside private jobs for mounting, small sanitary work and refresh.",
+      },
+      {
+        question: "Do you offer low-VOC eco or silicate painting?",
+        answer:
+          "Yes – as an eco & climate upgrade for apartment refresh with low-emission silicate and lime paints, applied dust-reduced. Full details, process and FAQ are on the “Eco & healthy painting” sub-page (via apartment refresh).",
       },
     ],
   },

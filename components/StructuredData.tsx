@@ -122,12 +122,17 @@ export async function StructuredData({
     };
   }
 
+  const bioRefreshPageUrl = `${SITE_URL}${getBioRefreshPath(lang)}`;
+
   const specialistWebPages =
     page === "home"
-      ? SERVICE_LANDING_KEYS.map((key) => {
-          const path = getServiceLandingPath(key, lang);
-          return { "@id": `${SITE_URL}${path}#webpage` };
-        })
+      ? [
+          ...SERVICE_LANDING_KEYS.map((key) => {
+            const path = getServiceLandingPath(key, lang);
+            return { "@id": `${SITE_URL}${path}#webpage` };
+          }),
+          { "@id": `${bioRefreshPageUrl}#webpage` },
+        ]
       : undefined;
 
   const graph: object[] = [
@@ -182,22 +187,35 @@ export async function StructuredData({
         lang === "de"
           ? "Spezial-Leistungen mit Detailseiten"
           : "Specialist services with detail pages",
-      itemListElement: SERVICE_LANDING_KEYS.map((key, index) => {
-        const landingDict = getServiceLandingPageDict(dict, key);
-        const url = `${SITE_URL}${getServiceLandingPath(key, lang)}`;
+      itemListElement: [
+        ...SERVICE_LANDING_KEYS.map((key, index) => {
+          const landingDict = getServiceLandingPageDict(dict, key);
+          const url = `${SITE_URL}${getServiceLandingPath(key, lang)}`;
 
-        return {
+          return {
+            "@type": "ListItem",
+            position: index + 1,
+            item: {
+              "@type": "WebPage",
+              "@id": `${url}#webpage`,
+              name: landingDict.hero.title,
+              description: landingDict.metaDescription,
+              url,
+            },
+          };
+        }),
+        {
           "@type": "ListItem",
-          position: index + 1,
+          position: SERVICE_LANDING_KEYS.length + 1,
           item: {
             "@type": "WebPage",
-            "@id": `${url}#webpage`,
-            name: landingDict.hero.title,
-            description: landingDict.metaDescription,
-            url,
+            "@id": `${bioRefreshPageUrl}#webpage`,
+            name: dict.bioRefreshPage.hero.title,
+            description: dict.bioRefreshPage.metaDescription,
+            url: bioRefreshPageUrl,
           },
-        };
-      }),
+        },
+      ],
     });
 
     graph.push({

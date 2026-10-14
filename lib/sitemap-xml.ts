@@ -30,30 +30,37 @@ const STATIC_SITEMAP_GROUPS: SitemapPageGroup[] = [
   },
 ];
 
-/** Specialist landings – order matches SERVICE_LANDING_KEYS in service-routes.ts */
-const SERVICE_LANDING_SITEMAP_GROUPS: SitemapPageGroup[] =
-  SERVICE_LANDING_KEYS.map((key) => ({
-    slugs: {
-      de: `/${getServiceLandingSlug(key, "de")}`,
-      en: `/${getServiceLandingSlug(key, "en")}`,
-    },
-    changeFrequency: "weekly",
-    priority: "0.9",
-  }));
-
 const BIO_REFRESH_SITEMAP_GROUP: SitemapPageGroup = {
   slugs: {
     de: `/${getServiceLandingSlug("apartmentRefresh", "de")}/${getBioRefreshSubSlug("de")}`,
     en: `/${getServiceLandingSlug("apartmentRefresh", "en")}/${getBioRefreshSubSlug("en")}`,
   },
-  changeFrequency: "monthly",
-  priority: "0.85",
+  changeFrequency: "weekly",
+  priority: "0.88",
 };
+
+/** Specialist landings – bio sub-page directly after apartment refresh */
+const SERVICE_LANDING_SITEMAP_GROUPS: SitemapPageGroup[] =
+  SERVICE_LANDING_KEYS.flatMap((key) => {
+    const group: SitemapPageGroup = {
+      slugs: {
+        de: `/${getServiceLandingSlug(key, "de")}`,
+        en: `/${getServiceLandingSlug(key, "en")}`,
+      },
+      changeFrequency: "weekly",
+      priority: "0.9",
+    };
+
+    if (key === "apartmentRefresh") {
+      return [group, BIO_REFRESH_SITEMAP_GROUP];
+    }
+
+    return [group];
+  });
 
 const SITEMAP_GROUPS: SitemapPageGroup[] = [
   ...STATIC_SITEMAP_GROUPS,
   ...SERVICE_LANDING_SITEMAP_GROUPS,
-  BIO_REFRESH_SITEMAP_GROUP,
 ];
 
 function escapeXml(value: string): string {

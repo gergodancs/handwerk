@@ -7,6 +7,8 @@ const KNOWS_ABOUT_DE: readonly string[] = [
   "Murexin designcoat",
   "Limewash Technik und Kalkfarben",
   "Bio-Kalkfarben und wohngesunde Anstriche",
+  "Silikatfarbe und schadstoffarmes Ausmalen Wien",
+  "Lösemittelarme Klima-Anstriche Altbau Wien",
   "Marmorino und Stucco Veneziano",
   "Designwände und TV-Akzentwände",
   "Betonoptik Wandgestaltung",
@@ -35,6 +37,8 @@ const KNOWS_ABOUT_EN: readonly string[] = [
   "Murexin designcoat",
   "Limewash and lime paint techniques",
   "Eco lime paints and low-emission coatings",
+  "Silicate paint and low-VOC interior painting Vienna",
+  "Breathable mineral wall finishes Vienna",
   "Marmorino and Stucco Veneziano",
   "Design walls and TV feature walls",
   "Concrete-look wall finishes",
@@ -62,8 +66,8 @@ export function getKnowsAbout(lang: Locale): readonly string[] {
 
 export function getSchemaBusinessDescription(lang: Locale): string {
   if (lang === "de") {
-    return "Handwerker und Allrounder in Wien und Umgebung: Mikrozement, Limewash und Bio-Kalkfarben, Montage (TV-Wandhalterung, Bilder, Lampen, Möbel), Wohnungs-Refresh und Sanitär-Kleinaufträge. Seit Februar 2026 Instandhaltung der Indischen Botschaft in Wien und eines Mietportfolios mit 25 Einheiten.";
+    return "Handwerker und Allrounder in Wien und Umgebung: Mikrozement, Limewash, Bio- und Silikat-Ausmalen, Montage (TV-Wandhalterung, Bilder, Lampen, Möbel), Wohnungs-Refresh und Sanitär-Kleinaufträge. Seit Februar 2026 Instandhaltung der Indischen Botschaft in Wien und eines Mietportfolios mit 25 Einheiten.";
   }
 
-  return "Handyman and all-round craftsman in Vienna and surroundings: microcement, limewash and eco lime paints, mounting (TV brackets, pictures, lights, furniture), apartment refresh and small sanitary jobs. Since February 2026 maintaining the Indian Embassy in Vienna and a rental portfolio of 25 units.";
+  return "Handyman and all-round craftsman in Vienna and surroundings: microcement, limewash, eco silicate and lime interior painting, mounting (TV brackets, pictures, lights, furniture), apartment refresh and small sanitary jobs. Since February 2026 maintaining the Indian Embassy in Vienna and a rental portfolio of 25 units.";
 }
