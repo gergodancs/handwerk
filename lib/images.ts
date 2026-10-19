@@ -43,8 +43,11 @@ export const LEISTUNG_IMAGES = {
   handwerkerWien: "handwerker-wien.jpg",
 } as const;
 
-export const HERO_BACKGROUND =
-  "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80";
+/** Homepage hero – Limewash / Kalkfarbe Wohnzimmer (Bio-Profil). */
+export const HERO_BACKGROUND = "/images/hero/limewash-kalkfarbe-wohnzimmer-wien.png";
+
+export const HERO_BACKGROUND_ALT =
+  "Limewash Kalkfarbe Wohnzimmer Wien – wohngesunde mineralische Wandgestaltung";
 
 /** Preview images for design-wall technique cards (order matches techniques in copy). */
 export const DESIGN_WALL_TECHNIQUE_PREVIEWS = [

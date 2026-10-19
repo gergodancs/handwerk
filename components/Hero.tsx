@@ -12,23 +12,24 @@ type HeroProps = {
 
 export function Hero({ dict }: HeroProps) {
   return (
-    <section className="relative overflow-hidden bg-slate-950 px-4 py-20 sm:px-6 sm:py-28">
+    <section className="relative overflow-hidden bg-stone-200 px-4 py-20 sm:px-6 sm:py-28">
       <Image
         src={HERO_BACKGROUND}
         alt=""
         fill
         priority
         sizes="100vw"
-        className="scale-105 object-cover object-center brightness-[0.88] saturate-[1.08]"
+        className="scale-105 object-cover object-[68%_center]"
         aria-hidden="true"
       />
 
+      {/* Scrim only behind copy (left); right side stays bright so Limewash is visible */}
       <div
-        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/72 to-slate-950/35"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-slate-950/92 from-0% via-slate-950/70 via-[48%] to-transparent to-[78%] sm:via-slate-950/50 sm:via-[40%] sm:to-[58%]"
         aria-hidden="true"
       />
       <div
-        className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/65 via-slate-950/20 to-slate-950/10"
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-slate-950/35 to-transparent sm:h-28"
         aria-hidden="true"
       />
 
