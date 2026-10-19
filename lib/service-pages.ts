@@ -459,6 +459,10 @@ export const apartmentRefreshPageDe: ApartmentRefreshPageDict = {
     "Kombinieren Sie Ihren Refresh mit einer Designwand oder TV-Akzentfläche im Wohnzimmer.",
   upsellLinkLabel: "Zu Designwänden & Edelputz →",
   bioPaintingMoreLinkLabel: "Mehr zum Bio-Refresh & Klimafarben erfahren →",
+  bioEntryBannerTitle: "Nur wohngesundes Ausmalen?",
+  bioEntryBannerText:
+    "Direkt zur Bio- & Klima-Seite – Silikat- und Kalkfarben, Ablauf und FAQ ohne volles Refresh-Paket.",
+  bioEntryBannerCta: "Zum Bio-Ausmalen →",
   ecoUpgradeTitle: "Öko- & Klima-Upgrade Option",
   ecoUpgradeIntro:
     "Für alle Pakete (Basis, Komfort, Komplett) buchbar – schadstoffarm und atmungsaktiv:",
@@ -651,6 +655,10 @@ export const apartmentRefreshPageEn: ApartmentRefreshPageDict = {
     "Combine your refresh with a design or TV feature wall in the living room.",
   upsellLinkLabel: "Design walls & premium plaster →",
   bioPaintingMoreLinkLabel: "Learn more about eco refresh & climate paints →",
+  bioEntryBannerTitle: "Healthy painting only?",
+  bioEntryBannerText:
+    "Go straight to the eco & climate page – silicate and lime paints, process and FAQ without a full refresh package.",
+  bioEntryBannerCta: "Eco painting page →",
   ecoUpgradeTitle: "Eco & climate upgrade option",
   ecoUpgradeIntro:
     "Available for all packages (Basic, Comfort, Complete) – low-emission and breathable:",

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Dictionary } from "@/lib/dictionaries";
 import type { Locale } from "@/lib/i18n";
+import { getBioRefreshPath } from "@/lib/bio-refresh-routes";
 import {
   getAllrounderMontagePath,
   getApartmentRefreshPath,
@@ -53,10 +54,18 @@ export function Footer({ lang, dict }: FooterProps) {
             <ul className="mt-3 space-y-2">
               <li>
                 <Link
-                  href={getMicrocementBathroomPath(lang)}
+                  href={getBioRefreshPath(lang)}
+                  className="text-sm font-medium text-emerald-400 transition-colors hover:text-emerald-300"
+                >
+                  {dict.footer.bioPaintingLink}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={getApartmentRefreshPath(lang)}
                   className="text-sm text-slate-300 transition-colors hover:text-white"
                 >
-                  {dict.footer.microcementBathroomLink}
+                  {dict.footer.apartmentRefreshLink}
                 </Link>
               </li>
               <li>
@@ -77,10 +86,10 @@ export function Footer({ lang, dict }: FooterProps) {
               </li>
               <li>
                 <Link
-                  href={getApartmentRefreshPath(lang)}
+                  href={getMicrocementBathroomPath(lang)}
                   className="text-sm text-slate-300 transition-colors hover:text-white"
                 >
-                  {dict.footer.apartmentRefreshLink}
+                  {dict.footer.microcementBathroomLink}
                 </Link>
               </li>
             </ul>

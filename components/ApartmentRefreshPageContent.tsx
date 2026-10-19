@@ -63,7 +63,22 @@ export function ApartmentRefreshPageContent({
       </section>
 
       <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-        <section>
+        <section className="rounded-2xl border border-emerald-200 bg-emerald-50/80 p-6 sm:p-8">
+          <h2 className="text-lg font-bold text-emerald-900">
+            {page.bioEntryBannerTitle}
+          </h2>
+          <p className="mt-2 text-sm leading-relaxed text-slate-700">
+            {page.bioEntryBannerText}
+          </p>
+          <Link
+            href={getBioRefreshPath(lang)}
+            className="mt-4 inline-flex text-sm font-semibold text-emerald-800 hover:text-emerald-700"
+          >
+            {page.bioEntryBannerCta}
+          </Link>
+        </section>
+
+        <section className="mt-14">
           <h2 className="text-2xl font-bold text-slate-900">
             {page.positioningTitle}
           </h2>

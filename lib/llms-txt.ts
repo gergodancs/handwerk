@@ -40,7 +40,7 @@ export function buildLlmsTxt(): string {
   const lines: string[] = [
     `# ${SITE_NAME}`,
     "",
-    `> Handwerk und Wohnungssanierung in Wien – Mikrozement, Refresh, Designwände, Allrounder.`,
+    `> Handwerk in Wien – Bio-/Silikat-Ausmalen, Wohnungs-Refresh, Allrounder; Spezial Mikrozement & Designwände.`,
     "",
     `${OWNER_NAME} betreut private Wohnungen und institutionelle Objekte in Wien und Umgebung`,
     `(u. a. laufende Instandhaltung an der Indischen Botschaft, 25 Mieteinheiten seit Februar 2026).`,

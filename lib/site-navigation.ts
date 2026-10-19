@@ -20,6 +20,10 @@ export function getServiceLandingNavItems(dict: Dictionary) {
   });
 }
 
+export function getBioPaintingNavLabel(dict: Dictionary): string {
+  return dict.header.nav.bioPaintingLink;
+}
+
 export function getServiceLandingChipLabel(
   dict: Dictionary,
   key: ServiceLandingKey,

@@ -5,8 +5,10 @@ import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { Dictionary } from "@/lib/dictionaries";
 import type { Locale } from "@/lib/i18n";
+import { getBioRefreshPath } from "@/lib/bio-refresh-routes";
 import {
   HOME_SECTION_NAV,
+  getBioPaintingNavLabel,
   getServiceLandingNavItems,
 } from "@/lib/site-navigation";
 import { resolveServiceLandingPath, type ServiceLandingKey } from "@/lib/service-routes";
@@ -22,6 +24,8 @@ export function HeaderNav({ lang, dict }: HeaderNavProps) {
   const servicesRef = useRef<HTMLDivElement>(null);
 
   const serviceItems = getServiceLandingNavItems(dict);
+  const bioHref = getBioRefreshPath(lang);
+  const bioNavLabel = getBioPaintingNavLabel(dict);
 
   const closeServices = useCallback(() => setServicesOpen(false), []);
 
@@ -52,6 +56,8 @@ export function HeaderNav({ lang, dict }: HeaderNavProps) {
 
   const isServiceActive = (key: ServiceLandingKey) =>
     pathname === resolveServiceLandingPath(lang, key);
+
+  const isBioActive = pathname === bioHref;
 
   const sectionLinkClass =
     "text-sm font-medium text-slate-300 transition-colors hover:text-white";
@@ -91,6 +97,19 @@ export function HeaderNav({ lang, dict }: HeaderNavProps) {
               {dict.header.nav.servicesOverview}
             </Link>
             <div className="my-1 border-t border-slate-800" role="separator" />
+            <Link
+              href={bioHref}
+              role="menuitem"
+              className={`block px-4 py-2.5 text-sm transition-colors hover:bg-slate-800 ${
+                isBioActive
+                  ? "bg-slate-800/80 font-semibold text-emerald-400"
+                  : "font-medium text-emerald-300 hover:text-emerald-200"
+              }`}
+              onClick={closeServices}
+              aria-current={isBioActive ? "page" : undefined}
+            >
+              {bioNavLabel}
+            </Link>
             {serviceItems.map((item) => {
               const href = resolveServiceLandingPath(lang, item.key);
               const active = isServiceActive(item.key);

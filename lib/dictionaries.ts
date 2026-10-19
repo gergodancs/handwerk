@@ -56,7 +56,13 @@ export type Dictionary = {
       gallery: string;
       reviews: string;
       faq: string;
+      bioPaintingLink: string;
     };
+  };
+  homeAudience: {
+    title: string;
+    intro: string;
+    columns: Array<{ title: string; description: string }>;
   };
   serviceLandingCrossNav: {
     label: string;
@@ -97,6 +103,11 @@ export type Dictionary = {
   services: {
     title: string;
     learnMore: string;
+    featuredBio: {
+      title: string;
+      description: string;
+      ctaLabel: string;
+    };
     items: Array<{
       title: string;
       description: string;
@@ -141,6 +152,7 @@ export type Dictionary = {
     allrounderMontageLink: string;
     designWallsLink: string;
     apartmentRefreshLink: string;
+    bioPaintingLink: string;
     contactTitle: string;
     rights: string;
   };
@@ -193,11 +205,11 @@ export type Dictionary = {
 const de: LocaleDictionary = {
   meta: {
     title:
-      "Handwerker Wien | Mikrozement, Allrounder, Refresh & Designwände",
+      "Handwerker Wien | Bio-Ausmalen, Refresh & Montage",
     description:
-      "Handwerker in Wien und Umgebung: Mikrozement-Bad, Allrounder, Wohnungs-Refresh inkl. Bio-/Silikat-Ausmalen, Designwände. Instandhaltung Indische Botschaft Wien & 25-Einheiten-Portfolio – Fixpreis, Detailseiten mit FAQ.",
+      "Handwerker in Wien: wohngesundes Bio- & Silikat-Ausmalen, Wohnungs-Refresh, Allrounder-Montage – Spezial auch Mikrozement-Bad & Designwände. Fixpreis nach Besichtigung, sauber & persönlich.",
     ogImageAlt:
-      "Wien Handwerk Profis – Mikrozement, Allrounder, Refresh und Designwände in Wien",
+      "Wien Handwerk Profis – Bio-Ausmalen, Refresh, Montage und Spezial-Oberflächen in Wien",
     keywords: [
       "Handwerker Wien",
       "Mikrozement Bad Wien",
@@ -236,7 +248,30 @@ const de: LocaleDictionary = {
       gallery: "Referenzen",
       reviews: "Bewertungen",
       faq: "FAQ",
+      bioPaintingLink: "Bio- & Klima-Ausmalen",
     },
+  },
+  homeAudience: {
+    title: "Für wen ist was?",
+    intro:
+      "Ob schnelles Übergabe-Streichen, Montage im Alltag oder eine besondere Wand – Sie finden den passenden Einstieg ohne Luxus-Druck.",
+    columns: [
+      {
+        title: "Schnell frisch & wohngesund",
+        description:
+          "Bio-/Silikat-Ausmalen und Wohnungs-Refresh für Übergabe, Einzug, Kinderzimmer oder Allergiker – lösemittelarm und Fixpreis nach Besichtigung.",
+      },
+      {
+        title: "Klein & praktisch",
+        description:
+          "Allrounder-Montage: TV, Bilder, Lampen, Möbel, Silikon, Kleinreparaturen – ein Ansprechpartner, sauber erledigt.",
+      },
+      {
+        title: "Besonderes Finish",
+        description:
+          "Designwände, Limewash oder fugenloses Mikrozement-Bad – wenn Sie mehr als Standardfarbe wollen, mit Muster und Planung vor Ort.",
+      },
+    ],
   },
   serviceLandingCrossNav: {
     label: "Weitere Leistungen",
@@ -261,27 +296,27 @@ const de: LocaleDictionary = {
   },
   hero: {
     title:
-      "Mikrozement, Allrounder-Montage, Wohnungs-Refresh & Designwände",
+      "Handwerker in Wien – wohngesundes Ausmalen, Refresh & Montage",
     subtitle:
-      "Fugenlose Bäder, Montage & Reparaturen im Haushalt, smarte Wohnungs-Updates und exklusive Designwände – in Wien und Umgebung.",
+      "Bio- & Silikat-Anstriche, Wohnungs-Refresh und Allrounder-Arbeiten – sauber, termingerecht, mit fairen Fixpreisen nach Besichtigung.",
     subtitleSecondary:
-      "Ich arbeite sauber, termingerecht und mit Premium-Materialien wie Murexin designcoat und Cemher – persönlich, transparent, ohne wechselnde Subunternehmer.",
+      "Spezial-Leistungen auf Wunsch: fugenlose Mikrozement-Bäder, Designwände & Edelputz – persönlich vom Meister, ohne wechselnde Subunternehmer.",
     trustBadges: [
+      "Lösemittelarm & staubreduziert",
       "Sauber & Termingerecht",
-      "Festpreis-Garantie",
-      "Musterplatten vor Ort",
+      "Festpreis nach Besichtigung",
     ],
     ctaWhatsApp: "WhatsApp Chat",
     ctaCall: "Anrufen",
   },
   about: {
     title: "Über mich",
-    role: "Spezialist für Handwerk, Mikrozement & Designwände",
+    role: "Handwerker & Maler in Wien – Bio-Ausmalen, Refresh & Spezial-Oberflächen",
     imageAlt:
-      "Gergely Dancs – Handwerk, Mikrozement und Designwände in Wien",
+      "Gergely Dancs – Handwerker, Bio-Ausmalen und Refresh in Wien",
     paragraphs: [
-      "Mein Name ist Gergely Dancs. Ich stehe für hochwertige handwerkliche Ausführung in Wien – von der durchdachten Wohnungssanierung über saubere Wohnungs-Refreshs bis hin zu maßgefertigten Designwänden.",
-      "Mein besonderer Fokus liegt auf exklusiven Oberflächen: Fugenloser Mikrozement für Bäder sowie kreative Putz- und Spachteltechniken – von moderner Betonoptik und edlem Limewash über Marmorino bis hin zu hochglänzendem Venetian Plaster (Stucco Veneziano) als echte Luxus-Akzente im Wohnbereich. Ich arbeite persönlich, transparent und mit höchstem Anspruch an Sauberkeit und Präzision – direkt vom Meisterhandwerk, ohne wechselnde Subunternehmer.",
+      "Mein Name ist Gergely Dancs. Ich helfe Eigentümern und Mietern in Wien mit dem, was im Alltag zählt: wohngesundes Ausmalen mit Silikat- und Kalkfarben, komplette Wohnungs-Refreshs und zuverlässige Montage – sauber, pünktlich, mit transparenten Fixpreisen.",
+      "Wenn Sie mehr als eine Standardfarbe wünschen, setze ich auch fugenlose Mikrozement-Bäder sowie Designwände um – Betonoptik, Limewash, Marmorino oder Venetian Plaster. Alles aus einer Hand, persönlich und ohne wechselnde Subunternehmer.",
     ],
   },
   sectionCta: {
@@ -305,30 +340,36 @@ const de: LocaleDictionary = {
   services: {
     title: "Meine Leistungen",
     learnMore: "Mehr erfahren",
+    featuredBio: {
+      title: "Bio- & klimafreundliches Ausmalen",
+      description:
+        "Silikat- und Kalkfarben, lösemittelarm – ideal für Kinderzimmer, Übergabe, Altbau und Allergiker. Staubreduziert verarbeitet, Fixpreis nach Besichtigung.",
+      ctaLabel: "Zur Bio- & Klima-Seite →",
+    },
     items: [
       {
-        title: "Mikrozement & fugenlose Bäder",
+        title: "Wohnungs-Refresh & Ausmalen",
         description:
-          "Fugenlose Mikrocement-Oberflächen für Bad, Dusche und WC – wasserfest, pflegeleicht und in modernem Betonlook. Verarbeitung mit Murexin designcoat und Cemher.",
-        landing: "microcementBathroom",
+          "Smartes Update ohne Großbaustelle: Streichen, Schalter, Lampen und mehr – optional mit Bio-/Silikat-Anstrich als Klima-Upgrade.",
+        landing: "apartmentRefresh",
       },
       {
         title: "Allrounder Handwerk & Montage",
         description:
-          "Kleinere Montage- und Reparaturarbeiten, Ergänzungen im Zuge von Sanierungen und praktische Hilfestellungen im Haushalt – zuverlässig aus einer Hand.",
+          "TV, Bilder, Lampen, Möbel, Silikon und Kleinreparaturen – praktische Hilfe im Haushalt, zuverlässig aus einer Hand.",
         landing: "allrounderMontage",
-      },
-      {
-        title: "Wohnungs-Refresh",
-        description:
-          "Smartes Update ohne Großbaustelle: Ausmalen, Schalter, Griffe, Lampen und mehr – in wenigen Tagen bezugsfertig und sauber.",
-        landing: "apartmentRefresh",
       },
       {
         title: "Designwände & Edelputz",
         description:
-          "TV-Wände und Akzentflächen: Betonoptik, Marmorino, Limewash und Kreativputz – mit Musterplatten vor Ort.",
+          "Für alle, die mehr als Standardfarbe wollen: TV-Wände, Limewash, Marmorino – mit Muster vor Ort, ohne überladenen Luxus-Jargon.",
         landing: "designWalls",
+      },
+      {
+        title: "Mikrozement & fugenlose Bäder",
+        description:
+          "Spezial für moderne, fugenlose Bäder und Duschen – wasserfest und pflegeleicht. Für geplante Bad-Updates mit Besichtigung und Festpreis.",
+        landing: "microcementBathroom",
       },
     ],
   },
@@ -442,6 +483,7 @@ const de: LocaleDictionary = {
     allrounderMontageLink: "Allrounder & Montage",
     designWallsLink: "Designwände & TV-Wand",
     apartmentRefreshLink: "Wohnungs-Refresh",
+    bioPaintingLink: "Bio- & Klima-Ausmalen",
     contactTitle: "Kontakt",
     rights: "© Wien Handwerk Profis. Alle Rechte vorbehalten.",
   },
@@ -545,11 +587,11 @@ const de: LocaleDictionary = {
 const en: LocaleDictionary = {
   meta: {
     title:
-      "Handyman Vienna | Microcement, Mounting, Refresh & Design Walls",
+      "Handyman Vienna | Eco Painting, Refresh & Mounting",
     description:
-      "Handyman in Vienna and surroundings: microcement bathrooms, mounting, apartment refresh with eco silicate & lime painting, design walls. Maintenance Indian Embassy Vienna & 25-unit portfolio – fixed prices, FAQ on every service page.",
+      "Handyman in Vienna: healthy eco silicate & lime painting, apartment refresh, mounting – specialist microcement bathrooms & design walls too. Fixed quote after viewing, clean & personal.",
     ogImageAlt:
-      "Wien Handwerk Profis – microcement, handyman mounting, refresh and design walls in Vienna",
+      "Wien Handwerk Profis – eco painting, refresh, mounting and specialist finishes in Vienna",
     keywords: [
       "handyman Vienna",
       "microcement bathroom Vienna",
@@ -586,7 +628,30 @@ const en: LocaleDictionary = {
       gallery: "Projects",
       reviews: "Reviews",
       faq: "FAQ",
+      bioPaintingLink: "Eco & healthy painting",
     },
+  },
+  homeAudience: {
+    title: "Which service fits you?",
+    intro:
+      "Whether you need a quick handover repaint, everyday mounting or a special wall – find the right entry point without luxury pressure.",
+    columns: [
+      {
+        title: "Fresh & healthy indoors",
+        description:
+          "Eco silicate and lime painting plus apartment refresh for handover, move-in, nurseries or allergy households – low-VOC, fixed quote after viewing.",
+      },
+      {
+        title: "Small & practical",
+        description:
+          "Handyman mounting: TV, pictures, lights, furniture, silicone, small repairs – one contact, done neatly.",
+      },
+      {
+        title: "Special finishes",
+        description:
+          "Design walls, limewash or seamless microcement bathrooms – when you want more than standard paint, with samples and planning on site.",
+      },
+    ],
   },
   serviceLandingCrossNav: {
     label: "More services",
@@ -611,27 +676,27 @@ const en: LocaleDictionary = {
   },
   hero: {
     title:
-      "Microcement, handyman mounting, apartment refresh & design walls",
+      "Handyman in Vienna – healthy painting, refresh & mounting",
     subtitle:
-      "Seamless bathrooms, home mounting and repairs, smart refreshes and exclusive design walls – in Vienna and surroundings.",
+      "Eco silicate and lime coats, apartment refresh and handyman work – clean, on schedule, fair fixed quotes after viewing.",
     subtitleSecondary:
-      "I work cleanly, on schedule and with premium materials including Murexin designcoat and Cemher – personally, transparently, without rotating subcontractors.",
+      "Specialist finishes on request: seamless microcement bathrooms, design walls and premium plaster – personally, without rotating subcontractors.",
     trustBadges: [
+      "Low-VOC & dust-reduced",
       "Clean & on schedule",
-      "Fixed-price guarantee",
-      "Sample boards on site",
+      "Fixed quote after viewing",
     ],
     ctaWhatsApp: "WhatsApp Chat",
     ctaCall: "Call Now",
   },
   about: {
     title: "About Me",
-    role: "Specialist for craftsmanship, microcement & design walls",
+    role: "Handyman & painter in Vienna – eco painting, refresh & specialist surfaces",
     imageAlt:
-      "Gergely Dancs – craftsmanship, microcement and design walls in Vienna",
+      "Gergely Dancs – handyman, eco painting and refresh in Vienna",
     paragraphs: [
-      "My name is Gergely Dancs. I stand for high-quality craftsmanship in Vienna – from thoughtful full renovations and clean apartment refreshes to bespoke design walls.",
-      "My particular focus is exclusive surfaces: seamless microcement for bathrooms and creative plaster techniques – from modern concrete look and refined limewash to marmorino and high-gloss Venetian plaster (Stucco Veneziano) as true luxury accents in living spaces. I work personally, transparently and with the highest standards of cleanliness and precision – master craftsmanship direct to you, without rotating subcontractors.",
+      "My name is Gergely Dancs. I help owners and tenants in Vienna with what matters day to day: healthy painting with silicate and lime, full apartment refreshes and reliable mounting – clean, on time, transparent fixed prices.",
+      "When you want more than standard paint, I also deliver seamless microcement bathrooms and design walls – concrete look, limewash, marmorino or Venetian plaster. One contact, personally, without rotating subcontractors.",
     ],
   },
   sectionCta: {
@@ -655,30 +720,36 @@ const en: LocaleDictionary = {
   services: {
     title: "My Services",
     learnMore: "Learn more",
+    featuredBio: {
+      title: "Eco & climate-friendly painting",
+      description:
+        "Silicate and lime paints, low-VOC – ideal for nurseries, handover, period flats and allergy households. Dust-reduced work, fixed quote after viewing.",
+      ctaLabel: "Go to eco painting page →",
+    },
     items: [
       {
-        title: "Microcement & Seamless Bathrooms",
+        title: "Apartment refresh & painting",
         description:
-          "Seamless microcement for bathroom, shower and WC – waterproof, low-maintenance concrete look. Applied with Murexin designcoat and Cemher.",
-        landing: "microcementBathroom",
+          "Smart update without major works: painting, switches, lights and more – optional eco silicate upgrade for healthier indoor air.",
+        landing: "apartmentRefresh",
       },
       {
         title: "Handyman work & installation",
         description:
-          "Smaller installation and repair jobs, add-ons during renovations and practical help around the home – reliably from one contact.",
+          "TV, pictures, lights, furniture, silicone and small repairs – practical help at home from one contact.",
         landing: "allrounderMontage",
       },
       {
-        title: "Apartment Refresh",
+        title: "Design walls & premium plaster",
         description:
-          "Smart update without major works: painting, switches, handles, lights and more – move-in ready in a few days.",
-        landing: "apartmentRefresh",
+          "When you want more than standard paint: TV walls, limewash, marmorino – samples on site, without intimidating luxury jargon.",
+        landing: "designWalls",
       },
       {
-        title: "Design Walls & Premium Plaster",
+        title: "Microcement & seamless bathrooms",
         description:
-          "TV walls and feature surfaces: concrete look, marmorino, limewash and creative plaster – sample boards on site.",
-        landing: "designWalls",
+          "Specialist seamless bathrooms and showers – waterproof and easy to clean. For planned bathroom updates with viewing and fixed quote.",
+        landing: "microcementBathroom",
       },
     ],
   },
@@ -792,6 +863,7 @@ const en: LocaleDictionary = {
     allrounderMontageLink: "Handyman & mounting",
     designWallsLink: "Design walls & TV wall",
     apartmentRefreshLink: "Apartment refresh",
+    bioPaintingLink: "Eco & healthy painting",
     contactTitle: "Contact",
     rights: "© Wien Handwerk Profis. All rights reserved.",
   },

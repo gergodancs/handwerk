@@ -7,8 +7,10 @@ import { createPortal } from "react-dom";
 import type { Dictionary } from "@/lib/dictionaries";
 import type { Locale } from "@/lib/i18n";
 import { buildMailtoHref, PHONE_DISPLAY, PHONE_HREF } from "@/lib/constants";
+import { getBioRefreshPath } from "@/lib/bio-refresh-routes";
 import {
   HOME_SECTION_NAV,
+  getBioPaintingNavLabel,
   getServiceLandingNavItems,
 } from "@/lib/site-navigation";
 import { resolveServiceLandingPath } from "@/lib/service-routes";
@@ -27,6 +29,8 @@ export function MobileNavMenu({ lang, dict }: MobileNavMenuProps) {
 
   const close = useCallback(() => setOpen(false), []);
   const serviceItems = getServiceLandingNavItems(dict);
+  const bioHref = getBioRefreshPath(lang);
+  const bioNavLabel = getBioPaintingNavLabel(dict);
 
   useEffect(() => {
     setMounted(true);
@@ -97,6 +101,16 @@ export function MobileNavMenu({ lang, dict }: MobileNavMenuProps) {
                   onClick={close}
                 >
                   {dict.header.nav.servicesOverview}
+                </Link>
+                <Link
+                  href={bioHref}
+                  className={`${linkClass} font-semibold text-emerald-400 ${
+                    pathname === bioHref ? "bg-slate-800" : ""
+                  }`}
+                  onClick={close}
+                  aria-current={pathname === bioHref ? "page" : undefined}
+                >
+                  {bioNavLabel}
                 </Link>
                 {serviceItems.map((item) => {
                   const href = resolveServiceLandingPath(lang, item.key);

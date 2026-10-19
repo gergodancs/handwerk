@@ -10,10 +10,10 @@ export type ServiceLandingKey =
  * All service landing pages – single source for sitemap, static params, and nav order.
  */
 export const SERVICE_LANDING_KEYS: readonly ServiceLandingKey[] = [
-  "microcementBathroom",
-  "allrounderMontage",
   "apartmentRefresh",
+  "allrounderMontage",
   "designWalls",
+  "microcementBathroom",
 ];
 
 const SERVICE_LANDING_SLUGS: Record<

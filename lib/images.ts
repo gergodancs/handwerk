@@ -1,3 +1,5 @@
+import type { ServiceLandingKey } from "./service-routes";
+
 const REF = "/images/referenzen";
 const WOHNUNG = `${REF}/wohnung-sanierung`;
 const MIKROCEMENT = `${REF}/mikrocement`;
@@ -116,24 +118,34 @@ export type ServiceCardImage = {
 
 export const SERVICE_IMAGES: ServiceCardImage[] = [
   {
-    src: `${LEISTUNGEN}/microzement-oberflaeche-detail.jpg`,
-    alt: "Mikrozement Oberfläche fugenlos Wien Bad und Dusche",
-    cropTopHalf: true,
+    src: `${LEISTUNGEN}/${LEISTUNG_IMAGES.wohnungssanierung}`,
+    alt: "Wohnungs-Refresh Wien Ausmalen Modernisierung",
   },
   {
     src: `${LEISTUNGEN}/${LEISTUNG_IMAGES.handwerkerWien}`,
     alt: "Handwerker Wien Altbau Fenster Malerarbeiten Allrounder",
   },
   {
-    src: `${LEISTUNGEN}/${LEISTUNG_IMAGES.wohnungssanierung}`,
-    alt: "Wohnungs-Refresh Wien Ausmalen Modernisierung",
-  },
-  {
     src: `${DESIGNWAENDE}/venetian-plaster.jpg`,
     alt: "Designwände Venetian Plaster und Edelputz Wien",
     cropTopHalf: true,
   },
+  {
+    src: `${LEISTUNGEN}/microzement-oberflaeche-detail.jpg`,
+    alt: "Mikrozement Oberfläche fugenlos Wien Bad und Dusche",
+    cropTopHalf: true,
+  },
 ];
+
+export const SERVICE_CARD_IMAGE_BY_LANDING: Record<
+  ServiceLandingKey,
+  ServiceCardImage
+> = {
+  apartmentRefresh: SERVICE_IMAGES[0],
+  allrounderMontage: SERVICE_IMAGES[1],
+  designWalls: SERVICE_IMAGES[2],
+  microcementBathroom: SERVICE_IMAGES[3],
+};
 
 export const GALLERY_PHASES = [
   {

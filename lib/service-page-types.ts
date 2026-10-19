@@ -115,6 +115,9 @@ export type ApartmentRefreshPageDict = ServiceLandingPageDict & {
   upsellLinkLabel: string;
   refreshIcons: Array<{ label: string; description: string }>;
   bioPaintingMoreLinkLabel: string;
+  bioEntryBannerTitle: string;
+  bioEntryBannerText: string;
+  bioEntryBannerCta: string;
   ecoUpgradeTitle: string;
   ecoUpgradeIntro: string;
   ecoUpgradeBullets: string[];
