@@ -2,7 +2,7 @@ import type { BioRefreshPageDict } from "./service-page-types";
 
 export const bioRefreshPageDe: BioRefreshPageDict = {
   metaTitle:
-    "Bio-Wandgestaltung & Schadstoffarm Ausmalen Wien | Handwerk Profis",
+    "Bio-Ausmalen Wien | Silikat- & Kalkfarben | Handwerk Profis",
   metaDescription:
     "Wohngesundes Ausmalen in Wien mit Silikat- und Kalkfarben: lösemittelarm, staubreduziert und atmungsaktiv. Fixpreis nach Besichtigung – jetzt anfragen.",
   metaKeywords: [
@@ -100,6 +100,11 @@ export const bioRefreshPageDe: BioRefreshPageDict = {
   faqTitle: "Häufige Fragen zu Bio- & Klima-Ausmalen",
   faq: [
     {
+      question: "Kalkfarbe vs. Silikatfarbe – was ist der Unterschied?",
+      answer:
+        "Beide sind mineralisch und atmungsaktiv. Kalkfarben (z. B. Sumpfkalk) wirken besonders feuchtigkeitsregulierend und matt – ideal für Wohn- und Schlafräume. Silikatfarben haften chemisch an mineralischen Untergründen, sind sehr robust und oft etwas abriebfester – häufig als Deckanstrich oder in feuchteren Bereichen. In der Praxis kombinieren wir je nach Untergrund und Wunschoptik Quarz-Haftgrund, Kalk- und Silikatschichten – nach Besichtigung empfehle ich das passende System.",
+    },
+    {
       question:
         "Kann man Silikat- oder Kalkfarbe auf alte Dispersionsfarbe auftragen?",
       answer:
@@ -140,7 +145,7 @@ export const bioRefreshPageDe: BioRefreshPageDict = {
 
 export const bioRefreshPageEn: BioRefreshPageDict = {
   metaTitle:
-    "Eco Wall Painting & Low-VOC Finishes Vienna | Handwerk Profis",
+    "Eco Painting Vienna | Silicate & Lime Paints | Handwerk Profis",
   metaDescription:
     "Healthy interior painting in Vienna with silicate and lime paints: low-VOC, dust-reduced application and breathable walls. Fixed quote after viewing – get in touch.",
   metaKeywords: [
@@ -236,6 +241,11 @@ export const bioRefreshPageEn: BioRefreshPageDict = {
   designWallsUpsellLinkLabel: "Design walls & limewash →",
   faqTitle: "FAQ – eco & healthy painting",
   faq: [
+    {
+      question: "Lime paint vs. silicate paint – what is the difference?",
+      answer:
+        "Both are mineral and breathable. Lime paints (e.g. slaked lime) regulate humidity especially well and look softly matt – ideal for living and bedrooms. Silicate paints bond chemically to mineral substrates, are very durable and often more scrub-resistant – common as a topcoat or in busier areas. In practice we combine quartz bonding primer, lime and silicate layers depending on substrate and look – after a visit I recommend the right system.",
+    },
     {
       question: "Can silicate or lime paint go over old dispersion paint?",
       answer:
