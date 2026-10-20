@@ -1,3 +1,4 @@
+import { GoogleTagManager } from "@next/third-parties/google";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -37,6 +38,7 @@ export default async function LangLayout({ children, params }: LayoutProps) {
       className={`${inter.variable} h-full`}
       suppressHydrationWarning
     >
+      <GoogleTagManager gtmId="GTM-M2CRJGFV" />
       <body className="min-h-full bg-slate-950 font-sans text-slate-100 antialiased">
         {children}
       </body>
